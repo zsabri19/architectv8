@@ -44,7 +44,7 @@ function ConnectPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-6 text-sm text-navy/60">
             <a href={`mailto:${SITE.email}`} className="hover:text-navy">{SITE.email}</a>
-            <a href={SITE.bookSessionUrl} className="hover:text-navy">Or book the $79 Session →</a>
+            <a href={SITE.bookSessionUrl} className="hover:text-navy">Or start a conversation →</a>
           </div>
           <p className="mt-6 text-sm text-navy/60">
             Not sure what you need yet? Review the{" "}
@@ -58,7 +58,7 @@ function ConnectPage() {
             .
           </p>
           <div className="mt-10">
-            <Testimonials items={[TESTIMONIALS[1]]} variant="single" />
+            <Testimonials items={[TESTIMONIALS[0]]} variant="single" />
           </div>
 
         </div>
@@ -117,7 +117,6 @@ function ConnectPage() {
             >
               <Field label="Name" name="name" required />
               <Field label="Organisation" name="org" required />
-              <Field label="Role" name="role" />
               <Field label="Email" name="email" type="email" required />
               <div>
                 <label
@@ -138,22 +137,20 @@ function ConnectPage() {
                   <option>Other</option>
                 </select>
               </div>
-              <Field label="Budget range (optional)" name="budget" />
-              <Field label="Timeline (optional)" name="timeline" />
               <div>
                 <label
                   htmlFor="field-message"
                   className="block text-[10px] font-medium uppercase tracking-widest text-navy/70"
                 >
-                  Context
+                  What is the real blocker? <span className="text-gold">*</span>
                 </label>
                 <textarea
                   id="field-message"
                   name="message"
                   required
-                  rows={5}
+                  rows={4}
                   className="mt-2 w-full border border-navy/20 bg-white px-4 py-3 text-sm outline-none focus:border-gold"
-                  placeholder="What is the real blocker you are trying to solve?"
+                  placeholder="What decision or situation brought you here?"
                 />
               </div>
               {status === "error" && (

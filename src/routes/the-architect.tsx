@@ -250,7 +250,7 @@ function ArchitectPage() {
               href={SITE.bookSessionUrl}
               className="bg-navy px-8 py-4 text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
             >
-              Book $79 Session
+              Start a Conversation
             </a>
             <Link
               to="/book"

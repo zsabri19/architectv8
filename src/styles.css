@@ -1034,3 +1034,91 @@
   .workshop-marquee { overflow-x: auto; }
   .workshop-marquee-track { animation: none; }
 }
+
+/* ---------- Hero social proof strip ---------- */
+.hero-social-proof {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgb(15 34 58 / 0.5);
+}
+.hero-social-proof span:first-child {
+  font-weight: 600;
+  color: var(--gold, #c08a4a);
+}
+.hero-proof-clients {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--navy);
+}
+
+/* ---------- Case study cards ---------- */
+.case-study-section {
+  padding: 5rem 0;
+  background: var(--paper-soft, #f8f6f1);
+}
+.case-study-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+@media (min-width: 768px) {
+  .case-study-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1024px) {
+  .case-study-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+}
+.case-study-card {
+  background: #fff;
+  border: 1px solid var(--line, rgb(15 34 58 / 0.1));
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.2s;
+}
+.case-study-card:hover {
+  border-color: var(--gold, #c08a4a);
+}
+.case-study-client {
+  font-family: var(--font-serif, Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.case-study-sector {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold, #c08a4a);
+}
+.case-study-challenge {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgb(15 34 58 / 0.7);
+  flex: 1;
+}
+.case-study-outcome {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--navy);
+  font-weight: 500;
+}
+.case-study-metric {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold, #c08a4a);
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line, rgb(15 34 58 / 0.1));
+}

@@ -256,32 +256,7 @@ export type Testimonial = {
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "AI doesn't transform businesses by itself but rather people, systems, and clarity do. While much of the industry is focused on building increasingly sophisticated AI solutions, Zeeshan is consistently bringing the conversation back to something more fundamental: organizations need clarity before complexity, and stability before optimization.",
-    name: "Makarand Upat",
-    title: "AI Readiness & Automation",
-    date: "June 2026",
-    source: "LinkedIn Recommendation",
-  },
-  {
-    quote:
-      "Zeeshan has a sharp understanding of digital solutions and a strong ability to align technology with business goals. His strategic thinking and execution have consistently driven tech-enabled growth and exceeded expectations.",
-    name: "Hamed Al Wahaibi",
-    title: "AGM — Retail Sales & Bancassurance",
-    org: "Dhofar Insurance Company",
-    date: "July 2025",
-    source: "LinkedIn Recommendation",
-  },
-  {
-    quote:
-      "We are not just buyers — we are capability architects. The workshop changed my view in some points.",
-    name: "Procurement Professional",
-    org: "NCMS Programme — Riyadh",
-    date: "November 2025",
-    source: "Participant Feedback",
-  },
-  {
-    quote:
-      "Consistently impressed by his strong knowledge of procurement processes and his structured, consultative approach... always dependable when it came to delivering quality work. I'm confident that Zeeshan will add value to any organization looking for a technically sound and process-driven professional.",
+      "Consistently impressed by his strong knowledge of procurement processes and his structured, consultative approach — always dependable when it came to delivering quality work. I'm confident that Zeeshan will add value to any organization looking for a technically sound and process-driven professional.",
     name: "Imran Shareef, PMP, FCIPS",
     title: "Head of Procurement — Middle East, Africa & UN Projects",
     date: "July 2025",
@@ -298,6 +273,15 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
+      "Zeeshan is an exceptional trainer, motivational speaker, and mentor. His ability to connect with audiences and drive meaningful transformation is rare.",
+    name: "Badr Al-Olama",
+    title: "Board Chairman",
+    org: "OME Digital Solutions",
+    date: "2025",
+    source: "LinkedIn Recommendation",
+  },
+  {
+    quote:
       "The feedback we received from ADNOC was excellent, and your contribution was highly appreciated by all participants.",
     name: "Boost Training & Consulting",
     title: "On the ADNOC programme",
@@ -306,11 +290,67 @@ export const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "The workshop was excellent and the trainer's interaction level is advanced.",
-    name: "Faisal Al Ruzaiqi",
+      "Thanks to the trainer for the speed and ease with which the information was delivered.",
+    name: "Mohsen Fazili",
+    title: "Procurement Specialist",
     org: "NCMS Programme — Riyadh",
     date: "November 2025",
     source: "Participant Feedback",
+  },
+  {
+    quote:
+      "We are not just buyers — we are capability architects. The workshop changed my view in some points.",
+    name: "Procurement Professional",
+    org: "NCMS Programme — Riyadh",
+    date: "November 2025",
+    source: "Participant Feedback",
+  },
+  {
+    quote:
+      "AI doesn't transform businesses by itself — people, systems, and clarity do. Zeeshan consistently brings the conversation back to something more fundamental: organizations need clarity before complexity, and stability before optimization.",
+    name: "Makarand Upat",
+    title: "AI Readiness & Automation",
+    date: "June 2026",
+    source: "LinkedIn Recommendation",
+  },
+];
+
+export type CaseStudy = {
+  client: string;
+  sector: string;
+  challenge: string;
+  outcome: string;
+  metric?: string;
+};
+
+export const CASE_STUDIES: CaseStudy[] = [
+  {
+    client: "ADNOC",
+    sector: "Energy & Defence",
+    challenge: "Procurement professionals needed financial management capability to manage complex supply chains.",
+    outcome: "Excellent feedback across all participants; programme extended.",
+    metric: "100% participant satisfaction",
+  },
+  {
+    client: "NCMS — National Company for Mechanical Systems",
+    sector: "Defence & Manufacturing",
+    challenge: "Leadership team required decision clarity and governance redesign across 80+ workshops.",
+    outcome: "Pyramid Framework adopted at 90–95% vs. 25% industry standard.",
+    metric: "90–95% adoption rate",
+  },
+  {
+    client: "Motorola Solutions",
+    sector: "Enterprise Technology",
+    challenge: "Middle East partner enablement required cross-cultural authority and structured engagement.",
+    outcome: "Partner programme delivered across Dubai and regional offices.",
+    metric: "Multi-country delivery",
+  },
+  {
+    client: "Oman Startup Hub",
+    sector: "Startup Ecosystem",
+    challenge: "Early-stage founders needed pattern-recognition for scaling under uncertainty.",
+    outcome: "Founders workshop on 'What You Can't Predict' delivered in Muscat.",
+    metric: "500+ founders and executives trained",
   },
 ];
 
@@ -319,11 +359,11 @@ export const SERVICES = [
     slug: "clarity-session",
     tier: "Personal",
     title: "ClarityOS Personal Session",
-    price: "$79",
+    price: "From $79",
     cadence: "90-minute focused intervention",
     description:
       "A focused 90-minute intervention for founders, executives, and operators who need sharper decisions and cleaner thinking.",
-    cta: { label: "Book Your Session", href: SITE.bookSessionUrl },
+    cta: { label: "Start a Conversation", href: SITE.bookSessionUrl },
   },
   {
     slug: "enterprise-90-day",
@@ -333,7 +373,7 @@ export const SERVICES = [
     cadence: "Structured team engagement",
     description:
       "A structured engagement for leadership teams that need decision clarity, aligned ownership, and governance before transformation spend multiplies confusion.",
-    cta: { label: "Start Enterprise Enquiry", href: "/connect" },
+    cta: { label: "Discuss Enterprise Needs", href: "/connect" },
   },
   {
     slug: "board-advisory",

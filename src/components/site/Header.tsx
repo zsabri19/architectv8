@@ -45,7 +45,7 @@ export function Header() {
           </nav>
 
           <a className="header-cta" href={SITE.bookSessionUrl}>
-            Book a $79 Session
+            Start a Conversation
           </a>
 
           <button
@@ -87,7 +87,7 @@ export function Header() {
               Contact
             </Link>
             <a href={SITE.bookSessionUrl} tabIndex={open ? 0 : -1}>
-              Request a Personal Session
+              Start a Conversation
             </a>
           </div>
         </nav>

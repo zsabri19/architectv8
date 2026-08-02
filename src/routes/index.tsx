@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { QuoteRotator } from "@/components/site/QuoteRotator";
 import { LogoMarquee } from "@/components/site/LogoMarquee";
 import { Testimonials } from "@/components/site/Testimonials";
 import {
@@ -10,6 +9,7 @@ import {
   LOGOS_VENTURES,
   METRICS,
   TESTIMONIALS,
+  CASE_STUDIES,
   FRAMEWORKS,
   SERVICES,
   ARTICLES,
@@ -89,10 +89,13 @@ function HomePage() {
                 Explore ClarityOS <ArrowRight aria-hidden="true" />
               </Link>
               <Link className="button button-quiet" to="/book-a-session">
-                Book a $79 session
+                Start a Conversation
               </Link>
             </div>
-            <QuoteRotator />
+            <div className="hero-social-proof">
+              <span>Trusted by</span>
+              <span className="hero-proof-clients">ADNOC · NCMS · Motorola · Huawei · CIPS</span>
+            </div>
             <a className="hero-scroll" href="#premise">
               <ArrowDown aria-hidden="true" /> Read the premise
             </a>
@@ -131,6 +134,14 @@ function HomePage() {
           </div>
         </section>
       </section>
+
+      {/* @section: social-proof — moved up for immediate credibility */}
+      <Testimonials
+        items={TESTIMONIALS.slice(0, 3)}
+        eyebrow="In their words"
+        heading="Proof, from the rooms and the relationships."
+      />
+
       {/* @section: film-band */}
       <section className="film-band" aria-labelledby="film-title">
         <div className="site-shell film-grid">
@@ -149,7 +160,7 @@ function HomePage() {
                 See the full film archive <ArrowRight aria-hidden="true" />
               </Link>
               <Link className="text-link on-dark" to="/book-a-session">
-                Book a $79 Clarity Session
+                Start a Conversation
               </Link>
             </div>
           </div>
@@ -292,12 +303,26 @@ function HomePage() {
         </div>
       </section>
 
-      {/* @section: testimonials */}
-      <Testimonials
-        items={TESTIMONIALS.slice(0, 3)}
-        eyebrow="In their words"
-        heading="Proof, from the rooms and the relationships."
-      />
+      {/* @section: case-studies */}
+      <section className="section case-study-section" aria-labelledby="case-studies-title">
+        <div className="site-shell">
+          <div className="section-heading">
+            <p className="eyebrow">Case Studies</p>
+            <h2 id="case-studies-title">Delivered outcomes, not just promises.</h2>
+          </div>
+          <div className="case-study-grid">
+            {CASE_STUDIES.map((cs) => (
+              <article key={cs.client} className="case-study-card">
+                <p className="case-study-client">{cs.client}</p>
+                <p className="case-study-sector">{cs.sector}</p>
+                <p className="case-study-challenge">{cs.challenge}</p>
+                <p className="case-study-outcome">{cs.outcome}</p>
+                {cs.metric && <p className="case-study-metric">{cs.metric}</p>}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* @section: memoir-anchor */}
       <section className="section book-section" aria-labelledby="book-title">
@@ -556,7 +581,7 @@ function HomePage() {
             </h2>
             <div className="closing-actions">
               <Link className="button button-copper" to="/book-a-session">
-                Book a $79 Clarity Session <ArrowRight aria-hidden="true" />
+                Start a Conversation <ArrowRight aria-hidden="true" />
               </Link>
               <Link className="text-link on-dark" to="/connect">
                 Discuss an enterprise need

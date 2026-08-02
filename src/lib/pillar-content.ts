@@ -115,7 +115,7 @@ export const EXEC_PILLAR = {
       heading: "Track record and business advisory context",
       paragraphs: [
         "The frameworks behind this practice were built inside Motorola and Huawei, deployed across the Central Bank of Oman, NCM, Sanad, and NASTP, and taught to executive audiences at LUMS, Decode, and the Oman Startup Hub. AI CERTs-certified for board-level AI governance programmes.",
-        "Indicative rate signal for board briefings and executive workshops: USD 350–500 per hour. The $79 Clarity Session exists so the first conversation is a diagnosis, not a sales call.",
+        "Indicative rate signal for board briefings and executive workshops: USD 350–500 per hour. The Clarity Session exists so the first conversation is a diagnosis, not a sales call.",
       ],
     },
   ] as PillarSection[],
@@ -133,7 +133,7 @@ export const EXEC_PILLAR = {
     {
       question: "How much does executive coaching cost?",
       answer:
-        "Rates vary widely by market and seniority. For board briefings and executive workshops in the GCC, USD 350–500 per hour is a typical signal. Here, engagements start with a $79 Clarity Session so scope is set against a real diagnosis rather than a guess.",
+        "Rates vary widely by market and seniority. For board briefings and executive workshops in the GCC, USD 350–500 per hour is a typical signal. Here, engagements start with a Clarity Session so scope is set against a real diagnosis rather than a guess.",
     },
     {
       question: "What is CEO advisory?",

@@ -63,7 +63,7 @@ function OrganizationalDevelopmentPage() {
           <p className="hero-summary mt-6 max-w-3xl">{OD_PILLAR.lede}</p>
           <div className="hero-actions mt-8">
             <a className="button button-copper" href={SITE.bookSessionUrl}>
-              Book a $79 Clarity Session <ArrowRight aria-hidden="true" />
+              Start a Conversation <ArrowRight aria-hidden="true" />
             </a>
             <Link className="text-link" to="/clarityos">
               See the ClarityOS methodology
@@ -147,7 +147,7 @@ function OrganizationalDevelopmentPage() {
             <h2 id="od-closing">Change the human layer before you change the system.</h2>
             <div className="closing-actions">
               <a className="button button-copper" href={SITE.bookSessionUrl}>
-                Book a $79 Clarity Session <ArrowRight aria-hidden="true" />
+                Start a Conversation <ArrowRight aria-hidden="true" />
               </a>
               <Link className="text-link on-dark" to="/connect">
                 Discuss an enterprise programme

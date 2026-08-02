@@ -143,14 +143,14 @@ function ServicesPage() {
         <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
           <h2 className="font-serif text-3xl md:text-4xl">Not sure which path fits?</h2>
           <p className="mx-auto mt-4 max-w-xl text-paper/70">
-            Book the $79 Clarity Session. Diagnose the situation before you commit to the wrong
+            Start with a Clarity Session. Diagnose the situation before you commit to the wrong
             kind of solution.
           </p>
           <a
             href={SITE.bookSessionUrl}
             className="mt-8 inline-block bg-gold px-8 py-4 text-xs font-bold uppercase tracking-widest text-navy hover:bg-paper"
           >
-            Book $79 Session
+            Start a Conversation
           </a>
         </div>
       </section>

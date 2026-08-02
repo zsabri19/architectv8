@@ -6,6 +6,7 @@ import {
   FIELD_PHOTOS,
   MEDIA_FILM,
   PRESS_ITEMS,
+  EXTERNAL_PUBLICATIONS,
   RECOGNITION,
   RECOGNITION_LUMS,
   WORKSHOP_LEDGER,
@@ -202,7 +203,7 @@ function MediaPage() {
 
       <section className="border-t border-navy/10 bg-paper-soft py-16">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <SectionTitle>Press</SectionTitle>
+          <SectionTitle>Press & Publications</SectionTitle>
           <ul className="mt-10 divide-y divide-navy/10">
             {PRESS_ITEMS.map((p) => (
               <li key={p.title} className="py-6">
@@ -230,6 +231,36 @@ function MediaPage() {
               </li>
             ))}
           </ul>
+          {EXTERNAL_PUBLICATIONS.length > 0 && (
+            <>
+              <h3 className="mt-12 font-serif text-2xl text-navy">External Publications</h3>
+              <ul className="mt-6 divide-y divide-navy/10">
+                {EXTERNAL_PUBLICATIONS.map((p) => (
+                  <li key={p.title} className="py-4">
+                    {p.url ? (
+                      <a href={p.url} className="group block" target="_blank" rel="noreferrer">
+                        <span className="block text-[10px] font-medium uppercase tracking-widest text-gold">
+                          {p.publisher} {p.date ? `· ${p.date}` : ""}
+                        </span>
+                        <span className="mt-1 block font-serif text-lg text-navy group-hover:text-gold">
+                          {p.title}
+                        </span>
+                        <span className="mt-1 block text-sm text-navy/60">{p.summary}</span>
+                      </a>
+                    ) : (
+                      <div>
+                        <span className="block text-[10px] font-medium uppercase tracking-widest text-gold">
+                          {p.publisher}
+                        </span>
+                        <span className="mt-1 block font-serif text-lg text-navy">{p.title}</span>
+                        <span className="mt-1 block text-sm text-navy/60">{p.summary}</span>
+                      </div>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </section>
 

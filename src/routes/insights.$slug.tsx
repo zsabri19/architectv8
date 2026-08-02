@@ -117,7 +117,7 @@ function ArticlePage() {
             href={SITE.bookSessionUrl}
             className="bg-navy px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
           >
-            Book $79 Clarity Session
+            Start a Conversation
           </a>
           <Link
             to="/insights"

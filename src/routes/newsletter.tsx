@@ -32,8 +32,14 @@ function NewsletterPage() {
           </h1>
           <p className="mt-6 text-lg text-navy/70">
             A weekly executive brief on the human layer of transformation — field notes, framework
-            unpacks, and GCC leadership intelligence.
+            unpacks, and GCC leadership intelligence. Each issue connects one real pattern to one
+            actionable framework.
           </p>
+          <ul className="mt-4 space-y-2 text-sm text-navy/60">
+            <li>One pattern from the field, every week</li>
+            <li>One framework unpack with practical application</li>
+            <li>No fluff — only what transfers to your next decision</li>
+          </ul>
           <form
             onSubmit={async (e) => {
               e.preventDefault();

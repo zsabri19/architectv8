@@ -64,7 +64,7 @@ function ExecutiveCoachingPage() {
           <p className="hero-summary mt-6 max-w-3xl">{EXEC_PILLAR.lede}</p>
           <div className="hero-actions mt-8">
             <a className="button button-copper" href={SITE.bookSessionUrl}>
-              Book a $79 Clarity Session <ArrowRight aria-hidden="true" />
+              Start a Conversation <ArrowRight aria-hidden="true" />
             </a>
             <Link className="text-link" to="/services">
               Compare engagement paths
@@ -129,7 +129,7 @@ function ExecutiveCoachingPage() {
             </li>
             <li>
               <Link className="text-link" to="/book-a-session">
-                What happens in a $79 Clarity Session
+                What happens in a Clarity Session
               </Link>
             </li>
           </ul>
@@ -143,7 +143,7 @@ function ExecutiveCoachingPage() {
             <h2 id="ec-closing">Bring the decision. Leave with the sequence.</h2>
             <div className="closing-actions">
               <a className="button button-copper" href={SITE.bookSessionUrl}>
-                Book a $79 Clarity Session <ArrowRight aria-hidden="true" />
+                Start a Conversation <ArrowRight aria-hidden="true" />
               </a>
               <Link className="text-link on-dark" to="/connect">
                 Request a board briefing

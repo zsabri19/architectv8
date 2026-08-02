@@ -222,7 +222,7 @@ function PersonalDevelopmentPage() {
             <h2 id="pd-closing">A plan without a practice ground is a wish list.</h2>
             <div className="closing-actions">
               <a className="button button-copper" href={SITE.bookSessionUrl}>
-                Book a $79 Clarity Session <ArrowRight aria-hidden="true" />
+                Start a Conversation <ArrowRight aria-hidden="true" />
               </a>
               <Link className="text-link on-dark" to="/frameworks/$slug" params={{ slug: "practical-people-skills-development" }}>
                 View the framework

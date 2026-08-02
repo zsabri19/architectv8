@@ -192,7 +192,7 @@ function ClarityOSPage() {
               href={SITE.bookSessionUrl}
               className="bg-gold px-8 py-4 text-xs font-bold uppercase tracking-widest text-navy hover:bg-paper"
             >
-              Book $79 Session
+              Start a Conversation
             </a>
             <Link
               to="/connect"
