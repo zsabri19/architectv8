@@ -1,0 +1,23 @@
+Content Engine Run — 2026-08-02 07:02
+=======================================================
+
+QUOTE: Q6
+TEXT: Techniques fail when foundations are weak. Tools disappoint when discipline is missing.
+
+VALIDATION: This quote was validated by the Fazila case study where coaching on 'posture and framing' (Human OS) succeeded before any technical tool (ClarityOS) was recommended for her Huawei prep.
+
+Categories: Persona_Trigger, Transformation_Phase, Content_Asset_Type
+Proof lines: 2
+
+DRAFT POST:
+Techniques fail when foundations are weak. Tools disappoint when discipline is missing.
+
+Delivered during Archive 2 (Beyond Techniques Series), this insight resonated with a room of senior procurement leaders and defense-industry executives who were grappling with systemic crisis response.
+
+This quote was validated by the Fazila case study where coaching on 'posture and framing' (Human OS) succeeded before any technical tool (ClarityOS) was recommended for her Huawei prep.
+
+For business leaders navigating digital drift and organizational transformation, this isn't philosophy — it's the architectural prerequisite that separates crisis response from governed clarity. When the next disruption hits, you won't be reacting. You'll be ready.
+
+#procurementtransformation
+
+Full JSON drafted to: /Users/zsabri/Architect-final/Clarity Architectv8/scripts/output/Q6_draft_20260802_070224.json

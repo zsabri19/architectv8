@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "sdk_version": "0.24.0",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "architect-global-mkts",
+      "version": "0.1.0",
+      "title": "Zeeshan Sabri — Architect"
+    },
+    "tools": [
+      {
+        "name": "list_frameworks",
+        "title": "List frameworks",
+        "description": "List every ClarityOS framework authored by Zeeshan Sabri, with slug, title, one-line summary, and pillar. Use as an index before calling get_framework.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_framework",
+        "title": "Get framework",
+        "description": "Return the full detail — parameters, impact statement, and lead magnet — for a single ClarityOS framework by slug.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "slug": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Framework slug, e.g. '8c-crisis-to-clarity' or 'pyramid-framework'."
+            }
+          },
+          "required": [
+            "slug"
+          ]
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_services",
+        "title": "List services",
+        "description": "List every engagement tier (personal, enterprise, advisory) with price, cadence, description, and booking link.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_speaking_engagements",
+        "title": "List speaking engagements",
+        "description": "List keynotes, panels, workshops, and featured appearances. Optionally filter by band: 'upcoming', 'keynote', 'workshop', 'featured'.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "band": {
+              "description": "Filter by band. Omit to return all.",
+              "type": "string",
+              "enum": [
+                "upcoming",
+                "keynote",
+                "workshop",
+                "featured"
+              ]
+            }
+          }
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "list_insights",
+        "title": "List insights",
+        "description": "List published articles and essays with slug, title, category, date, summary, and related framework slug.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_book_outline",
+        "title": "Get book outline",
+        "description": "Return the full outline of Zeeshan Sabri's book: parts (I–VI) and every chapter with its lesson and related framework.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_site_info",
+        "title": "Get site info",
+        "description": "Return the site's public identity: name, role, tagline, contact email, booking URL, headline metrics, and social links.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
