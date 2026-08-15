@@ -46,13 +46,27 @@ function isH3SwallowedErrorBody(body: string): boolean {
 
 const CANONICAL_HOST = "global-mkts.com";
 const ALIAS_HOSTS = new Set(["www.global-mkts.com", "architect.global-mkts.com"]);
+const LEGACY_PATHS: Record<string, string> = {
+  "/advisory": "/connect",
+  "/architect": "/the-architect",
+  "/memoir": "/book",
+  "/dispatch": "/newsletter",
+  "/executive-profile": "/the-architect",
+};
 
 function redirectAliasHost(request: Request): Response | null {
   const url = new URL(request.url);
-  if (!ALIAS_HOSTS.has(url.hostname.toLowerCase())) return null;
+  const host = url.hostname.toLowerCase();
+  const path = url.pathname.replace(/\/+$/, "") || "/";
+  const legacy = LEGACY_PATHS[path];
+  const hostNeedsCanonical = ALIAS_HOSTS.has(host);
+
+  if (!hostNeedsCanonical && !legacy) return null;
+
   url.hostname = CANONICAL_HOST;
   url.protocol = "https:";
   url.port = "";
+  if (legacy) url.pathname = legacy;
   return Response.redirect(url.toString(), 301);
 }
 
