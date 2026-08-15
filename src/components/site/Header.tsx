@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { NAV, SITE } from "@/lib/site-data";
+import { NAV } from "@/lib/site-data";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -44,9 +44,9 @@ export function Header() {
             ))}
           </nav>
 
-          <a className="header-cta" href={SITE.bookSessionUrl}>
-            Start a Conversation
-          </a>
+          <Link className="header-cta" to="/book-a-session">
+            Book $79 Session
+          </Link>
 
           <button
             className="menu-trigger"
@@ -80,15 +80,15 @@ export function Header() {
             </Link>
           ))}
           <div className="mobile-nav-footer">
-            <Link to="/newsletter" tabIndex={open ? 0 : -1}>
-              The Clarity Dispatch
+            <Link to="/book-a-session" tabIndex={open ? 0 : -1}>
+              Book $79 Session
             </Link>
             <Link to="/connect" tabIndex={open ? 0 : -1}>
-              Contact
+              Enterprise enquiry
             </Link>
-            <a href={SITE.bookSessionUrl} tabIndex={open ? 0 : -1}>
-              Start a Conversation
-            </a>
+            <Link to="/the-architect" tabIndex={open ? 0 : -1}>
+              The Architect
+            </Link>
           </div>
         </nav>
       </div>

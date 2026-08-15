@@ -85,16 +85,16 @@ function HomePage() {
             <p className="hero-tagline">{SITE.tagline}</p>
             <p className="hero-summary">{SITE.heroSub}</p>
             <div className="hero-actions" aria-label="Primary actions">
-              <Link className="button button-primary" to="/clarityos">
-                Explore ClarityOS <ArrowRight aria-hidden="true" />
+              <Link className="button button-primary" to="/book-a-session">
+                Book a $79 Clarity Session <ArrowRight aria-hidden="true" />
               </Link>
-              <Link className="button button-quiet" to="/book-a-session">
-                Start a Conversation
+              <Link className="button button-quiet" to="/clarityos">
+                Explore ClarityOS
               </Link>
             </div>
             <div className="hero-social-proof">
-              <span>Trusted by</span>
-              <span className="hero-proof-clients">ADNOC · NCMS · Motorola · Huawei · CIPS</span>
+              <span>Programmes delivered with</span>
+              <span className="hero-proof-clients">Huawei · Motorola · NCMS · NASTP</span>
             </div>
             <a className="hero-scroll" href="#premise">
               <ArrowDown aria-hidden="true" /> Read the premise
@@ -160,7 +160,7 @@ function HomePage() {
                 See the full film archive <ArrowRight aria-hidden="true" />
               </Link>
               <Link className="text-link on-dark" to="/book-a-session">
-                Start a Conversation
+                Book a $79 Clarity Session
               </Link>
             </div>
           </div>
@@ -581,7 +581,7 @@ function HomePage() {
             </h2>
             <div className="closing-actions">
               <Link className="button button-copper" to="/book-a-session">
-                Start a Conversation <ArrowRight aria-hidden="true" />
+                Book a $79 Clarity Session <ArrowRight aria-hidden="true" />
               </Link>
               <Link className="text-link on-dark" to="/connect">
                 Discuss an enterprise need

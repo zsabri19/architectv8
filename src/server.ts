@@ -44,9 +44,23 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+const CANONICAL_HOST = "global-mkts.com";
+const ALIAS_HOSTS = new Set(["www.global-mkts.com", "architect.global-mkts.com"]);
+
+function redirectAliasHost(request: Request): Response | null {
+  const url = new URL(request.url);
+  if (!ALIAS_HOSTS.has(url.hostname.toLowerCase())) return null;
+  url.hostname = CANONICAL_HOST;
+  url.protocol = "https:";
+  url.port = "";
+  return Response.redirect(url.toString(), 301);
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      const aliasRedirect = redirectAliasHost(request);
+      if (aliasRedirect) return aliasRedirect;
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);

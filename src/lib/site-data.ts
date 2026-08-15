@@ -363,7 +363,7 @@ export const SERVICES = [
     cadence: "90-minute focused intervention",
     description:
       "A focused 90-minute intervention for founders, executives, and operators who need sharper decisions and cleaner thinking.",
-    cta: { label: "Start a Conversation", href: SITE.bookSessionUrl },
+    cta: { label: "Book Your Session", href: "/book-a-session" },
   },
   {
     slug: "enterprise-90-day",
@@ -1092,8 +1092,8 @@ export const SPEAKING = [
 ];
 
 export const NAV = [
-  { label: "Home", href: "/" },
-  { label: "The Architect", href: "/the-architect" },
+  { label: "ClarityOS", href: "/clarityos" },
+  { label: "Services", href: "/services" },
   { label: "Media", href: "/media" },
   { label: "Connect", href: "/connect" },
 ];

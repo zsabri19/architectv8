@@ -2,12 +2,14 @@ import { Link } from "@tanstack/react-router";
 import { SITE } from "@/lib/site-data";
 
 const footerLinks = [
-  { label: "The Architect", href: "/the-architect" },
+  { label: "ClarityOS", href: "/clarityos" },
+  { label: "Services", href: "/services" },
+  { label: "Book a $79 Session", href: "/book-a-session" },
   { label: "Media", href: "/media" },
   { label: "Connect", href: "/connect" },
-  { label: "The Book", href: "/book" },
+  { label: "The Architect", href: "/the-architect" },
   { label: "Frameworks", href: "/frameworks" },
-  { label: "Newsletter", href: "/newsletter" },
+  { label: "The Book", href: "/book" },
 ] as const;
 
 

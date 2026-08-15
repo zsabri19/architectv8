@@ -10,14 +10,14 @@ import portraitAsset from "@/assets/portrait-3.jpg.asset.json";
 export const Route = createFileRoute("/connect")({
   head: () => ({
     meta: [
-      { title: "Connect — Enterprise, Advisory, Speaking · Zeeshan Sabri" },
+      { title: "Connect — Book $79 or start an enterprise enquiry · Zeeshan Sabri" },
       {
         name: "description",
         content:
-          "Enterprise ClarityOS engagements, board advisory, and keynote enquiries. Initial response within 48 hours; tailored proposal within 5 business days.",
+          "Two lanes: book a $79 Clarity Session now, or send an enterprise, advisory, or speaking enquiry. Response within 48 hours.",
       },
       { property: "og:title", content: "Connect — ClarityOS" },
-      { property: "og:description", content: "Enterprise, advisory, and speaking enquiries." },
+      { property: "og:description", content: "Book the $79 session or start an enterprise enquiry." },
       { property: "og:url", content: canonicalUrl("/connect") },
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/connect") }],
@@ -31,57 +31,100 @@ function ConnectPage() {
 
   return (
     <SiteLayout>
-      
-      <section className="mx-auto max-w-7xl px-6 pt-20 pb-16 lg:grid lg:grid-cols-12 lg:gap-12 lg:px-8">
-        <div className="lg:col-span-8">
-          <Eyebrow>Connect</Eyebrow>
-          <h1 className="font-serif text-4xl leading-[1.1] text-navy md:text-6xl">
-            Start with a direct conversation.
-          </h1>
-          <p className="mt-6 text-lg text-navy/70">
-            For enterprise engagements, board advisory, and speaking. Initial response within 48
-            hours; tailored proposal within 5 business days.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-6 text-sm text-navy/60">
-            <a href={`mailto:${SITE.email}`} className="hover:text-navy">{SITE.email}</a>
-            <a href={SITE.bookSessionUrl} className="hover:text-navy">Or start a conversation →</a>
-          </div>
-          <p className="mt-6 text-sm text-navy/60">
-            Not sure what you need yet? Review the{" "}
-            <Link to="/services" className="underline underline-offset-4">
-              engagement tiers
-            </Link>{" "}
-            or the{" "}
-            <Link to="/clarityos" className="underline underline-offset-4">
-              ClarityOS methodology
+      <section className="mx-auto max-w-7xl px-6 pt-20 pb-10 lg:px-8">
+        <Eyebrow>Connect</Eyebrow>
+        <h1 className="font-serif text-4xl leading-[1.1] text-navy md:text-6xl">
+          Two lanes. Pick the one that fits.
+        </h1>
+        <p className="mt-6 max-w-2xl text-lg text-navy/70">
+          The paid session and the enterprise path stay separate by design. Choose yours and move.
+        </p>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-16 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="relative flex flex-col border-2 border-gold bg-white p-8 lg:p-10">
+            <span className="absolute -top-3 left-8 bg-gold px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-navy">
+              Fastest path
+            </span>
+            <p className="text-[10px] font-medium uppercase tracking-widest text-gold">Lane 1 · Personal</p>
+            <h2 className="mt-3 font-serif text-3xl text-navy">The $79 Clarity Session</h2>
+            <p className="mt-4 flex-1 text-navy/70">
+              90 minutes. One real blocker diagnosed. One sequenced next step. Book directly — no
+              proposal cycle.
+            </p>
+            <ul className="mt-6 space-y-2.5 text-sm text-navy/80">
+              {[
+                "90 minutes, one live decision or blocker",
+                "Direct read on decisions, ownership, and alignment",
+                "Clear next step before you leave the call",
+              ].map((line) => (
+                <li key={line} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                  {line}
+                </li>
+              ))}
+            </ul>
+            <Link
+              to="/book-a-session"
+              className="mt-8 inline-flex w-full items-center justify-center bg-navy py-4 text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
+            >
+              Book the $79 session
             </Link>
-            .
-          </p>
-          <div className="mt-10">
-            <Testimonials items={[TESTIMONIALS[0]]} variant="single" />
           </div>
 
-        </div>
-        <div className="mt-12 lg:col-span-4 lg:mt-0">
-          <div className="overflow-hidden bg-navy shadow-2xl">
-            <img
-              src={portraitAsset.url}
-              alt="Zeeshan Sabri"
-              className="h-full w-full object-cover"
-              loading="eager"
-            />
+          <div className="flex flex-col border border-navy/15 bg-white p-8 lg:p-10">
+            <p className="text-[10px] font-medium uppercase tracking-widest text-navy/50">
+              Lane 2 · Enterprise and Advisory
+            </p>
+            <h2 className="mt-3 font-serif text-3xl text-navy">Enterprise discovery enquiry</h2>
+            <p className="mt-4 text-navy/70">
+              For ClarityOS 90-day work, board advisory, speaking, or partnership. Outline the
+              context. Initial response within 48 hours; a scoped proposal within 5 business days.
+            </p>
+            <div className="mt-8 overflow-hidden bg-navy">
+              <img
+                src={portraitAsset.url}
+                alt="Zeeshan Sabri"
+                className="h-48 w-full object-cover object-top"
+                loading="eager"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       <section className="border-t border-navy/10 bg-paper-soft py-16">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
+          <p className="text-[10px] font-medium uppercase tracking-widest text-gold">Lane 2 form</p>
+          <h2 className="mt-3 font-serif text-3xl text-navy">Send the enterprise enquiry</h2>
+          <p className="mt-3 text-sm text-navy/60">
+            Prefer email?{" "}
+            <a href={`mailto:${SITE.email}`} className="underline underline-offset-4">
+              {SITE.email}
+            </a>
+            . Not sure yet? Review{" "}
+            <Link to="/services" className="underline underline-offset-4">
+              engagement tiers
+            </Link>{" "}
+            or{" "}
+            <Link to="/clarityos" className="underline underline-offset-4">
+              ClarityOS
+            </Link>
+            .
+          </p>
+          <div className="mt-8">
+            <Testimonials items={[TESTIMONIALS[0]]} variant="single" />
+          </div>
           {submitted ? (
-            <div className="border border-green-500 bg-white p-10 text-center">
-              <h2 className="font-serif text-3xl text-navy">Submitted!</h2>
+            <div className="mt-10 border border-green-500 bg-white p-10 text-center">
+              <h2 className="font-serif text-3xl text-navy">Enquiry received.</h2>
               <p className="mt-4 text-navy/70">
-                Thank you for your enquiry. We'll be in touch within 48 hours. For time-sensitive matters, email{" "}
-                <a href={`mailto:${SITE.email}`} className="text-gold">{SITE.email}</a>.
+                I reply personally, usually within 48 hours. For time-sensitive matters, email{" "}
+                <a href={`mailto:${SITE.email}`} className="text-gold">
+                  {SITE.email}
+                </a>
+                .
               </p>
             </div>
           ) : (
@@ -112,9 +155,9 @@ function ConnectPage() {
                   setStatus("error");
                 }
               }}
-
-              className="space-y-6 border border-navy/10 bg-white p-8 lg:p-10"
+              className="mt-10 space-y-6 border border-navy/10 bg-white p-8 lg:p-10"
             >
+              <input type="hidden" name="enquiry_type" value="enterprise" />
               <Field label="Name" name="name" required />
               <Field label="Organisation" name="org" required />
               <Field label="Email" name="email" type="email" required />

@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BookRouteImport } from './routes/book'
 import { Route as BookASessionRouteImport } from './routes/book-a-session'
+import { Route as BookASessionThanksRouteImport } from './routes/book-a-session_.thanks'
 import { Route as ClarityosRouteImport } from './routes/clarityos'
 import { Route as ConnectRouteImport } from './routes/connect'
 import { Route as ExecutiveCoachingRouteImport } from './routes/executive-coaching'
@@ -47,6 +48,11 @@ const BookRoute = BookRouteImport.update({
 const BookASessionRoute = BookASessionRouteImport.update({
   id: '/book-a-session',
   path: '/book-a-session',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookASessionThanksRoute = BookASessionThanksRouteImport.update({
+  id: '/book-a-session/thanks',
+  path: '/book-a-session/thanks',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ClarityosRoute = ClarityosRouteImport.update({
@@ -164,6 +170,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/book': typeof BookRouteWithChildren
   '/book-a-session': typeof BookASessionRoute
+  '/book-a-session/thanks': typeof BookASessionThanksRoute
   '/clarityos': typeof ClarityosRoute
   '/connect': typeof ConnectRoute
   '/executive-coaching': typeof ExecutiveCoachingRoute
@@ -190,6 +197,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/book': typeof BookRouteWithChildren
   '/book-a-session': typeof BookASessionRoute
+  '/book-a-session/thanks': typeof BookASessionThanksRoute
   '/clarityos': typeof ClarityosRoute
   '/connect': typeof ConnectRoute
   '/executive-coaching': typeof ExecutiveCoachingRoute
@@ -217,6 +225,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/book': typeof BookRouteWithChildren
   '/book-a-session': typeof BookASessionRoute
+  '/book-a-session/thanks': typeof BookASessionThanksRoute
   '/clarityos': typeof ClarityosRoute
   '/connect': typeof ConnectRoute
   '/executive-coaching': typeof ExecutiveCoachingRoute
@@ -245,6 +254,7 @@ export interface FileRouteTypes {
     | '/'
     | '/book'
     | '/book-a-session'
+    | '/book-a-session/thanks'
     | '/clarityos'
     | '/connect'
     | '/executive-coaching'
@@ -271,6 +281,7 @@ export interface FileRouteTypes {
     | '/'
     | '/book'
     | '/book-a-session'
+    | '/book-a-session/thanks'
     | '/clarityos'
     | '/connect'
     | '/executive-coaching'
@@ -297,6 +308,7 @@ export interface FileRouteTypes {
     | '/'
     | '/book'
     | '/book-a-session'
+    | '/book-a-session/thanks'
     | '/clarityos'
     | '/connect'
     | '/executive-coaching'
@@ -324,6 +336,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BookRoute: typeof BookRouteWithChildren
   BookASessionRoute: typeof BookASessionRoute
+  BookASessionThanksRoute: typeof BookASessionThanksRoute
   ClarityosRoute: typeof ClarityosRoute
   ConnectRoute: typeof ConnectRoute
   ExecutiveCoachingRoute: typeof ExecutiveCoachingRoute
@@ -367,6 +380,13 @@ declare module '@tanstack/react-router' {
       path: '/book-a-session'
       fullPath: '/book-a-session'
       preLoaderRoute: typeof BookASessionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book-a-session/thanks': {
+      id: '/book-a-session/thanks'
+      path: '/book-a-session/thanks'
+      fullPath: '/book-a-session/thanks'
+      preLoaderRoute: typeof BookASessionThanksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/clarityos': {
@@ -533,6 +553,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BookRoute: BookRouteWithChildren,
   BookASessionRoute: BookASessionRoute,
+  BookASessionThanksRoute: BookASessionThanksRoute,
   ClarityosRoute: ClarityosRoute,
   ConnectRoute: ConnectRoute,
   ExecutiveCoachingRoute: ExecutiveCoachingRoute,

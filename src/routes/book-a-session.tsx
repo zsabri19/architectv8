@@ -70,12 +70,23 @@ function BookSessionPage() {
           <p className="hero-summary mt-6 max-w-2xl">{DESC}</p>
           <div className="hero-actions mt-8">
             <a className="button button-copper" href={SITE.bookSessionUrl}>
-              Book the session <ArrowRight aria-hidden="true" />
+              Pay $79 and book <ArrowRight aria-hidden="true" />
             </a>
             <Link className="text-link" to="/services">
               Compare all engagement paths
             </Link>
           </div>
+          <p className="mt-4 max-w-2xl text-sm text-navy/55">
+            After payment, send two times that work. I confirm the session the same day at{" "}
+            <a className="underline underline-offset-4" href={`mailto:${SITE.email}`}>
+              {SITE.email}
+            </a>
+            .{" "}
+            <Link className="underline underline-offset-4" to="/book-a-session/thanks">
+              Already paid? Send your times
+            </Link>
+            .
+          </p>
           <div className="mt-10 max-w-2xl">
             <Testimonials items={[TESTIMONIALS[4]]} variant="single" />
           </div>
