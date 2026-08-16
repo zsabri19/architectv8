@@ -2,7 +2,16 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 
-import { BOOK_PARTS, BOOK_CHAPTERS, SITE, canonicalUrl, chapterPath } from "@/lib/site-data";
+import {
+  BOOK_PARTS,
+  BOOK_CHAPTERS,
+  SITE,
+  canonicalUrl,
+  chapterPath,
+  listenChapterUrl,
+  LISTEN_PROLOGUE,
+  LISTEN_EPILOGUE,
+} from "@/lib/site-data";
 import {
   BOOK_ABOUT,
   BOOK_PROLOGUE,
@@ -173,6 +182,14 @@ function BookPage() {
               </p>
             ))}
           </div>
+          <a
+            href={LISTEN_PROLOGUE}
+            className="mt-8 inline-flex text-[11px] font-medium uppercase tracking-widest text-navy hover:text-gold"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+          >
+            Listen to the prologue →
+          </a>
         </div>
       </section>
 
@@ -205,24 +222,39 @@ function BookPage() {
                 )}
                 <ul className="divide-y divide-navy/10">
                   {BOOK_CHAPTERS.filter((c) => c.part === p.number).map((c) => (
-                    <li key={c.slug}>
+                    <li
+                      key={c.slug}
+                      className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 py-5"
+                    >
                       <Link
                         to="/book/$slug"
                         params={{ slug: chapterPath(c) }}
-                        className="group flex items-baseline justify-between gap-6 py-5 hover:bg-paper-soft"
+                        className="group flex min-w-0 items-baseline gap-6"
                       >
-                        <div className="flex items-baseline gap-6">
-                          <span className="font-mono text-xs text-navy/40">
-                            Ch. {String(c.number).padStart(2, "0")}
-                          </span>
-                          <span className="font-serif text-lg text-navy group-hover:text-gold">
-                            {c.title}
-                          </span>
-                        </div>
-                        <span className="text-[10px] font-medium uppercase tracking-widest text-navy/40 group-hover:text-gold">
-                          Read →
+                        <span className="font-mono text-xs text-navy/40">
+                          Ch. {String(c.number).padStart(2, "0")}
+                        </span>
+                        <span className="font-serif text-lg text-navy group-hover:text-gold">
+                          {c.title}
                         </span>
                       </Link>
+                      <span className="flex items-center gap-5 text-[10px] font-medium uppercase tracking-widest">
+                        <Link
+                          to="/book/$slug"
+                          params={{ slug: chapterPath(c) }}
+                          className="text-navy/40 hover:text-gold"
+                        >
+                          Read
+                        </Link>
+                        <a
+                          href={listenChapterUrl(c)}
+                          className="text-navy/40 hover:text-gold"
+                          rel="nofollow noopener noreferrer"
+                          target="_blank"
+                        >
+                          Listen
+                        </a>
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -230,6 +262,14 @@ function BookPage() {
             );
           })}
         </div>
+        <a
+          href={LISTEN_EPILOGUE}
+          className="mt-10 inline-flex text-[11px] font-medium uppercase tracking-widest text-navy hover:text-gold"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+        >
+          Listen to the epilogue →
+        </a>
       </section>
 
       {/* Metrics */}
