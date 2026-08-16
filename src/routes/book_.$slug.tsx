@@ -5,6 +5,7 @@ import {
   BOOK_PARTS,
   FRAMEWORKS,
   chapterPath,
+  listenChapterUrl,
   canonicalUrl,
 } from "@/lib/site-data";
 
@@ -70,6 +71,14 @@ function ChapterPage() {
         <p className="mt-8 font-serif text-2xl italic leading-relaxed text-navy/80">
           {chapter.lesson}
         </p>
+        <a
+          href={listenChapterUrl(chapter)}
+          className="mt-6 inline-flex border border-navy px-5 py-3 text-[11px] font-bold uppercase tracking-widest text-navy hover:bg-navy hover:text-paper"
+          rel="nofollow noopener noreferrer"
+          target="_blank"
+        >
+          Listen to this chapter
+        </a>
 
         <div className="mt-12 space-y-6 text-lg leading-relaxed text-navy/70">
           <p>
