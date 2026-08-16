@@ -678,7 +678,7 @@ export const chapterPath = (chapter: BookChapter) =>
   `chapter-${String(chapter.number).padStart(2, "0")}-${chapter.slug}`;
 
 /** Private first-draft audio players. Stay off nav and sitemap. */
-export const LISTEN_BASE = "https://zsabri19.github.io/memoir-listen";
+export const LISTEN_BASE = "https://listen.global-mkts.com";
 export const listenChapterUrl = (chapter: BookChapter) => `${LISTEN_BASE}/${chapter.number}/`;
 export const LISTEN_PROLOGUE = `${LISTEN_BASE}/prologue/`;
 export const LISTEN_EPILOGUE = `${LISTEN_BASE}/epilogue/`;
