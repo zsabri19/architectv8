@@ -344,7 +344,7 @@ function HomePage() {
             <h2 id="book-title">A memoir beyond techniques.</h2>
             <p className="book-deck">
               The book connects lived resilience, Fortune 500 foundations, GCC institution-building,
-              and the creation of ClarityOS. Its six parts become the platform’s editorial and
+              and the creation of ClarityOS. Its four parts become the platform’s editorial and
               search architecture.
             </p>
             <ol className="book-parts">

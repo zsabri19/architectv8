@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 
-import { BOOK_PARTS, BOOK_CHAPTERS, SITE, canonicalUrl } from "@/lib/site-data";
+import { BOOK_PARTS, BOOK_CHAPTERS, SITE, canonicalUrl, chapterPath } from "@/lib/site-data";
 import {
   BOOK_ABOUT,
   BOOK_PROLOGUE,
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/book")({
       {
         name: "description",
         content:
-          "15 chapters, 6 parts, epilogue, and 14 frameworks. The book behind ClarityOS. Join the pre-order waitlist for the 2026 release.",
+          "Four parts, sixteen chapters. From Exile to Transformation — the memoir behind ClarityOS. Join the pre-order waitlist for the 2026 release.",
       },
       { property: "og:title", content: "From Exile to Transformation" },
       {
@@ -81,8 +81,8 @@ function BookPage() {
               From Exile to Transformation
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-paper/70">
-              A memoir beyond techniques. 15 chapters, 6 parts, an epilogue, and the 16 frameworks
-              that make up ClarityOS — the world's first Pre-Governance Operating System.
+              A memoir beyond techniques. Four parts, sixteen chapters, a prologue, an epilogue,
+              and the frameworks that later became ClarityOS.
             </p>
             <p className="mt-4 text-paper/60">
               From the Gulf War to Fortune 500 boardrooms, from Muscat to Dubai, this is the record
@@ -178,7 +178,7 @@ function BookPage() {
 
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
         <Eyebrow>Table of Contents</Eyebrow>
-        <SectionTitle>Six parts. Fifteen chapters.</SectionTitle>
+        <SectionTitle>Four parts. Sixteen chapters.</SectionTitle>
 
         <div className="mt-16 space-y-16">
           {BOOK_PARTS.map((p) => {
@@ -208,7 +208,7 @@ function BookPage() {
                     <li key={c.slug}>
                       <Link
                         to="/book/$slug"
-                        params={{ slug: `chapter-${String(c.number).padStart(2, "0")}-${c.slug}` }}
+                        params={{ slug: chapterPath(c) }}
                         className="group flex items-baseline justify-between gap-6 py-5 hover:bg-paper-soft"
                       >
                         <div className="flex items-baseline gap-6">

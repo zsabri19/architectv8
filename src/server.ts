@@ -52,6 +52,18 @@ const LEGACY_PATHS: Record<string, string> = {
   "/memoir": "/book",
   "/dispatch": "/newsletter",
   "/executive-profile": "/the-architect",
+  "/book/chapter-02-the-gulf-war-and-what-it-took": "/book/chapter-02-the-gulf-war",
+  "/book/chapter-03-learning-to-rebuild": "/book/chapter-03-return-and-reinvention",
+  "/book/chapter-04-entering-the-fortune-500": "/book/chapter-04-breaking-into-the-room",
+  "/book/chapter-05-procurement-as-power": "/book/chapter-05-governance-as-runway",
+  "/book/chapter-06-governance-lessons-in-glass-towers":
+    "/book/chapter-06-the-constraint-advantage",
+  "/book/chapter-07-arriving-in-the-gulf": "/book/chapter-09-reading-cultures",
+  "/book/chapter-08-the-oman-years": "/book/chapter-12-digital-nation-building",
+  "/book/chapter-09-the-pyramid-a-framework-for-everything": "/book/chapter-07-the-pyramid",
+  "/book/chapter-11-constraint-as-catalyst": "/book/chapter-06-the-constraint-advantage",
+  "/book/chapter-13-ai-and-the-governance-gap": "/book/chapter-13-ai-as-interpreter",
+  "/book/chapter-15-from-exile-to-transformation": "/book/chapter-16-the-mirror",
 };
 
 function redirectAliasHost(request: Request): Response | null {

@@ -354,12 +354,13 @@ export const FRAMEWORK_ENRICHMENTS: Record<string, FrameworkEnrichment> = {
 // ---------- Book memoir content (from v4) ----------
 
 export const BOOK_ABOUT = {
-  headline: "A Story of Clarity Forged in Crisis",
+  headline: "Clarity is born in exile, not in comfort.",
   lead:
-    "In 1990, when war forced his family from Kuwait to Pakistan, Zeeshan Sabri experienced exile before he understood the word.",
+    "In August 1990, when war forced his family from Kuwait to Pakistan, Zeeshan Sabri experienced exile before he understood the word.",
   body: [
-    "Those early years of uncertainty became the compass for a life dedicated to building clarity in chaos, dignity in work, and governance in transformation. This memoir blends personal narrative with professional frameworks forged in Fortune 500 boardrooms and national-scale projects across the Gulf.",
-    "From Huawei and Motorola to the Government of Oman, the journey captures what it takes to lead under pressure, reframe procurement into progress, and design frameworks like the Pyramid and Beyond Techniques that anchor transformation in both people and systems.",
+    "Those early years of uncertainty became the compass for a life dedicated to building clarity in chaos, dignity in work, and governance in transformation. This memoir blends personal narrative with The Pyramid — Governance, Strategy, Insights, Performance — and the fourteen frameworks that later became ClarityOS.",
+    "From Fortune 500 boardrooms at Huawei and Motorola to national-scale projects in Oman, the journey captures what it takes to lead under pressure, reframe procurement into progress, and stabilize the human operating system before any system upgrade is asked to hold.",
+    "For anyone navigating disruption — in life, business, or nation — this book is a reminder that resilience is not a reaction. It is a discipline.",
   ],
   quote: "True transformation starts where trust has been broken and dignity restored.",
 } as const;
@@ -394,53 +395,33 @@ export type BookPartDetail = {
 export const BOOK_PART_DETAILS: BookPartDetail[] = [
   {
     partNumber: "I",
-    title: "Roots & Resilience",
-    era: "Kuwait & Pakistan, 1980s to 1992",
-    body:
-      "Iraq invades Kuwait on August 2, 1990. A Pakistani family loses everything, rebuilds in Pakistan, and returns to a Kuwait scarred by war. Cricket becomes the training ground for discipline and strategy.",
+    title: "The Human OS",
+    era: "Kuwait & Pakistan · 1990–1992",
+    body: "Clarity born in exile. A family loses the world it knew, rebuilds in Pakistan, and returns to a Kuwait that will not be the same.",
     quote:
       "Reinvention is not about discarding the past. It is about taking what is broken and giving it new alignment.",
   },
   {
     partNumber: "II",
-    title: "Fortune 500 Foundations",
-    era: "Huawei and Motorola, 2012 to 2025",
-    body:
-      "Breaking into Huawei and Motorola as a Pakistani professional in the Gulf, proving credibility twice over, and turning governance from red tape into an $80M, zero-breach runway.",
+    title: "The Enterprise OS",
+    era: "Huawei & Motorola · the GCC years",
+    body: "Proving credibility twice, turning governance into a runway, and building The Pyramid — the signature operating system.",
     quote: "Competence opens the door, but credibility keeps you inside.",
   },
   {
     partNumber: "III",
-    title: "The GCC Odyssey",
-    era: "Kuwait, Bahrain, Dubai, Qatar, Oman, Saudi Arabia",
-    body:
-      "Reading six GCC markets as distinct cultural ecosystems rather than one monolith, and building cross-border authority in twenty-four months.",
-    quote: "Leaders don't just read contracts. They read cultures.",
+    title: "The Nation OS",
+    era: "GCC markets · Oman and beyond",
+    body: "Reading cultures, building authority across borders, Super-Labor, digital nation-building, and AI as interpreter — not replacement.",
+    quote: "Nation-building begins with solving frustrations you've lived.",
   },
   {
     partNumber: "IV",
-    title: "Frameworks & Playbooks",
-    era: "The signature methodology",
-    body:
-      "A friend's phone call becomes the Pyramid Framework. Procurement is reframed from a cost center that says no into a strategic growth engine.",
-    quote: "If a framework can't guide a friend, it won't guide a Fortune 500.",
-  },
-  {
-    partNumber: "V",
-    title: "Building Movements",
-    era: "Oman and beyond",
-    body:
-      "Dignity-first labor reform at Shams for Services; Oman's first Sharia-compliant digital bank; and AI governance built on interpretation, not replacement, through SuperJet.",
-    quote: "Sustainable change begins where trust is weakest.",
-  },
-  {
-    partNumber: "VI",
-    title: "The Leader & The Self",
+    title: "The Legacy OS",
     era: "The reckoning",
-    body:
-      "A TriMetrix assessment becomes the Character Compass. The final chapter turns from Fortune 500 case studies to letters written for Nashwa, Amirah, and Ahlam.",
+    body: "The Character Compass, letters to Nashwa, Amirah, and Ahlam, and The Mirror — external measurement meeting internal governance.",
     quote:
-      "Emotional intelligence is not optional. It is the architecture of sustainable leadership.",
+      "Leadership is not about titles. It is about presence under pressure, and the space you create for others to grow.",
   },
 ];
 
