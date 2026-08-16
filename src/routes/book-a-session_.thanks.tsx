@@ -4,7 +4,7 @@ import { Loader2 } from "lucide-react";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
 import { SITE, canonicalUrl } from "@/lib/site-data";
 
-export const Route = createFileRoute("/book-a-session/thanks")({
+export const Route = createFileRoute("/book-a-session_/thanks")({
   head: () => ({
     meta: [
       { title: "Session paid — send two times · Zeeshan Sabri" },

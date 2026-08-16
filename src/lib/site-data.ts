@@ -313,6 +313,33 @@ export const TESTIMONIALS: Testimonial[] = [
     date: "June 2026",
     source: "LinkedIn Recommendation",
   },
+  {
+    quote:
+      "Zeeshan has a sharp understanding of digital solutions and a strong ability to align technology with business goals. His strategic thinking and execution have consistently driven tech-enabled growth and exceeded expectations.",
+    name: "Hamed Al Wahaibi",
+    title: "AGM",
+    org: "Dhofar Insurance",
+    date: "2025",
+    source: "LinkedIn Recommendation",
+  },
+  {
+    quote:
+      "As both a mentor and leader, Zeeshan has always encouraged his subordinates to proactively take lead in complex scenarios allowing them the opportunity for learning and developing.",
+    name: "Mian Arham Munawar",
+    title: "IT Category Manager",
+    org: "PwC",
+    date: "2020",
+    source: "LinkedIn Recommendation",
+  },
+  {
+    quote:
+      "I've always found him to be a very diligent and thorough professional. He has got a strong understanding of procurement processes and an uncanny ability to find a win-win solution.",
+    name: "Hamza Bin Tariq",
+    title: "Executive Director",
+    org: "Radiance Tek",
+    date: "2017",
+    source: "LinkedIn Recommendation",
+  },
 ];
 
 export type CaseStudy = {

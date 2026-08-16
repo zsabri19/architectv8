@@ -137,10 +137,24 @@ function HomePage() {
 
       {/* @section: social-proof — moved up for immediate credibility */}
       <Testimonials
-        items={TESTIMONIALS.slice(0, 3)}
+        items={TESTIMONIALS}
+        variant="pager"
         eyebrow="In their words"
         heading="Proof, from the rooms and the relationships."
       />
+
+      <section className="logo-band" aria-labelledby="logo-band-title">
+        <div className="site-shell">
+          <p className="eyebrow">Rooms and programmes</p>
+          <h2 id="logo-band-title" className="logo-band-title">
+            Institutions engaged. Ventures and programmes built.
+          </h2>
+        </div>
+        <p className="logo-band-label">Institutions and programmes engaged</p>
+        <LogoMarquee logos={LOGOS_INSTITUTIONS} label="Institutions engaged" speed={38} />
+        <p className="logo-band-label">Ventures and programmes built or advised</p>
+        <LogoMarquee logos={LOGOS_VENTURES} label="Ventures and programmes" speed={52} />
+      </section>
 
       {/* @section: film-band */}
       <section className="film-band" aria-labelledby="film-title">
@@ -295,10 +309,7 @@ function HomePage() {
             ))}
           </div>
           <div className="credential-note">
-            <p>Institutions and programmes engaged:</p>
-            <LogoMarquee logos={LOGOS_INSTITUTIONS} label="Institutions engaged" speed={38} />
-            <p className="mt-8">Ventures and programmes built or advised:</p>
-            <LogoMarquee logos={LOGOS_VENTURES} label="Ventures and programmes" speed={52} />
+            <p>Field metrics from delivered programmes — logos sit with the proof section above.</p>
           </div>
         </div>
       </section>
