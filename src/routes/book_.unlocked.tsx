@@ -32,7 +32,8 @@ function UnlockedPage() {
           The rest of the book is open.
         </h1>
         <p className="mt-6 text-lg text-navy/70">
-          One payment, once. Pick up where you left off — or start Chapter Two.
+          The chapters and the audio are both open on this browser. Pick up where
+          you left off — or start Chapter Two.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <Link

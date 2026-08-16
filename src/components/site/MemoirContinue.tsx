@@ -20,14 +20,14 @@ export function MemoirContinue({
   return (
     <div className="memoir-continue" role="dialog" aria-modal="true" aria-labelledby="memoir-continue-title">
       <div className="memoir-continue-card">
-        <p className="eyebrow">The next pages</p>
+        <p className="eyebrow">Memoir · book and audio</p>
         <h2 id="memoir-continue-title">If this is landing, stay with it.</h2>
         <p>
-          One payment, once. Then the rest of the book is yours to finish in your
-          own time — no subscription, no reminder emails.
+          One payment of {SITE.bookUnlockPrice}, once. That opens the rest of the
+          chapters to read and to listen — no subscription.
         </p>
         <a className="memoir-continue-cta" href={href}>
-          Continue · {SITE.bookUnlockPrice}
+          Continue the memoir · {SITE.bookUnlockPrice}
         </a>
         {onClose ? (
           <button type="button" className="memoir-continue-later" onClick={onClose}>

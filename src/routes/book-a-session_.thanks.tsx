@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Loader2 } from "lucide-react";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
+import { persistMemoirUnlock } from "@/lib/memoir/access";
 import { SITE, canonicalUrl } from "@/lib/site-data";
 
 export const Route = createFileRoute("/book-a-session_/thanks")({
@@ -25,6 +26,10 @@ function ThanksPage() {
   const [submitted, setSubmitted] = useState(false);
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
 
+  useEffect(() => {
+    persistMemoirUnlock();
+  }, []);
+
   return (
     <SiteLayout>
       <section className="mx-auto max-w-3xl px-6 pt-20 pb-24 lg:px-8">
@@ -35,6 +40,13 @@ function ThanksPage() {
         <p className="mt-6 text-lg text-navy/70">
           Stripe has the payment. I still need two times that work for you (include your timezone).
           I confirm the 90-minute session the same day.
+        </p>
+        <p className="mt-4 text-navy/70">
+          The memoir — chapters to read and to listen — is also open on this browser.{" "}
+          <Link to="/book" className="text-gold">
+            Continue the book
+          </Link>
+          .
         </p>
 
         {submitted ? (

@@ -13,9 +13,9 @@ export const SITE = {
   // from this constant — keep it as the single source of truth.
   domain: "global-mkts.com",
   bookSessionUrl: "https://buy.stripe.com/00w28q41PdjveV2bfWcV201",
-  /** Stripe Payment Link for the one-time memoir continue. Success URL: /book/unlocked */
-  bookUnlockUrl: "",
-  bookUnlockPrice: "$10",
+  /** Same $79 Payment Link, labeled on the memoir as book + audio. */
+  bookUnlockUrl: "https://buy.stripe.com/00w28q41PdjveV2bfWcV201",
+  bookUnlockPrice: "$79",
   socials: {
     linkedin: "https://www.linkedin.com/in/zeeshansabri/",
   },
