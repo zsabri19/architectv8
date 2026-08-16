@@ -29,6 +29,7 @@ import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as BookASessionThanksRouteImport } from './routes/book-a-session_.thanks'
 import { Route as BookSlugRouteImport } from './routes/book_.$slug'
+import { Route as BookUnlockedRouteImport } from './routes/book_.unlocked'
 import { Route as FrameworksIndexRouteImport } from './routes/frameworks.index'
 import { Route as FrameworksSlugRouteImport } from './routes/frameworks.$slug'
 import { Route as InsightsIndexRouteImport } from './routes/insights.index'
@@ -139,6 +140,11 @@ const BookSlugRoute = BookSlugRouteImport.update({
   path: '/book/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookUnlockedRoute = BookUnlockedRouteImport.update({
+  id: '/book_/unlocked',
+  path: '/book/unlocked',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FrameworksIndexRoute = FrameworksIndexRouteImport.update({
   id: '/frameworks/',
   path: '/frameworks/',
@@ -187,6 +193,7 @@ export interface FileRoutesByFullPath {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/book-a-session/thanks': typeof BookASessionThanksRoute
   '/book/$slug': typeof BookSlugRoute
+  '/book/unlocked': typeof BookUnlockedRoute
   '/frameworks/$slug': typeof FrameworksSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/frameworks/': typeof FrameworksIndexRoute
@@ -214,6 +221,7 @@ export interface FileRoutesByTo {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/book-a-session/thanks': typeof BookASessionThanksRoute
   '/book/$slug': typeof BookSlugRoute
+  '/book/unlocked': typeof BookUnlockedRoute
   '/frameworks/$slug': typeof FrameworksSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/frameworks': typeof FrameworksIndexRoute
@@ -242,6 +250,7 @@ export interface FileRoutesById {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/book-a-session_/thanks': typeof BookASessionThanksRoute
   '/book_/$slug': typeof BookSlugRoute
+  '/book_/unlocked': typeof BookUnlockedRoute
   '/frameworks/$slug': typeof FrameworksSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/frameworks/': typeof FrameworksIndexRoute
@@ -271,6 +280,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/book-a-session/thanks'
     | '/book/$slug'
+    | '/book/unlocked'
     | '/frameworks/$slug'
     | '/insights/$slug'
     | '/frameworks/'
@@ -298,6 +308,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/book-a-session/thanks'
     | '/book/$slug'
+    | '/book/unlocked'
     | '/frameworks/$slug'
     | '/insights/$slug'
     | '/frameworks'
@@ -325,6 +336,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/book-a-session_/thanks'
     | '/book_/$slug'
+    | '/book_/unlocked'
     | '/frameworks/$slug'
     | '/insights/$slug'
     | '/frameworks/'
@@ -353,6 +365,7 @@ export interface RootRouteChildren {
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   BookASessionThanksRoute: typeof BookASessionThanksRoute
   BookSlugRoute: typeof BookSlugRoute
+  BookUnlockedRoute: typeof BookUnlockedRoute
   FrameworksSlugRoute: typeof FrameworksSlugRoute
   InsightsSlugRoute: typeof InsightsSlugRoute
   FrameworksIndexRoute: typeof FrameworksIndexRoute
@@ -502,6 +515,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book_/unlocked': {
+      id: '/book_/unlocked'
+      path: '/book/unlocked'
+      fullPath: '/book/unlocked'
+      preLoaderRoute: typeof BookUnlockedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/frameworks/': {
       id: '/frameworks/'
       path: '/frameworks'
@@ -562,6 +582,7 @@ const rootRouteChildren: RootRouteChildren = {
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
   BookASessionThanksRoute: BookASessionThanksRoute,
   BookSlugRoute: BookSlugRoute,
+  BookUnlockedRoute: BookUnlockedRoute,
   FrameworksSlugRoute: FrameworksSlugRoute,
   InsightsSlugRoute: InsightsSlugRoute,
   FrameworksIndexRoute: FrameworksIndexRoute,
