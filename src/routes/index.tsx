@@ -151,9 +151,9 @@ function HomePage() {
           </h2>
         </div>
         <p className="logo-band-label">Institutions and programmes engaged</p>
-        <LogoMarquee logos={LOGOS_INSTITUTIONS} label="Institutions engaged" speed={38} />
+        <LogoMarquee logos={LOGOS_INSTITUTIONS} label="Institutions engaged" speed={32} />
         <p className="logo-band-label">Ventures and programmes built or advised</p>
-        <LogoMarquee logos={LOGOS_VENTURES} label="Ventures and programmes" speed={52} />
+        <LogoMarquee logos={LOGOS_VENTURES} label="Ventures and programmes" speed={40} reverse />
       </section>
 
       {/* @section: film-band */}
