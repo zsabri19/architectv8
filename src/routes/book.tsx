@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
+import { MemoirListenLink } from "@/components/site/MemoirListenLink";
 
 import {
   BOOK_PARTS,
@@ -8,7 +9,6 @@ import {
   SITE,
   canonicalUrl,
   chapterPath,
-  listenChapterUrl,
   LISTEN_PROLOGUE,
   LISTEN_EPILOGUE,
 } from "@/lib/site-data";
@@ -246,14 +246,9 @@ function BookPage() {
                         >
                           Read
                         </Link>
-                        <a
-                          href={listenChapterUrl(c)}
-                          className="text-navy/40 hover:text-gold"
-                          rel="nofollow noopener noreferrer"
-                          target="_blank"
-                        >
+                        <MemoirListenLink chapter={c} className="text-navy/40 hover:text-gold">
                           Listen
-                        </a>
+                        </MemoirListenLink>
                       </span>
                     </li>
                   ))}

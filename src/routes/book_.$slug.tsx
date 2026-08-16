@@ -1,5 +1,10 @@
+import { useEffect, useMemo, useState, type MouseEvent } from "react";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
+import { MemoirContinue } from "@/components/site/MemoirContinue";
+import { MemoirProse, previewBlocks } from "@/components/site/MemoirProse";
+import { chapterIsOpen, isMemoirUnlocked } from "@/lib/memoir/access";
+import { MEMOIR_BODIES } from "@/lib/memoir/bodies";
 import {
   BOOK_CHAPTERS,
   BOOK_PARTS,
@@ -53,6 +58,36 @@ function ChapterPage() {
   const index = BOOK_CHAPTERS.findIndex((c) => c.number === chapter.number);
   const prev = index > 0 ? BOOK_CHAPTERS[index - 1] : null;
   const next = index < BOOK_CHAPTERS.length - 1 ? BOOK_CHAPTERS[index + 1] : null;
+  const full = MEMOIR_BODIES[String(chapter.number)] ?? [];
+
+  const [unlocked, setUnlocked] = useState(false);
+  const [prompt, setPrompt] = useState(false);
+
+  useEffect(() => {
+    const open = isMemoirUnlocked();
+    setUnlocked(open);
+    if (chapterIsOpen(chapter.number, open)) {
+      setPrompt(false);
+      return;
+    }
+    // Chapter 2: let them start reading, then the continue sheet arrives.
+    // Later chapters: the same sheet, a little sooner.
+    const delay = chapter.number === 2 ? 7000 : 2800;
+    const timer = window.setTimeout(() => setPrompt(true), delay);
+    return () => window.clearTimeout(timer);
+  }, [chapter.number]);
+
+  const open = chapterIsOpen(chapter.number, unlocked);
+  const blocks = useMemo(() => {
+    if (open) return full;
+    return previewBlocks(full, chapter.number === 2 ? 3 : 1);
+  }, [open, full, chapter.number]);
+
+  const onListen = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (open) return;
+    event.preventDefault();
+    setPrompt(true);
+  };
 
   return (
     <SiteLayout>
@@ -68,31 +103,20 @@ function ChapterPage() {
         </nav>
         <Eyebrow>Chapter {String(chapter.number).padStart(2, "0")}</Eyebrow>
         <h1 className="font-serif text-4xl leading-tight text-navy md:text-6xl">{chapter.title}</h1>
-        <p className="mt-8 font-serif text-2xl italic leading-relaxed text-navy/80">
-          {chapter.lesson}
-        </p>
+        <p className="mt-4 text-sm uppercase tracking-widest text-navy/40">{chapter.lesson}</p>
         <a
           href={listenChapterUrl(chapter)}
           className="mt-6 inline-flex border border-navy px-5 py-3 text-[11px] font-bold uppercase tracking-widest text-navy hover:bg-navy hover:text-paper"
           rel="nofollow noopener noreferrer"
           target="_blank"
+          onClick={onListen}
         >
           Listen to this chapter
         </a>
 
-        <div className="mt-12 space-y-6 text-lg leading-relaxed text-navy/70">
-          <p>
-            <span className="float-left mr-3 mt-1 font-serif text-6xl leading-none text-gold">
-              {chapter.title.charAt(0)}
-            </span>
-            This chapter is from <em>From Exile to Transformation</em>, Final Draft 1 — four parts,
-            sixteen chapters. The full manuscript is not published on this site. What you have here
-            is the chapter&apos;s place in the book, the line it leaves you with, and the framework
-            it produced.
-          </p>
-        </div>
+        <MemoirProse blocks={blocks} />
 
-        {framework && (
+        {framework && open && (
           <div className="mt-16 border-l-2 border-gold bg-paper-soft p-8">
             <div className="text-[10px] font-medium uppercase tracking-widest text-gold">
               Framework this chapter produced
@@ -148,6 +172,7 @@ function ChapterPage() {
           </Link>
         </div>
       </article>
+      <MemoirContinue open={prompt} onClose={chapter.number === 2 ? () => setPrompt(false) : undefined} />
     </SiteLayout>
   );
 }

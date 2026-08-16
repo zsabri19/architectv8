@@ -966,6 +966,92 @@
   .testimonial-card-pager { animation: none; }
 }
 
+.memoir-prose { margin-top: 3rem; }
+.memoir-prose p {
+  margin: 0 0 1.35rem;
+  color: #2c3a46;
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+.memoir-prose h2 {
+  margin: 2.4rem 0 1rem;
+  color: var(--navy);
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+.memoir-epigraph {
+  margin: 0 0 2rem;
+  border-left: 2px solid var(--copper, #c88f5f);
+  padding-left: 1.1rem;
+  color: var(--navy);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.45;
+}
+.memoir-epigraph cite {
+  display: block;
+  margin-top: 0.6rem;
+  color: #6b747c;
+  font-size: 0.78rem;
+  font-style: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.memoir-continue {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: end center;
+  padding: 1.25rem;
+  background: linear-gradient(to top, rgba(15, 26, 46, 0.55), rgba(15, 26, 46, 0.12) 55%, transparent);
+}
+.memoir-continue-card {
+  width: min(34rem, 100%);
+  margin-bottom: 1.5rem;
+  background: #fffdf7;
+  border: 1px solid rgba(16, 39, 61, 0.16);
+  padding: 1.75rem 1.6rem 1.5rem;
+  box-shadow: 0 24px 60px -28px rgba(15, 26, 46, 0.55);
+}
+.memoir-continue-card h2 {
+  margin: 0.35rem 0 0.8rem;
+  color: var(--navy);
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.15;
+}
+.memoir-continue-card p {
+  margin: 0 0 1.25rem;
+  color: #5a6570;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.memoir-continue-cta {
+  display: inline-flex;
+  background: var(--navy);
+  color: #fffdf7;
+  padding: 0.85rem 1.15rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.memoir-continue-later {
+  display: block;
+  margin-top: 0.85rem;
+  border: 0;
+  background: none;
+  color: #6b747c;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 /* ── Photo gallery + lightbox ──────────────────────────────────────────────── */
 .photo-tile { cursor: zoom-in; }
 .photo-tile-cue { opacity: 0; transition: opacity 260ms ease; }
