@@ -17,7 +17,7 @@ export const SITE = {
   bookUnlockUrl: "https://buy.stripe.com/00w28q41PdjveV2bfWcV201",
   bookUnlockPrice: "$79",
   socials: {
-    linkedin: "https://www.linkedin.com/in/zeeshansabri/",
+    linkedin: "https://www.linkedin.com/in/zeeshan-sabri-75760a26/",
   },
   award: {
     title: "Entrepreneurial Excellence Award — Founders 2.0 Conference",

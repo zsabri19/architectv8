@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SITE } from "@/lib/site-data";
 
 function NotFoundComponent() {
   return (
@@ -103,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           jobTitle: "Crisis-to-Clarity Architect, Founder of ClarityOS",
           worksFor: { "@type": "Organization", name: "Global Markets Technologies LLC" },
           award: "Entrepreneurial Excellence Award, Founders 2.0 Conference (Dubai, 2025)",
-          sameAs: ["https://www.linkedin.com/in/zeeshansabri/"],
+          sameAs: [SITE.socials.linkedin],
         }),
       },
       {
