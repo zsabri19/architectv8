@@ -954,6 +954,7 @@ export const ARTICLES: Article[] = [
     ],
   },
   {
+    // lovable-sync: insights-07 two-trillion
     slug: "two-trillion-dollars-and-the-control-layer-nobody-owns",
     number: "07",
     title: "Two Trillion Dollars and the Control Layer Nobody Owns",
