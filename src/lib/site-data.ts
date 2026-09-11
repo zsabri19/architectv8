@@ -831,7 +831,7 @@ export const ARTICLES: Article[] = [
         ],
       },
     ],
-  },] = [
+  },
   {
     slug: "leadership-styles",
     number: "00",
@@ -1088,7 +1088,7 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
-  ];
+];
 
 export type ExternalPublication = {
   publisher: string;
