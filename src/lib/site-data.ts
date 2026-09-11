@@ -693,10 +693,145 @@ export type Article = {
   category: string;
   date: string;
   relatedFramework?: string;
+  /** Optional listing chip, e.g. "New" — shown on Insights index card only. */
+  badge?: string;
   sections: ArticleSection[];
 };
 
 export const ARTICLES: Article[] = [
+  {
+    slug: "two-trillion-dollars-and-the-control-layer-nobody-owns",
+    number: "07",
+    title: "Two Trillion Dollars and the Control Layer Nobody Owns",
+    summary:
+      "The Gulf has committed to the most concentrated delivery decade in the world. The largest risk is not funding or ambition — it is the ungoverned behavioural layer where pressured human decisions become expensive commercial facts.",
+    lede: "The Gulf has committed to the most concentrated delivery decade in the world. The largest risk to it is not funding, and it is not ambition. It is not even, anymore, the money.",
+    category: "Governance & control",
+    date: "2026-09-11",
+    badge: "New",
+    relatedFramework: "governance-as-accelerator",
+    sections: [
+      {
+        heading: "The layer underneath capital and ambition",
+        paragraphs: [
+          "Strategy& Middle East puts the GCC megaproject pipeline above 2 trillion dollars through 2035, with roughly 1.5 trillion of it still in the planning phase. Behind that number sit national transformation agendas with published deadlines, sovereign capital with defined return expectations, and delivery organizations being asked to move faster than they have ever moved.",
+          "The region has solved for capital. It has solved for ambition. It has largely solved for the technology stack, because every serious contractor and client in the Gulf now runs some combination of contract lifecycle platform, project controls suite and executive dashboard.",
+          "What remains unsolved is the layer underneath all of it. Not what the contract says, and not what the system records. What people actually do at the moment a decision has to be made under pressure.",
+          "That layer is ungoverned, and it is where the money goes.",
+          "And since this argument was first drafted, the ground has shifted in a way that makes it more urgent, not less. The Line suspended construction in September 2025. The Mukaab followed in January 2026, with barely two tenths of one percent of its budget contracted. The Public Investment Fund has approved a strategy that cuts construction commitments from 71 billion dollars to 30 billion and repositions the fund from deployer of capital to returns-driven investor. The region has entered a returns era. When a sovereign funder triages its portfolio by delivery credibility — and Diriyah and Red Sea Global proceed precisely because they have operational proof points — the ability to prevent value loss in execution stops being a contractor's margin question. It becomes the criterion on which the next decade of projects is awarded, descoped or cancelled.",
+        ],
+      },
+      {
+        heading: "What leakage looks like on a Gulf programme",
+        paragraphs: [
+          "A programme director on a live package knows this sequence without needing it explained.",
+          "Site access slips by five weeks and nobody serves notice, because the client is a sovereign entity or a group that will award the next three packages. A design change is agreed verbally in a progress meeting and priced nine months later, from memory. A commercial manager who held the entire history of a claim finishes his contract and flies home, and the file he carried in his head leaves with him. A subcontractor commitment does not match the prime contract, and the mismatch surfaces at handover. An executive gives a reassurance in a client meeting that the delivery team was never consulted on. A frustrated email is sent at eleven at night and becomes the strongest document the other side owns.",
+          "None of that is a breach. Every step of it is reasonable, human and locally rational. And by the time it is called a dispute, the value has already left the building.",
+          "Contracts in this region rarely fail in the document. They fail in the behaviour of capable people operating under real pressure.",
+        ],
+      },
+      {
+        heading: "The structural reasons this happens here",
+        paragraphs: [
+          "Four conditions make the Gulf a higher amplitude environment for this failure than most markets. None of them is a criticism of the region. All of them are consequences of the speed and scale at which it has chosen to build.",
+          "Counterparty asymmetry. A large proportion of regional work is performed for sovereign clients, national champions and major family groups, against whom a contractor holds a real entitlement and a limited practical appetite to enforce it. Notice provisions exist and go unused. The relationship is protected and the margin is not. That is a commercial structure, not a cultural failing, and it produces measurable leakage.",
+          "Compressed programmes. When a national deadline is fixed and public, sequence gets traded for pace. Decisions move to the site and to the individual, ahead of the documentation that is supposed to protect them.",
+          "Deep and multinational supply chains. Delivery runs through layers of subcontractors and specialist vendors, and through teams drawn from a dozen national engineering traditions. A term interpreted one way in a design office in one country is interpreted differently on site in another. The contract is centralised and its interpretation is not.",
+          "Mobile workforces and thin project memory. The Gulf's talent model is international and rotational by design — expatriates constitute roughly four fifths of the Saudi employed workforce, a share that has barely moved despite a decade of localisation policy, because giga-project construction keeps pulling capability in. It brings extraordinary expertise into the region, and it means institutional memory frequently sits in individuals rather than in the organization. When they move, the history moves with them, and the same mistake is priced again on the next job.",
+          "These four conditions were offered, in the first version of this article, as practitioner observation. The dispute data now lets us measure their amplitude.",
+          "HKA's CRUX research finds cashflow and payment issues affecting 25.8% of disputed projects in the Middle East, against 11.1% for the rest of the world — the signature of payment behaviour inside deep supply chains under counterparty asymmetry. Change in scope has affected 52.9% of Middle Eastern projects against a 31.8% global average — the signature of compressed programmes outrunning their own design. In Saudi Arabia specifically, claimed time extensions have averaged 97.2% of planned schedules across the projects analysed, with late approvals and cashflow disputes each touching roughly three projects in ten. RICS reaches the same diagnosis independently: cashflow and payment issues are notably more prevalent in this region than anywhere else, owing to over-long payment times.",
+          "The four conditions are observation. The amplitude they produce is measurement.",
+        ],
+      },
+      {
+        heading: "What the research says the exposure is worth",
+        paragraphs: [
+          "World Commerce and Contracting reports that the average business loses close to 9% of contract value annually through poor contract management, with best performers near 3% and the weakest near 15% or more. Its procurement research puts average post-signature leakage at 11% of contract value, accumulating across many small failure points — missed savings, unauthorised changes, untracked adjustments, unmanaged clauses — rather than any single catastrophe.",
+          "Two honest qualifications belong with those numbers. They are perception-based survey instruments, not audited financials. And WorldCC itself cautions that most organizations do not formally track value leakage at all, which means the true figures are, if anything, understated. What the benchmarks give us is direction and order of magnitude, not precision — and the spread they reveal is the point: the distance between the best and worst managed contract portfolios is five-fold.",
+          "HKA's CRUX research adds the catastrophic tail to that slow leak. Its eighth annual edition covers more than 2,200 construction and engineering projects across 114 countries with combined capital expenditure of 2.433 trillion dollars. Claimed costs across that sample reached 95 billion dollars, and sums in dispute averaged 33.4% of contract budgets on affected contracts. Change in scope was the most common cause of conflict. Cashflow and payment issues affected more than 25% of megaprojects.",
+          "Two patterns in the newest CRUX data deserve more attention than they get. Dispute drivers have declined materially for projects completing since 2020 — scope change down, contract-management failures almost halved — with one exception: cashflow and payment issues, which are rising. The industry is getting better at the documented, procedural causes of dispute and worse at the financially relational ones. And Arcadis, whose global disputes research has tracked this field for over a decade, states the underlying cause directly: human factors and misunderstanding of contractual obligations continue to be a primary cause of disputes, with transparency and willingness to compromise the strongest mitigations. When the contracting profession's own research body and the disputes industry's own analysts both locate the problem between the document and the decision, the gap is not a contrarian observation. It is what the incumbents already concede.",
+          "The Project Management Institute, in older research that remains directionally useful, associated 75 million dollars of risk per billion dollars of project spend with ineffective communication.",
+          "These are global benchmarks and no organization should assume its own exposure matches an average. They are not additive and none of them promises a recovery rate. What they establish is the shape of the problem. The exposure is large, it recurs, and it is produced by behaviour rather than by drafting.",
+          "Set that shape against a 2 trillion dollar regional pipeline and the arithmetic becomes difficult to ignore. A one percent improvement on a 500 million dollar programme is five million dollars. Applied to the regional pipeline, even the most conservative single-point scenario implies twenty billion dollars of value at stake; at the global average benchmark it approaches one hundred and eighty billion. Neither figure is a measurement of GCC leakage — no such measurement exists, and that vacuum is itself the finding. Somewhere between sixty and three hundred billion dollars depends on where regional practice actually sits on the global distribution, and no board in the region can currently say where its own portfolio lies.",
+        ],
+      },
+      {
+        heading: "The control point the market does not serve",
+        paragraphs: [
+          "Contract prevention is not the claim that disputes can be eliminated. It is the disciplined reduction of the conditions that make value hard to protect. A mature model operates across five control points.",
+          "1. Structure. Is the commercial position clear before performance begins? 2. Recognition. Can the organization see risk before it becomes an event? 3. Behaviour. Will people act in a way that preserves the position? 4. Evidence. Can the organization prove what happened and when? 5. Learning. Does the organization get better after each project?",
+          "The regional market serves four of these well. Contract platforms, claims consultancies, project management offices and controls suites deliver structure, recognition, evidence and, at their best, learning. They are necessary and none of them should be replaced.",
+          "The third control point has no owner. A risk can be identified and not acted on. An obligation can be tracked and not understood. A dashboard can display exposure and change nothing about the decision that produced it. Insight becomes value only at the moment it changes behaviour, and no line in the regional org chart is accountable for that moment.",
+          "World Commerce and Contracting's own procurement research describes the same vacuum from the inside: the commercial functions exit at precisely the moment their expertise is most needed, risk allocation is mistaken for risk management, and automated obligation tracking is only partly reliable without context — leaving human judgment, in their words, the critical safeguard against leakage. The third control point is not unowned because the market is negligent. It is unowned because behaviour was never anyone's line item.",
+        ],
+      },
+      {
+        heading: "Every organization runs two operating systems",
+        paragraphs: [
+          "Only one of them is written down.",
+          "The System OS is the visible layer. Platforms, workflows, data, dashboards, documents, controls. It is what the transformation budget buys.",
+          "The Human OS is the behavioural layer. How people interpret risk, decide with incomplete information, communicate under pressure, preserve leverage and evidence, escalate to the right authority, and convert experience into rules the organization keeps.",
+          "System OS stores the contract; Human OS interprets what it means in context. System OS tracks the obligation; Human OS decides whether it is understood and acted on. System OS flags the risk; Human OS determines whether the warning changes behaviour. System OS records the communication; Human OS shapes the communication before it is sent. System OS reports performance; Human OS explains the behaviour that produced it.",
+          "System OS creates capability. Human OS decides whether capability becomes performance. An organization that installs better tools on top of an ungoverned behavioural layer has purchased a clearer view of its own leakage.",
+          "The Human OS is not a metaphor, and it is worth saying why. The decision-science literature has spent fifty years demonstrating that professional judgment under pressure is not merely biased but noisy: when Daniel Kahneman and his colleagues asked experienced professionals at the same firm to evaluate identical cases, their judgments differed by roughly fifty percent — five times what the firm's own executives expected — and experience did not close the gap. The remedies that work are not exhortation or training in awareness. They are structural: independent assessment, decision hygiene, rules and checks that bound judgment at the moment it is exercised. Prevention against a failure you cannot predict individually, justified by the base rate of the failure class.",
+          "That is exactly what the unserved notice, the verbal variation and the eleven o'clock email are. Not personality defects. Predictable, patterned, structurally reducible judgment failures — occurring in the one layer of the delivery stack that has no owner and no instrumentation.",
+        ],
+      },
+      {
+        heading: "Why the Gulf should set this standard rather than import it",
+        paragraphs: [
+          "The instinct in the region has often been to bring in mature market practice and adapt it. On this question that instinct is wrong, for a straightforward reason.",
+          "No other region is running this concentration of complex, fast, multi party delivery this decade. The Gulf is not a follower market in contract execution. It is the largest live laboratory in the world for it. The behavioural data that would prove what prevention is worth is being generated here, on these programmes, right now, and it is currently being discarded.",
+          "There is a window argument too. Strategy& notes that sixty to seventy percent of project spending is effectively locked in at master plan and concept stage, before tender. With roughly 1.5 trillion dollars of the regional pipeline still in planning, the decisions that determine the next decade's dispute docket are being taken now, in design offices and programme boards, ahead of the contracts that will have to live with them. The control layer can still be designed in. In five years it will only be retrofitted onto distressed projects, at distressed prices.",
+          "There is also a localisation argument that in country value programmes across the region already recognise. Delivery capability is national capability. A region that can prevent value loss in execution retains margin inside its own economy, builds a class of commercially disciplined local contractors, and reduces the volume of regional dispute value that flows to advisers outside it.",
+          "This is a sovereign capability question dressed as a contract administration question. The recalibration now under way at PIF has made that literal: execution credibility is the new allocation criterion, and the organizations that can demonstrate governed delivery will be the ones the returns era keeps funding.",
+        ],
+      },
+      {
+        heading: "What a serious organization does next",
+        paragraphs: [
+          "Resist buying a solution before establishing a baseline. The discipline runs in this order, and the order is the discipline.",
+          "Establish the baseline. Measure the current pattern of missed notices, late escalations, unauthorised concessions, evidence gaps and decision rework on live packages. Without it, every subsequent improvement is anecdote. This is also, not incidentally, the missing regional number: the first organization to produce an honest GCC leakage baseline owns the reference point everyone else will be measured against.",
+          "Run a controlled proof of concept — and design it to be believed. One live project or business unit, 30 to 60 days, behavioural guardrails at selected decision and communication points, with a defined decision gate at the end to scale, refine, reposition or stop. The evaluation design should be fixed before the pilot starts, not negotiated after it ends: the leading indicators chosen in advance, the comparison logic stated, the causal caveats written down. A sceptical CFO will not be persuaded by a success story. They may be persuaded by a pre-registered test that was allowed to fail.",
+          "Measure leading indicators before lagging ones. Interventions accepted or overridden, contract context retrieved before a decision, escalations routed to the correct authority. Commercial outcomes follow later, and a credible evaluation links the two without pretending causality is immediate. The honest claim after sixty days is not \"we saved X million.\" It is \"the decisions that historically produced X million of exposure now happen differently, and here is the instrumented record.\"",
+          "Build governance into the return. Data minimisation, access and retention control, human override, explainable rationale, audit logs and clear boundaries for sensitive communications. In a region where relationship trust is the operating currency, a capability that protects margin and erodes trust has not created value.",
+          "One more thing belongs on this list in 2026 that did not a year ago. The current wave of suspensions and descoping — The Line, the Mukaab, the terminated packages at NEOM and Trojena — is a live stress test of exactly the disciplines described here. Terminations and scope cuts are the most claims-intensive events in construction, and they expose the weakest-link behaviours first: the missing notices, the verbal agreements, the evidence gaps. Organizations instrumented before the next descoping decision lands will navigate it. The rest will discover their leakage at the worst possible moment, priced by the other side.",
+        ],
+      },
+      {
+        heading: "The question worth putting to your board",
+        paragraphs: [
+          "Most organizations in this region can answer whether they have a contract platform, a claims adviser and a project dashboard. Very few can answer the question underneath all three.",
+          "Can our operating system stop a pressured human decision from becoming an expensive commercial fact?",
+          "The verified spread between the best and worst managed contract portfolios in the world is five-fold. The region's own dispute data shows its signature failures are the behavioural and relational ones. The decision science shows those failures are predictable and structurally reducible. And the sovereign capital funding this decade has just made delivery credibility the price of admission.",
+          "Two trillion dollars of assets will be delivered against the answer to that question over the next decade. It deserves an owner.",
+          "Clarity before scale. Structure before performance. Human OS before System OS.",
+        ],
+      },
+      {
+        heading: "Evidence and sources",
+        paragraphs: [
+          "Regional pipeline. Strategy& Middle East, How the GCC Can Use Mega Projects to Build Local Supplier Ecosystems and Increase Resilience. GCC pipeline above 2 trillion dollars in megaprojects through 2035, defined as projects above 250 million dollars, across transportation, oil and gas, utilities and real estate, with approximately 1.5 trillion in the planning phase over the next decade. The same analysis notes that 60–70% of project spending is effectively locked in at master plan and concept stage.",
+          "Regional recalibration. Contemporaneous reporting and analysis of PIF's 2026–2030 strategy: construction commitments reduced from 71 billion to 30 billion dollars; The Line's construction suspended September 2025; The Mukaab suspended January 2026; Diriyah and Red Sea Global continuing on the strength of operational proof points. Included as market context; readers should consult primary PIF communications for investment decisions.",
+          "Contract value leakage. World Commerce and Contracting, Contract Management: An Overlooked Driver of Business Agility and Financial Performance, August 2025. Average annual loss near 9% of contract value, approximately 3% for best performers and 15% or more for the weakest. Survey-based instrument; WorldCC cautions that most organizations do not formally track leakage, so true figures are likely understated.",
+          "Procurement leakage. World Commerce and Contracting with Ironclad, Closing the Procurement Value Gap. Average post-signature loss of 11% of contract value, accumulating across multiple small failure points, with explicit emphasis on the gap between contracting activity and how contracts translate into behaviour, governance and relationships; human judgment described as the critical safeguard against leakage.",
+          "Dispute exposure. HKA, CRUX Insight Eighth Annual Report: From Insight to Foresight. More than 2,200 construction and engineering projects across 114 countries, combined capital expenditure of 2.433 trillion dollars, total claimed costs of 95.0 billion dollars, sums in dispute averaging 33.4% of contract budgets on affected contracts, and claimed extensions of time averaging 65.8% of planned schedules. Change in scope was the most common cause of conflict, affecting just over 28% of projects. Cashflow and payment issues affected more than 14% globally and more than 25% of megaprojects, and are the only major dispute cause rising in the post-2020 cohort.",
+          "Regional dispute amplitude. HKA, CRUX Middle East perspective. Cashflow and payment issues affecting 25.8% of disputed Middle East projects versus 11.1% for the rest of the world. Earlier CRUX regional analysis: change in scope affecting 52.9% of Middle Eastern projects versus 31.8% globally; in Saudi Arabia, claimed extensions averaging 97.2% of planned schedules. RICS independently identifies cashflow and payment issues as notably more prevalent in the Middle East than in other regions.",
+          "Human factors in disputes. Arcadis, Global Construction Disputes Report series. Human factors and misunderstanding of contractual obligations identified as a primary cause of disputes; transparency and willingness to compromise identified as the strongest mitigation factors. (Cited directly from Arcadis's published reports.)",
+          "Communication risk. Project Management Institute, The High Cost of Low Performance: The Essential Role of Communications, 2013. 135 million dollars at risk for every 1 billion dollars spent on projects, of which 75 million, or 56%, was associated with ineffective communication. Treated here as a historical benchmark rather than a current rate.",
+          "Judgment under pressure. Kahneman, Sibony and Sunstein, Noise: A Flaw in Human Judgment. Experienced professionals evaluating identical cases differed by roughly 50% in their judgments; the effective remedies are structural (decision hygiene, independent assessment, bounded judgment) rather than exhortation.",
+          "Workforce structure. Expatriates constitute approximately 78% of the employed workforce in Saudi Arabia, with roughly 5.4 million additional expatriate workers drawn in between 2021 and 2025, largely by giga-project construction. GCC-wide, non-nationals hold the majority of private-sector employment.",
+          "Limitation and scope. The leakage benchmarks above are global, survey-based instruments and are used to establish the scale and recurrence of the exposure. They do not measure GCC specific leakage, and no GCC specific leakage rate is claimed here; the illustrative pipeline scenarios are arithmetic, not estimates. The four structural conditions are practitioner observations, now corroborated in amplitude by regional dispute data. Establishing a regional figure requires exactly what this article argues for: client specific baselines, controlled deployment and outcome linkage.",
+        ],
+      },
+      {
+        heading: "About the author",
+        paragraphs: [
+          "Zeeshan Sabri is a transformation architect and governance advisor working with enterprise and government clients across the GCC and global markets. He is the creator of ClarityOS, a pre governance operating model built on the Crisis to Clarity methodology, and writes on why organizations break under pressure and how to repair the invisible operating system underneath them. Contact: zeeshan@global-mkts.com",
+        ],
+      },
+    ],
+  },] = [
   {
     slug: "leadership-styles",
     number: "00",
@@ -953,139 +1088,7 @@ export const ARTICLES: Article[] = [
       },
     ],
   },
-  {
-    slug: "two-trillion-dollars-and-the-control-layer-nobody-owns",
-    number: "07",
-    title: "Two Trillion Dollars and the Control Layer Nobody Owns",
-    summary:
-      "The Gulf has committed to the most concentrated delivery decade in the world. The largest risk is not funding or ambition — it is the ungoverned behavioural layer where pressured human decisions become expensive commercial facts.",
-    lede: "The Gulf has committed to the most concentrated delivery decade in the world. The largest risk to it is not funding, and it is not ambition. It is not even, anymore, the money.",
-    category: "Governance & control",
-    date: "2026-09-11",
-    relatedFramework: "governance-as-accelerator",
-    sections: [
-      {
-        heading: "The layer underneath capital and ambition",
-        paragraphs: [
-          "Strategy& Middle East puts the GCC megaproject pipeline above 2 trillion dollars through 2035, with roughly 1.5 trillion of it still in the planning phase. Behind that number sit national transformation agendas with published deadlines, sovereign capital with defined return expectations, and delivery organizations being asked to move faster than they have ever moved.",
-          "The region has solved for capital. It has solved for ambition. It has largely solved for the technology stack, because every serious contractor and client in the Gulf now runs some combination of contract lifecycle platform, project controls suite and executive dashboard.",
-          "What remains unsolved is the layer underneath all of it. Not what the contract says, and not what the system records. What people actually do at the moment a decision has to be made under pressure.",
-          "That layer is ungoverned, and it is where the money goes.",
-          "And since this argument was first drafted, the ground has shifted in a way that makes it more urgent, not less. The Line suspended construction in September 2025. The Mukaab followed in January 2026, with barely two tenths of one percent of its budget contracted. The Public Investment Fund has approved a strategy that cuts construction commitments from 71 billion dollars to 30 billion and repositions the fund from deployer of capital to returns-driven investor. The region has entered a returns era. When a sovereign funder triages its portfolio by delivery credibility — and Diriyah and Red Sea Global proceed precisely because they have operational proof points — the ability to prevent value loss in execution stops being a contractor's margin question. It becomes the criterion on which the next decade of projects is awarded, descoped or cancelled.",
-        ],
-      },
-      {
-        heading: "What leakage looks like on a Gulf programme",
-        paragraphs: [
-          "A programme director on a live package knows this sequence without needing it explained.",
-          "Site access slips by five weeks and nobody serves notice, because the client is a sovereign entity or a group that will award the next three packages. A design change is agreed verbally in a progress meeting and priced nine months later, from memory. A commercial manager who held the entire history of a claim finishes his contract and flies home, and the file he carried in his head leaves with him. A subcontractor commitment does not match the prime contract, and the mismatch surfaces at handover. An executive gives a reassurance in a client meeting that the delivery team was never consulted on. A frustrated email is sent at eleven at night and becomes the strongest document the other side owns.",
-          "None of that is a breach. Every step of it is reasonable, human and locally rational. And by the time it is called a dispute, the value has already left the building.",
-          "Contracts in this region rarely fail in the document. They fail in the behaviour of capable people operating under real pressure.",
-        ],
-      },
-      {
-        heading: "The structural reasons this happens here",
-        paragraphs: [
-          "Four conditions make the Gulf a higher amplitude environment for this failure than most markets. None of them is a criticism of the region. All of them are consequences of the speed and scale at which it has chosen to build.",
-          "Counterparty asymmetry. A large proportion of regional work is performed for sovereign clients, national champions and major family groups, against whom a contractor holds a real entitlement and a limited practical appetite to enforce it. Notice provisions exist and go unused. The relationship is protected and the margin is not. That is a commercial structure, not a cultural failing, and it produces measurable leakage.",
-          "Compressed programmes. When a national deadline is fixed and public, sequence gets traded for pace. Decisions move to the site and to the individual, ahead of the documentation that is supposed to protect them.",
-          "Deep and multinational supply chains. Delivery runs through layers of subcontractors and specialist vendors, and through teams drawn from a dozen national engineering traditions. A term interpreted one way in a design office in one country is interpreted differently on site in another. The contract is centralised and its interpretation is not.",
-          "Mobile workforces and thin project memory. The Gulf's talent model is international and rotational by design — expatriates constitute roughly four fifths of the Saudi employed workforce, a share that has barely moved despite a decade of localisation policy, because giga-project construction keeps pulling capability in. It brings extraordinary expertise into the region, and it means institutional memory frequently sits in individuals rather than in the organization. When they move, the history moves with them, and the same mistake is priced again on the next job.",
-          "These four conditions were offered, in the first version of this article, as practitioner observation. The dispute data now lets us measure their amplitude.",
-          "HKA's CRUX research finds cashflow and payment issues affecting 25.8% of disputed projects in the Middle East, against 11.1% for the rest of the world — the signature of payment behaviour inside deep supply chains under counterparty asymmetry. Change in scope has affected 52.9% of Middle Eastern projects against a 31.8% global average — the signature of compressed programmes outrunning their own design. In Saudi Arabia specifically, claimed time extensions have averaged 97.2% of planned schedules across the projects analysed, with late approvals and cashflow disputes each touching roughly three projects in ten. RICS reaches the same diagnosis independently: cashflow and payment issues are notably more prevalent in this region than anywhere else, owing to over-long payment times.",
-          "The four conditions are observation. The amplitude they produce is measurement.",
-        ],
-      },
-      {
-        heading: "What the research says the exposure is worth",
-        paragraphs: [
-          "World Commerce and Contracting reports that the average business loses close to 9% of contract value annually through poor contract management, with best performers near 3% and the weakest near 15% or more. Its procurement research puts average post-signature leakage at 11% of contract value, accumulating across many small failure points — missed savings, unauthorised changes, untracked adjustments, unmanaged clauses — rather than any single catastrophe.",
-          "Two honest qualifications belong with those numbers. They are perception-based survey instruments, not audited financials. And WorldCC itself cautions that most organizations do not formally track value leakage at all, which means the true figures are, if anything, understated. What the benchmarks give us is direction and order of magnitude, not precision — and the spread they reveal is the point: the distance between the best and worst managed contract portfolios is five-fold.",
-          "HKA's CRUX research adds the catastrophic tail to that slow leak. Its eighth annual edition covers more than 2,200 construction and engineering projects across 114 countries with combined capital expenditure of 2.433 trillion dollars. Claimed costs across that sample reached 95 billion dollars, and sums in dispute averaged 33.4% of contract budgets on affected contracts. Change in scope was the most common cause of conflict. Cashflow and payment issues affected more than 25% of megaprojects.",
-          "Two patterns in the newest CRUX data deserve more attention than they get. Dispute drivers have declined materially for projects completing since 2020 — scope change down, contract-management failures almost halved — with one exception: cashflow and payment issues, which are rising. The industry is getting better at the documented, procedural causes of dispute and worse at the financially relational ones. And Arcadis, whose global disputes research has tracked this field for over a decade, states the underlying cause directly: human factors and misunderstanding of contractual obligations continue to be a primary cause of disputes, with transparency and willingness to compromise the strongest mitigations. When the contracting profession's own research body and the disputes industry's own analysts both locate the problem between the document and the decision, the gap is not a contrarian observation. It is what the incumbents already concede.",
-          "The Project Management Institute, in older research that remains directionally useful, associated 75 million dollars of risk per billion dollars of project spend with ineffective communication.",
-          "These are global benchmarks and no organization should assume its own exposure matches an average. They are not additive and none of them promises a recovery rate. What they establish is the shape of the problem. The exposure is large, it recurs, and it is produced by behaviour rather than by drafting.",
-          "Set that shape against a 2 trillion dollar regional pipeline and the arithmetic becomes difficult to ignore. A one percent improvement on a 500 million dollar programme is five million dollars. Applied to the regional pipeline, even the most conservative single-point scenario implies twenty billion dollars of value at stake; at the global average benchmark it approaches one hundred and eighty billion. Neither figure is a measurement of GCC leakage — no such measurement exists, and that vacuum is itself the finding. Somewhere between sixty and three hundred billion dollars depends on where regional practice actually sits on the global distribution, and no board in the region can currently say where its own portfolio lies.",
-        ],
-      },
-      {
-        heading: "The control point the market does not serve",
-        paragraphs: [
-          "Contract prevention is not the claim that disputes can be eliminated. It is the disciplined reduction of the conditions that make value hard to protect. A mature model operates across five control points.",
-          "1. Structure. Is the commercial position clear before performance begins? 2. Recognition. Can the organization see risk before it becomes an event? 3. Behaviour. Will people act in a way that preserves the position? 4. Evidence. Can the organization prove what happened and when? 5. Learning. Does the organization get better after each project?",
-          "The regional market serves four of these well. Contract platforms, claims consultancies, project management offices and controls suites deliver structure, recognition, evidence and, at their best, learning. They are necessary and none of them should be replaced.",
-          "The third control point has no owner. A risk can be identified and not acted on. An obligation can be tracked and not understood. A dashboard can display exposure and change nothing about the decision that produced it. Insight becomes value only at the moment it changes behaviour, and no line in the regional org chart is accountable for that moment.",
-          "World Commerce and Contracting's own procurement research describes the same vacuum from the inside: the commercial functions exit at precisely the moment their expertise is most needed, risk allocation is mistaken for risk management, and automated obligation tracking is only partly reliable without context — leaving human judgment, in their words, the critical safeguard against leakage. The third control point is not unowned because the market is negligent. It is unowned because behaviour was never anyone's line item.",
-        ],
-      },
-      {
-        heading: "Every organization runs two operating systems",
-        paragraphs: [
-          "Only one of them is written down.",
-          "The System OS is the visible layer. Platforms, workflows, data, dashboards, documents, controls. It is what the transformation budget buys.",
-          "The Human OS is the behavioural layer. How people interpret risk, decide with incomplete information, communicate under pressure, preserve leverage and evidence, escalate to the right authority, and convert experience into rules the organization keeps.",
-          "System OS stores the contract; Human OS interprets what it means in context. System OS tracks the obligation; Human OS decides whether it is understood and acted on. System OS flags the risk; Human OS determines whether the warning changes behaviour. System OS records the communication; Human OS shapes the communication before it is sent. System OS reports performance; Human OS explains the behaviour that produced it.",
-          "System OS creates capability. Human OS decides whether capability becomes performance. An organization that installs better tools on top of an ungoverned behavioural layer has purchased a clearer view of its own leakage.",
-          "The Human OS is not a metaphor, and it is worth saying why. The decision-science literature has spent fifty years demonstrating that professional judgment under pressure is not merely biased but noisy: when Daniel Kahneman and his colleagues asked experienced professionals at the same firm to evaluate identical cases, their judgments differed by roughly fifty percent — five times what the firm's own executives expected — and experience did not close the gap. The remedies that work are not exhortation or training in awareness. They are structural: independent assessment, decision hygiene, rules and checks that bound judgment at the moment it is exercised. Prevention against a failure you cannot predict individually, justified by the base rate of the failure class.",
-          "That is exactly what the unserved notice, the verbal variation and the eleven o'clock email are. Not personality defects. Predictable, patterned, structurally reducible judgment failures — occurring in the one layer of the delivery stack that has no owner and no instrumentation.",
-        ],
-      },
-      {
-        heading: "Why the Gulf should set this standard rather than import it",
-        paragraphs: [
-          "The instinct in the region has often been to bring in mature market practice and adapt it. On this question that instinct is wrong, for a straightforward reason.",
-          "No other region is running this concentration of complex, fast, multi party delivery this decade. The Gulf is not a follower market in contract execution. It is the largest live laboratory in the world for it. The behavioural data that would prove what prevention is worth is being generated here, on these programmes, right now, and it is currently being discarded.",
-          "There is a window argument too. Strategy& notes that sixty to seventy percent of project spending is effectively locked in at master plan and concept stage, before tender. With roughly 1.5 trillion dollars of the regional pipeline still in planning, the decisions that determine the next decade's dispute docket are being taken now, in design offices and programme boards, ahead of the contracts that will have to live with them. The control layer can still be designed in. In five years it will only be retrofitted onto distressed projects, at distressed prices.",
-          "There is also a localisation argument that in country value programmes across the region already recognise. Delivery capability is national capability. A region that can prevent value loss in execution retains margin inside its own economy, builds a class of commercially disciplined local contractors, and reduces the volume of regional dispute value that flows to advisers outside it.",
-          "This is a sovereign capability question dressed as a contract administration question. The recalibration now under way at PIF has made that literal: execution credibility is the new allocation criterion, and the organizations that can demonstrate governed delivery will be the ones the returns era keeps funding.",
-        ],
-      },
-      {
-        heading: "What a serious organization does next",
-        paragraphs: [
-          "Resist buying a solution before establishing a baseline. The discipline runs in this order, and the order is the discipline.",
-          "Establish the baseline. Measure the current pattern of missed notices, late escalations, unauthorised concessions, evidence gaps and decision rework on live packages. Without it, every subsequent improvement is anecdote. This is also, not incidentally, the missing regional number: the first organization to produce an honest GCC leakage baseline owns the reference point everyone else will be measured against.",
-          "Run a controlled proof of concept — and design it to be believed. One live project or business unit, 30 to 60 days, behavioural guardrails at selected decision and communication points, with a defined decision gate at the end to scale, refine, reposition or stop. The evaluation design should be fixed before the pilot starts, not negotiated after it ends: the leading indicators chosen in advance, the comparison logic stated, the causal caveats written down. A sceptical CFO will not be persuaded by a success story. They may be persuaded by a pre-registered test that was allowed to fail.",
-          "Measure leading indicators before lagging ones. Interventions accepted or overridden, contract context retrieved before a decision, escalations routed to the correct authority. Commercial outcomes follow later, and a credible evaluation links the two without pretending causality is immediate. The honest claim after sixty days is not \"we saved X million.\" It is \"the decisions that historically produced X million of exposure now happen differently, and here is the instrumented record.\"",
-          "Build governance into the return. Data minimisation, access and retention control, human override, explainable rationale, audit logs and clear boundaries for sensitive communications. In a region where relationship trust is the operating currency, a capability that protects margin and erodes trust has not created value.",
-          "One more thing belongs on this list in 2026 that did not a year ago. The current wave of suspensions and descoping — The Line, the Mukaab, the terminated packages at NEOM and Trojena — is a live stress test of exactly the disciplines described here. Terminations and scope cuts are the most claims-intensive events in construction, and they expose the weakest-link behaviours first: the missing notices, the verbal agreements, the evidence gaps. Organizations instrumented before the next descoping decision lands will navigate it. The rest will discover their leakage at the worst possible moment, priced by the other side.",
-        ],
-      },
-      {
-        heading: "The question worth putting to your board",
-        paragraphs: [
-          "Most organizations in this region can answer whether they have a contract platform, a claims adviser and a project dashboard. Very few can answer the question underneath all three.",
-          "Can our operating system stop a pressured human decision from becoming an expensive commercial fact?",
-          "The verified spread between the best and worst managed contract portfolios in the world is five-fold. The region's own dispute data shows its signature failures are the behavioural and relational ones. The decision science shows those failures are predictable and structurally reducible. And the sovereign capital funding this decade has just made delivery credibility the price of admission.",
-          "Two trillion dollars of assets will be delivered against the answer to that question over the next decade. It deserves an owner.",
-          "Clarity before scale. Structure before performance. Human OS before System OS.",
-        ],
-      },
-      {
-        heading: "Evidence and sources",
-        paragraphs: [
-          "Regional pipeline. Strategy& Middle East, How the GCC Can Use Mega Projects to Build Local Supplier Ecosystems and Increase Resilience. GCC pipeline above 2 trillion dollars in megaprojects through 2035, defined as projects above 250 million dollars, across transportation, oil and gas, utilities and real estate, with approximately 1.5 trillion in the planning phase over the next decade. The same analysis notes that 60–70% of project spending is effectively locked in at master plan and concept stage.",
-          "Regional recalibration. Contemporaneous reporting and analysis of PIF's 2026–2030 strategy: construction commitments reduced from 71 billion to 30 billion dollars; The Line's construction suspended September 2025; The Mukaab suspended January 2026; Diriyah and Red Sea Global continuing on the strength of operational proof points. Included as market context; readers should consult primary PIF communications for investment decisions.",
-          "Contract value leakage. World Commerce and Contracting, Contract Management: An Overlooked Driver of Business Agility and Financial Performance, August 2025. Average annual loss near 9% of contract value, approximately 3% for best performers and 15% or more for the weakest. Survey-based instrument; WorldCC cautions that most organizations do not formally track leakage, so true figures are likely understated.",
-          "Procurement leakage. World Commerce and Contracting with Ironclad, Closing the Procurement Value Gap. Average post-signature loss of 11% of contract value, accumulating across multiple small failure points, with explicit emphasis on the gap between contracting activity and how contracts translate into behaviour, governance and relationships; human judgment described as the critical safeguard against leakage.",
-          "Dispute exposure. HKA, CRUX Insight Eighth Annual Report: From Insight to Foresight. More than 2,200 construction and engineering projects across 114 countries, combined capital expenditure of 2.433 trillion dollars, total claimed costs of 95.0 billion dollars, sums in dispute averaging 33.4% of contract budgets on affected contracts, and claimed extensions of time averaging 65.8% of planned schedules. Change in scope was the most common cause of conflict, affecting just over 28% of projects. Cashflow and payment issues affected more than 14% globally and more than 25% of megaprojects, and are the only major dispute cause rising in the post-2020 cohort.",
-          "Regional dispute amplitude. HKA, CRUX Middle East perspective. Cashflow and payment issues affecting 25.8% of disputed Middle East projects versus 11.1% for the rest of the world. Earlier CRUX regional analysis: change in scope affecting 52.9% of Middle Eastern projects versus 31.8% globally; in Saudi Arabia, claimed extensions averaging 97.2% of planned schedules. RICS independently identifies cashflow and payment issues as notably more prevalent in the Middle East than in other regions.",
-          "Human factors in disputes. Arcadis, Global Construction Disputes Report series. Human factors and misunderstanding of contractual obligations identified as a primary cause of disputes; transparency and willingness to compromise identified as the strongest mitigation factors. (Cited directly from Arcadis's published reports.)",
-          "Communication risk. Project Management Institute, The High Cost of Low Performance: The Essential Role of Communications, 2013. 135 million dollars at risk for every 1 billion dollars spent on projects, of which 75 million, or 56%, was associated with ineffective communication. Treated here as a historical benchmark rather than a current rate.",
-          "Judgment under pressure. Kahneman, Sibony and Sunstein, Noise: A Flaw in Human Judgment. Experienced professionals evaluating identical cases differed by roughly 50% in their judgments; the effective remedies are structural (decision hygiene, independent assessment, bounded judgment) rather than exhortation.",
-          "Workforce structure. Expatriates constitute approximately 78% of the employed workforce in Saudi Arabia, with roughly 5.4 million additional expatriate workers drawn in between 2021 and 2025, largely by giga-project construction. GCC-wide, non-nationals hold the majority of private-sector employment.",
-          "Limitation and scope. The leakage benchmarks above are global, survey-based instruments and are used to establish the scale and recurrence of the exposure. They do not measure GCC specific leakage, and no GCC specific leakage rate is claimed here; the illustrative pipeline scenarios are arithmetic, not estimates. The four structural conditions are practitioner observations, now corroborated in amplitude by regional dispute data. Establishing a regional figure requires exactly what this article argues for: client specific baselines, controlled deployment and outcome linkage.",
-        ],
-      },
-      {
-        heading: "About the author",
-        paragraphs: [
-          "Zeeshan Sabri is a transformation architect and governance advisor working with enterprise and government clients across the GCC and global markets. He is the creator of ClarityOS, a pre governance operating model built on the Crisis to Clarity methodology, and writes on why organizations break under pressure and how to repair the invisible operating system underneath them. Contact: zeeshan@global-mkts.com",
-        ],
-      },
-    ],
-  },
-];
+  ];
 
 export type ExternalPublication = {
   publisher: string;

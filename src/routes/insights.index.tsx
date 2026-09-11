@@ -59,8 +59,18 @@ function InsightsPage() {
                 className="group grid gap-4 py-8 md:grid-cols-12"
               >
                 <div className="md:col-span-3">
-                  <div className="text-[10px] font-medium uppercase tracking-widest text-gold">
-                    {a.category}
+                  <div className="flex flex-wrap items-center gap-2">
+                    <div className="text-[10px] font-medium uppercase tracking-widest text-gold">
+                      {a.category}
+                    </div>
+                    {a.badge ? (
+                      <span
+                        className="inline-flex items-center rounded-sm bg-gold px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-navy"
+                        aria-label={`${a.badge} article`}
+                      >
+                        {a.badge}
+                      </span>
+                    ) : null}
                   </div>
                   <time className="mt-1 block text-xs text-navy/50">
                     {new Date(a.date).toLocaleDateString("en-US", {
