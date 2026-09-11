@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import { JustPublishedBar } from "./JustPublishedBar";
 
 export function SiteLayout({ children }: { children: ReactNode }) {
   return (
@@ -9,6 +10,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         Skip to main content
       </a>
       <Header />
+      <JustPublishedBar />
       <main id="main-content">{children}</main>
       <Footer />
     </div>
