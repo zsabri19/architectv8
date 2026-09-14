@@ -82,11 +82,35 @@ function redirectAliasHost(request: Request): Response | null {
   return Response.redirect(url.toString(), 301);
 }
 
+// The memoir now ships as the self-contained static reading experience under
+// /the-book/. Forward the previous dynamic /book routes (and their indexed
+// chapter URLs) to the corresponding static pages so old links keep working.
+function redirectLegacyBookToMemoir(request: Request): Response | null {
+  const url = new URL(request.url);
+  const path = url.pathname.replace(/\/+$/, "") || "/";
+
+  if (path === "/book") {
+    url.pathname = "/the-book/index.html";
+    return Response.redirect(url.toString(), 301);
+  }
+
+  const chapterMatch = path.match(/^\/book\/chapter-(\d+)-(.+)$/);
+  if (chapterMatch) {
+    const num = chapterMatch[1].padStart(2, "0");
+    url.pathname = `/the-book/ch-${num}-${chapterMatch[2]}.html`;
+    return Response.redirect(url.toString(), 301);
+  }
+
+  return null;
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const aliasRedirect = redirectAliasHost(request);
       if (aliasRedirect) return aliasRedirect;
+      const bookRedirect = redirectLegacyBookToMemoir(request);
+      if (bookRedirect) return bookRedirect;
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);

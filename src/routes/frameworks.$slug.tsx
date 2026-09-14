@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
-import { FRAMEWORKS, BOOK_CHAPTERS, ARTICLES, SITE, canonicalUrl, chapterPath } from "@/lib/site-data";
+import { FRAMEWORKS, BOOK_CHAPTERS, ARTICLES, SITE, canonicalUrl } from "@/lib/site-data";
 import { FRAMEWORK_ENRICHMENTS } from "@/lib/v4-content";
 import { CITABLE_ASSETS } from "@/lib/citable-assets";
 
@@ -338,13 +338,12 @@ function FrameworkPage() {
                 <ul className="mt-3 space-y-2">
                   {chapters.map((c) => (
                     <li key={c.slug}>
-                      <Link
-                        to="/book/$slug"
-                        params={{ slug: chapterPath(c) }}
+                      <a
+                        href={`/the-book/ch-${String(c.number).padStart(2, "0")}-${c.slug}.html`}
                         className="font-serif text-lg text-navy hover:text-gold"
                       >
                         Ch. {c.number}: {c.title}
-                      </Link>
+                      </a>
                     </li>
                   ))}
                 </ul>
