@@ -1,16 +1,23 @@
 /advisory /connect 301
 /architect /the-architect 301
-/memoir /book 301
+/memoir /book/ 301
 /dispatch /newsletter 301
 /executive-profile /the-architect 301
-/book/chapter-02-the-gulf-war-and-what-it-took /book/chapter-02-the-gulf-war 301
-/book/chapter-03-learning-to-rebuild /book/chapter-03-return-and-reinvention 301
-/book/chapter-04-entering-the-fortune-500 /book/chapter-04-breaking-into-the-room 301
-/book/chapter-05-procurement-as-power /book/chapter-05-governance-as-runway 301
-/book/chapter-06-governance-lessons-in-glass-towers /book/chapter-06-the-constraint-advantage 301
-/book/chapter-07-arriving-in-the-gulf /book/chapter-09-reading-cultures 301
-/book/chapter-08-the-oman-years /book/chapter-12-digital-nation-building 301
-/book/chapter-09-the-pyramid-a-framework-for-everything /book/chapter-07-the-pyramid 301
-/book/chapter-11-constraint-as-catalyst /book/chapter-06-the-constraint-advantage 301
-/book/chapter-13-ai-and-the-governance-gap /book/chapter-13-ai-as-interpreter 301
-/book/chapter-15-from-exile-to-transformation /book/chapter-16-the-mirror 301
+
+# The memoir is a self-contained static reader under /book/. Serve its index at
+# the clean /book/ URL and forward the previous dynamic chapter URLs (and their
+# earlier aliases) to the new static chapter pages.
+/book /book/ 301
+/book/ /book/index.html 200
+/book/chapter-02-the-gulf-war-and-what-it-took /book/ch-02-the-gulf-war.html 301
+/book/chapter-03-learning-to-rebuild /book/ch-03-return-and-reinvention.html 301
+/book/chapter-04-entering-the-fortune-500 /book/ch-04-breaking-into-the-room.html 301
+/book/chapter-05-procurement-as-power /book/ch-05-governance-as-runway.html 301
+/book/chapter-06-governance-lessons-in-glass-towers /book/ch-06-the-constraint-advantage.html 301
+/book/chapter-07-arriving-in-the-gulf /book/ch-09-reading-cultures.html 301
+/book/chapter-08-the-oman-years /book/ch-12-digital-nation-building.html 301
+/book/chapter-09-the-pyramid-a-framework-for-everything /book/ch-07-the-pyramid.html 301
+/book/chapter-11-constraint-as-catalyst /book/ch-06-the-constraint-advantage.html 301
+/book/chapter-13-ai-and-the-governance-gap /book/ch-13-ai-as-interpreter.html 301
+/book/chapter-15-from-exile-to-transformation /book/ch-16-the-mirror.html 301
+/book/chapter-* /book/ch-:splat.html 301

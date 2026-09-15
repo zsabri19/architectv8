@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as BookRouteImport } from './routes/book'
 import { Route as BookASessionRouteImport } from './routes/book-a-session'
 import { Route as ClarityosRouteImport } from './routes/clarityos'
 import { Route as ConnectRouteImport } from './routes/connect'
@@ -28,8 +27,6 @@ import { Route as TheArchitectRouteImport } from './routes/the-architect'
 import { Route as Char91DotmcpChar93ListToolsRouteImport } from './routes/[.mcp]/list-tools'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as BookASessionThanksRouteImport } from './routes/book-a-session_.thanks'
-import { Route as BookSlugRouteImport } from './routes/book_.$slug'
-import { Route as BookUnlockedRouteImport } from './routes/book_.unlocked'
 import { Route as FrameworksIndexRouteImport } from './routes/frameworks.index'
 import { Route as FrameworksSlugRouteImport } from './routes/frameworks.$slug'
 import { Route as InsightsIndexRouteImport } from './routes/insights.index'
@@ -39,11 +36,6 @@ import { Route as Char91DotmcpChar93InvokeToolToolRouteImport } from './routes/[
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BookRoute = BookRouteImport.update({
-  id: '/book',
-  path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BookASessionRoute = BookASessionRouteImport.update({
@@ -135,16 +127,6 @@ const BookASessionThanksRoute = BookASessionThanksRouteImport.update({
   path: '/book-a-session/thanks',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BookSlugRoute = BookSlugRouteImport.update({
-  id: '/book_/$slug',
-  path: '/book/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BookUnlockedRoute = BookUnlockedRouteImport.update({
-  id: '/book_/unlocked',
-  path: '/book/unlocked',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const FrameworksIndexRoute = FrameworksIndexRouteImport.update({
   id: '/frameworks/',
   path: '/frameworks/',
@@ -174,7 +156,6 @@ const Char91DotmcpChar93InvokeToolToolRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/book': typeof BookRoute
   '/book-a-session': typeof BookASessionRoute
   '/clarityos': typeof ClarityosRoute
   '/connect': typeof ConnectRoute
@@ -192,8 +173,6 @@ export interface FileRoutesByFullPath {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/book-a-session/thanks': typeof BookASessionThanksRoute
-  '/book/$slug': typeof BookSlugRoute
-  '/book/unlocked': typeof BookUnlockedRoute
   '/frameworks/$slug': typeof FrameworksSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/frameworks/': typeof FrameworksIndexRoute
@@ -202,7 +181,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/book': typeof BookRoute
   '/book-a-session': typeof BookASessionRoute
   '/clarityos': typeof ClarityosRoute
   '/connect': typeof ConnectRoute
@@ -220,8 +198,6 @@ export interface FileRoutesByTo {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/book-a-session/thanks': typeof BookASessionThanksRoute
-  '/book/$slug': typeof BookSlugRoute
-  '/book/unlocked': typeof BookUnlockedRoute
   '/frameworks/$slug': typeof FrameworksSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/frameworks': typeof FrameworksIndexRoute
@@ -231,7 +207,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/book': typeof BookRoute
   '/book-a-session': typeof BookASessionRoute
   '/clarityos': typeof ClarityosRoute
   '/connect': typeof ConnectRoute
@@ -249,8 +224,6 @@ export interface FileRoutesById {
   '/.mcp/list-tools': typeof Char91DotmcpChar93ListToolsRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/book-a-session_/thanks': typeof BookASessionThanksRoute
-  '/book_/$slug': typeof BookSlugRoute
-  '/book_/unlocked': typeof BookUnlockedRoute
   '/frameworks/$slug': typeof FrameworksSlugRoute
   '/insights/$slug': typeof InsightsSlugRoute
   '/frameworks/': typeof FrameworksIndexRoute
@@ -261,7 +234,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/book'
     | '/book-a-session'
     | '/clarityos'
     | '/connect'
@@ -279,8 +251,6 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/book-a-session/thanks'
-    | '/book/$slug'
-    | '/book/unlocked'
     | '/frameworks/$slug'
     | '/insights/$slug'
     | '/frameworks/'
@@ -289,7 +259,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/book'
     | '/book-a-session'
     | '/clarityos'
     | '/connect'
@@ -307,8 +276,6 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/book-a-session/thanks'
-    | '/book/$slug'
-    | '/book/unlocked'
     | '/frameworks/$slug'
     | '/insights/$slug'
     | '/frameworks'
@@ -317,7 +284,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/book'
     | '/book-a-session'
     | '/clarityos'
     | '/connect'
@@ -335,8 +301,6 @@ export interface FileRouteTypes {
     | '/.mcp/list-tools'
     | '/.well-known/oauth-protected-resource'
     | '/book-a-session_/thanks'
-    | '/book_/$slug'
-    | '/book_/unlocked'
     | '/frameworks/$slug'
     | '/insights/$slug'
     | '/frameworks/'
@@ -346,7 +310,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BookRoute: typeof BookRoute
   BookASessionRoute: typeof BookASessionRoute
   ClarityosRoute: typeof ClarityosRoute
   ConnectRoute: typeof ConnectRoute
@@ -364,8 +327,6 @@ export interface RootRouteChildren {
   Char91DotmcpChar93ListToolsRoute: typeof Char91DotmcpChar93ListToolsRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   BookASessionThanksRoute: typeof BookASessionThanksRoute
-  BookSlugRoute: typeof BookSlugRoute
-  BookUnlockedRoute: typeof BookUnlockedRoute
   FrameworksSlugRoute: typeof FrameworksSlugRoute
   InsightsSlugRoute: typeof InsightsSlugRoute
   FrameworksIndexRoute: typeof FrameworksIndexRoute
@@ -380,13 +341,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/book': {
-      id: '/book'
-      path: '/book'
-      fullPath: '/book'
-      preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/book-a-session': {
@@ -508,20 +462,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookASessionThanksRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/book_/$slug': {
-      id: '/book_/$slug'
-      path: '/book/$slug'
-      fullPath: '/book/$slug'
-      preLoaderRoute: typeof BookSlugRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/book_/unlocked': {
-      id: '/book_/unlocked'
-      path: '/book/unlocked'
-      fullPath: '/book/unlocked'
-      preLoaderRoute: typeof BookUnlockedRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/frameworks/': {
       id: '/frameworks/'
       path: '/frameworks'
@@ -562,7 +502,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BookRoute: BookRoute,
   BookASessionRoute: BookASessionRoute,
   ClarityosRoute: ClarityosRoute,
   ConnectRoute: ConnectRoute,
@@ -581,8 +520,6 @@ const rootRouteChildren: RootRouteChildren = {
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
   BookASessionThanksRoute: BookASessionThanksRoute,
-  BookSlugRoute: BookSlugRoute,
-  BookUnlockedRoute: BookUnlockedRoute,
   FrameworksSlugRoute: FrameworksSlugRoute,
   InsightsSlugRoute: InsightsSlugRoute,
   FrameworksIndexRoute: FrameworksIndexRoute,
