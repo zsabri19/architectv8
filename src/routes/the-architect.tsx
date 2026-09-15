@@ -253,7 +253,7 @@ function ArchitectPage() {
               Start a Conversation
             </a>
             <a
-              href="/the-book/index.html"
+              href="/book/"
               className="border border-navy/20 px-8 py-4 text-xs font-bold uppercase tracking-widest hover:border-navy"
             >
               Explore the Memoir

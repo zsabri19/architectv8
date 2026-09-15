@@ -9,7 +9,7 @@ const footerLinks = [
   { label: "Connect", href: "/connect" },
   { label: "The Architect", href: "/the-architect" },
   { label: "Frameworks", href: "/frameworks" },
-  { label: "The Book", href: "/the-book/index.html", external: true },
+  { label: "The Book", href: "/book/", external: true },
 ] as const;
 
 

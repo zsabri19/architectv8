@@ -82,22 +82,24 @@ function redirectAliasHost(request: Request): Response | null {
   return Response.redirect(url.toString(), 301);
 }
 
-// The memoir now ships as the self-contained static reading experience under
-// /the-book/. Forward the previous dynamic /book routes (and their indexed
-// chapter URLs) to the corresponding static pages so old links keep working.
+// The memoir ships as a self-contained static reading experience under /book/.
+// Old indexed chapter URLs (/book/chapter-NN-slug) are forwarded to the static
+// chapter pages, and a bare /book is sent to the reader index so relative asset
+// paths resolve. Static files (/book/index.html, /book/ch-*.html, /book/assets/*)
+// pass straight through to the asset handler.
 function redirectLegacyBookToMemoir(request: Request): Response | null {
   const url = new URL(request.url);
   const path = url.pathname.replace(/\/+$/, "") || "/";
 
-  if (path === "/book") {
-    url.pathname = "/the-book/index.html";
-    return Response.redirect(url.toString(), 301);
-  }
-
   const chapterMatch = path.match(/^\/book\/chapter-(\d+)-(.+)$/);
   if (chapterMatch) {
     const num = chapterMatch[1].padStart(2, "0");
-    url.pathname = `/the-book/ch-${num}-${chapterMatch[2]}.html`;
+    url.pathname = `/book/ch-${num}-${chapterMatch[2]}.html`;
+    return Response.redirect(url.toString(), 301);
+  }
+
+  if (path === "/book") {
+    url.pathname = "/book/index.html";
     return Response.redirect(url.toString(), 301);
   }
 

@@ -339,7 +339,7 @@ function FrameworkPage() {
                   {chapters.map((c) => (
                     <li key={c.slug}>
                       <a
-                        href={`/the-book/ch-${String(c.number).padStart(2, "0")}-${c.slug}.html`}
+                        href={`/book/ch-${String(c.number).padStart(2, "0")}-${c.slug}.html`}
                         className="font-serif text-lg text-navy hover:text-gold"
                       >
                         Ch. {c.number}: {c.title}
