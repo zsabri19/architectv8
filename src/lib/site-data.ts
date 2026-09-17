@@ -677,6 +677,13 @@ export const BOOK_CHAPTERS: BookChapter[] = [
 export const chapterPath = (chapter: BookChapter) =>
   `chapter-${String(chapter.number).padStart(2, "0")}-${chapter.slug}`;
 
+/** Locked illustrated edition (static HTML + plates) served from /read/. */
+export const ILLUSTRATED_COVER = "/read/index.html";
+export const ILLUSTRATED_PROLOGUE = "/read/prologue.html";
+export const ILLUSTRATED_EPILOGUE = "/read/epilogue.html";
+export const illustratedChapterHref = (chapter: BookChapter) =>
+  `/read/ch-${String(chapter.number).padStart(2, "0")}-${chapter.slug}.html`;
+
 /** Private first-draft audio players. Stay off nav and sitemap. */
 export const LISTEN_BASE = "https://listen.global-mkts.com";
 export const listenChapterUrl = (chapter: BookChapter) => `${LISTEN_BASE}/${chapter.number}/`;

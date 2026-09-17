@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 import { MemoirListenLink } from "@/components/site/MemoirListenLink";
@@ -8,7 +8,9 @@ import {
   BOOK_CHAPTERS,
   SITE,
   canonicalUrl,
-  chapterPath,
+  ILLUSTRATED_COVER,
+  ILLUSTRATED_PROLOGUE,
+  illustratedChapterHref,
   LISTEN_PROLOGUE,
   LISTEN_EPILOGUE,
 } from "@/lib/site-data";
@@ -33,7 +35,7 @@ export const Route = createFileRoute("/book")({
       {
         name: "description",
         content:
-          "Four parts, sixteen chapters. From Exile to Transformation — the memoir behind ClarityOS. Join the pre-order waitlist for the 2026 release.",
+          "Four parts, sixteen chapters. From Exile to Transformation — the illustrated memoir behind ClarityOS. Read the digital edition now; join the waitlist for print.",
       },
       { property: "og:title", content: "From Exile to Transformation" },
       {
@@ -67,25 +69,17 @@ function BookPage() {
     <SiteLayout>
       <section className="overflow-hidden bg-navy py-24 text-paper lg:py-32">
         <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:px-8">
-          <div className="mx-auto aspect-[3/4] w-full max-w-sm border border-paper/10 bg-gradient-to-br from-navy-soft to-navy p-10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
-            <div className="flex h-full flex-col justify-between text-paper">
-              <div className="text-[10px] font-medium uppercase tracking-[0.3em] text-gold">
-                A Memoir Beyond Techniques
-              </div>
-              <div>
-                <div className="font-serif text-4xl leading-tight">
-                  From Exile <br />
-                  to <br />
-                  <span className="italic text-gold">Transformation</span>
-                </div>
-                <div className="mt-6 text-[10px] uppercase tracking-widest text-paper/50">
-                  Zeeshan Sabri · 2026
-                </div>
-              </div>
-            </div>
-          </div>
+          <a href={ILLUSTRATED_COVER} className="mx-auto block aspect-[3/4] w-full max-w-sm overflow-hidden border border-paper/10">
+            <img
+              src="/read/assets/photos/cover-headshot.jpeg"
+              alt="From Exile to Transformation — cover portrait of Zeeshan Sabri"
+              className="h-full w-full object-cover object-top"
+              width={532}
+              height={852}
+            />
+          </a>
           <div>
-            <Eyebrow>Forthcoming — 2026</Eyebrow>
+            <Eyebrow>Illustrated edition · open to read</Eyebrow>
             <h1 className="font-serif text-4xl leading-tight md:text-6xl">
               From Exile to Transformation
             </h1>
@@ -97,6 +91,12 @@ function BookPage() {
               From the Gulf War to Fortune 500 boardrooms, from Muscat to Dubai, this is the record
               of what it took to build a system that holds under real pressure.
             </p>
+            <a
+              href={ILLUSTRATED_COVER}
+              className="mt-8 inline-flex w-full items-center justify-center bg-gold py-4 text-xs font-bold uppercase tracking-widest text-navy hover:bg-paper"
+            >
+              Open the illustrated book
+            </a>
             <form onSubmit={async (e) => {
               e.preventDefault();
               const form = e.currentTarget;
@@ -135,11 +135,11 @@ function BookPage() {
                 name="email"
                 type="email"
                 required
-                placeholder="Join the pre-order waitlist"
+                placeholder="Print edition waitlist"
                 className="w-full border border-paper/20 bg-paper/5 px-6 py-4 text-paper placeholder-paper/40 outline-none focus:border-gold"
               />
               <button className="w-full bg-gold py-4 text-xs font-bold uppercase tracking-widest text-navy hover:bg-paper">
-                Secure Early Access
+                Notify me when print ships
               </button>
             </form>
           </div>
@@ -182,14 +182,22 @@ function BookPage() {
               </p>
             ))}
           </div>
-          <a
-            href={LISTEN_PROLOGUE}
-            className="mt-8 inline-flex text-[11px] font-medium uppercase tracking-widest text-navy hover:text-gold"
-            rel="nofollow noopener noreferrer"
-            target="_blank"
-          >
-            Listen to the prologue →
-          </a>
+          <div className="mt-8 flex flex-wrap gap-6">
+            <a
+              href={ILLUSTRATED_PROLOGUE}
+              className="inline-flex text-[11px] font-medium uppercase tracking-widest text-navy hover:text-gold"
+            >
+              Read the illustrated prologue →
+            </a>
+            <a
+              href={LISTEN_PROLOGUE}
+              className="inline-flex text-[11px] font-medium uppercase tracking-widest text-navy/50 hover:text-gold"
+              rel="nofollow noopener noreferrer"
+              target="_blank"
+            >
+              Listen to the prologue →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -226,9 +234,8 @@ function BookPage() {
                       key={c.slug}
                       className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 py-5"
                     >
-                      <Link
-                        to="/book/$slug"
-                        params={{ slug: chapterPath(c) }}
+                      <a
+                        href={illustratedChapterHref(c)}
                         className="group flex min-w-0 items-baseline gap-6"
                       >
                         <span className="font-mono text-xs text-navy/40">
@@ -237,15 +244,11 @@ function BookPage() {
                         <span className="font-serif text-lg text-navy group-hover:text-gold">
                           {c.title}
                         </span>
-                      </Link>
+                      </a>
                       <span className="flex items-center gap-5 text-[10px] font-medium uppercase tracking-widest">
-                        <Link
-                          to="/book/$slug"
-                          params={{ slug: chapterPath(c) }}
-                          className="text-navy/40 hover:text-gold"
-                        >
+                        <a href={illustratedChapterHref(c)} className="text-navy/40 hover:text-gold">
                           Read
-                        </Link>
+                        </a>
                         <MemoirListenLink chapter={c} className="text-navy/40 hover:text-gold">
                           Listen
                         </MemoirListenLink>
@@ -257,14 +260,22 @@ function BookPage() {
             );
           })}
         </div>
-        <a
-          href={LISTEN_EPILOGUE}
-          className="mt-10 inline-flex text-[11px] font-medium uppercase tracking-widest text-navy hover:text-gold"
-          rel="nofollow noopener noreferrer"
-          target="_blank"
-        >
-          Listen to the epilogue →
-        </a>
+        <div className="mt-10 flex flex-wrap gap-6">
+          <a
+            href="/read/epilogue.html"
+            className="inline-flex text-[11px] font-medium uppercase tracking-widest text-navy hover:text-gold"
+          >
+            Read the illustrated epilogue →
+          </a>
+          <a
+            href={LISTEN_EPILOGUE}
+            className="inline-flex text-[11px] font-medium uppercase tracking-widest text-navy/50 hover:text-gold"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+          >
+            Listen to the epilogue →
+          </a>
+        </div>
       </section>
 
       {/* Metrics */}

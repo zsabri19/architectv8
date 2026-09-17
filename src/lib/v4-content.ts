@@ -480,7 +480,7 @@ export const BOOK_CLOSING = {
 export const BOOK_PUBLISHER = {
   headline: "Interested in This Manuscript?",
   body:
-    "The manuscript is currently in first draft stage and available for publisher review. For inquiries about publishing rights, representation, or collaboration opportunities, please reach out directly.",
+    "The illustrated digital edition is live. Print and translation rights remain available for publisher review. For inquiries about publishing rights, representation, or collaboration, please reach out directly.",
   cta: "Contact the Author",
 };
 

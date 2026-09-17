@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
 import { persistMemoirUnlock } from "@/lib/memoir/access";
-import { BOOK_CHAPTERS, chapterPath, canonicalUrl } from "@/lib/site-data";
+import { BOOK_CHAPTERS, illustratedChapterHref, canonicalUrl } from "@/lib/site-data";
 
 export const Route = createFileRoute("/book_/unlocked")({
   head: () => ({
@@ -36,13 +36,12 @@ function UnlockedPage() {
           you left off — or start Chapter Two.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link
-            to="/book/$slug"
-            params={{ slug: chapterPath(next) }}
+          <a
+            href={illustratedChapterHref(next)}
             className="inline-flex border border-navy bg-navy px-6 py-3 text-[11px] font-bold uppercase tracking-widest text-paper"
           >
             Continue reading
-          </Link>
+          </a>
           <Link
             to="/book"
             className="inline-flex border border-navy/20 px-6 py-3 text-[11px] font-bold uppercase tracking-widest text-navy"
