@@ -9,7 +9,7 @@ const footerLinks = [
   { label: "Connect", href: "/connect" },
   { label: "The Architect", href: "/the-architect" },
   { label: "Frameworks", href: "/frameworks" },
-  { label: "The Book", href: "/book" },
+  { label: "The Book", href: "/book/", external: true },
 ] as const;
 
 
@@ -28,11 +28,17 @@ export function Footer() {
         </div>
 
         <div className="footer-links" aria-label="Footer navigation">
-          {footerLinks.map((item) => (
-            <Link key={item.href} to={item.href}>
-              {item.label}
-            </Link>
-          ))}
+          {footerLinks.map((item) =>
+            "external" in item && item.external ? (
+              <a key={item.href} href={item.href}>
+                {item.label}
+              </a>
+            ) : (
+              <Link key={item.href} to={item.href}>
+                {item.label}
+              </Link>
+            ),
+          )}
         </div>
 
         <div className="footer-contact">
