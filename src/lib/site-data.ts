@@ -98,31 +98,63 @@ export const LOGOS_INSTITUTIONS = [
 ];
 
 export const LOGOS_VENTURES = [
-  { name: "Global Markets Technologies", alt: "Global Markets Technologies logo", src: logoGmt.url },
+  {
+    name: "Global Markets Technologies",
+    alt: "Global Markets Technologies logo",
+    src: logoGmt.url,
+  },
   { name: "SuperJet", alt: "SuperJet aviation services logo", src: logoSuperjet.url },
-  { name: "NASTP", alt: "NASTP National Aerospace Science and Technology Park logo", src: logoNastp.url },
+  {
+    name: "NASTP",
+    alt: "NASTP National Aerospace Science and Technology Park logo",
+    src: logoNastp.url,
+  },
   { name: "Da1ilmverse", alt: "Da1ilmverse learning platform logo", src: logoDa1ilmverse.url },
   { name: "Jabr", alt: "Jabr consulting logo", src: logoJabr.url },
   { name: "Sanad Services Center", alt: "Sanad Services Center logo", src: logoSanad.url },
   { name: "SCMDojo", alt: "SCMDojo supply chain academy logo", src: logoScmdojo.url },
   { name: "ROSP", alt: "ROSP professional development logo", src: logoRosp.url },
   { name: "Kuwait Cricket", alt: "Kuwait Cricket association logo", src: logoKuwaitCricket.url },
-  { name: "Boost Training & Consulting", alt: "Boost Training and Consulting logo", src: logoBoost.url },
+  {
+    name: "Boost Training & Consulting",
+    alt: "Boost Training and Consulting logo",
+    src: logoBoost.url,
+  },
 ];
 
 export const FIELD_PHOTOS = [
-  { src: talkLumsDecode.url, caption: "LUMS Lahore — Decode Conference keynote, ClarityOS unveil", tag: "Keynote" },
+  {
+    src: talkLumsDecode.url,
+    caption: "LUMS Lahore — Decode Conference keynote, ClarityOS unveil",
+    tag: "Keynote",
+  },
   { src: talkStage.url, caption: "The Architecture of Change — mainstage keynote", tag: "Keynote" },
   { src: talkIgnite.url, caption: "Ignite Fireside Chat — founder conversation", tag: "Keynote" },
-  { src: fieldMsiMe.url, caption: "Motorola Solutions — Middle East partner enablement", tag: "Enterprise" },
-  { src: fieldMsiEvent.url, caption: "Motorola Solutions — Dubai partner event", tag: "Enterprise" },
+  {
+    src: fieldMsiMe.url,
+    caption: "Motorola Solutions — Middle East partner enablement",
+    tag: "Enterprise",
+  },
+  {
+    src: fieldMsiEvent.url,
+    caption: "Motorola Solutions — Dubai partner event",
+    tag: "Enterprise",
+  },
   { src: fieldDubaiPanel.url, caption: "Procurement Leaders Panel — Dubai", tag: "Panel" },
-  { src: fieldKsaDefence1.url, caption: "KSA defence procurement workshop — cohort", tag: "Workshop" },
+  {
+    src: fieldKsaDefence1.url,
+    caption: "KSA defence procurement workshop — cohort",
+    tag: "Workshop",
+  },
   { src: fieldKsaDefence2.url, caption: "KSA defence — cohort certification", tag: "Workshop" },
   { src: fieldKsaPartner.url, caption: "KSA — partner enablement session", tag: "Enterprise" },
   { src: fieldDohaAi.url, caption: "Doha — AI leadership workshop", tag: "Workshop" },
   { src: fieldDohaAi2.url, caption: "Doha — AI working session", tag: "Workshop" },
-  { src: fieldOshFounders.url, caption: "Oman — What You Can't Predict, founders session", tag: "Workshop" },
+  {
+    src: fieldOshFounders.url,
+    caption: "Oman — What You Can't Predict, founders session",
+    tag: "Workshop",
+  },
   { src: talkOsh04.url, caption: "OSH — Hard Questions workshop", tag: "Workshop" },
   { src: talkOsh18.url, caption: "OSH — the Inside session", tag: "Workshop" },
   { src: talkOsh21.url, caption: "OSH — What You Can't Predict", tag: "Workshop" },
@@ -135,9 +167,21 @@ export const TEAM_PHOTOS = [
 ];
 
 export const RECOGNITION = [
-  { src: recHuaweiMentor.url, title: "Huawei — Best Mentor Award", note: "Recognised for mentorship across Huawei ME." },
-  { src: recHuaweiFarewell.url, title: "Huawei Bahrain — farewell tribute", note: "Team recognition from Huawei Bahrain." },
-  { src: recKuwaitSummit.url, title: "Kuwait Procurement Summit", note: "Featured speaker and industry recognition." },
+  {
+    src: recHuaweiMentor.url,
+    title: "Huawei — Best Mentor Award",
+    note: "Recognised for mentorship across Huawei ME.",
+  },
+  {
+    src: recHuaweiFarewell.url,
+    title: "Huawei Bahrain — farewell tribute",
+    note: "Team recognition from Huawei Bahrain.",
+  },
+  {
+    src: recKuwaitSummit.url,
+    title: "Kuwait Procurement Summit",
+    note: "Featured speaker and industry recognition.",
+  },
 ];
 
 export const CERT_AICERTS_PDF = certAicerts.url;
@@ -174,7 +218,6 @@ export const CERTIFICATIONS = [
   },
 ];
 
-
 export const ARCHIVE_CRICKET = [
   {
     src: archiveCricketMag.url,
@@ -202,28 +245,32 @@ export const QUOTE_CARDS: QuoteCard[] = [
   {
     slug: "crisis",
     src: quoteCrisis.url,
-    quote: "Crisis does not introduce disorder. Crisis compresses time and exposes what was already ungoverned.",
+    quote:
+      "Crisis does not introduce disorder. Crisis compresses time and exposes what was already ungoverned.",
     attribution: "Zeeshan Sabri",
     relatedFramework: "crisis-as-audit",
   },
   {
     slug: "leadership",
     src: quoteLeadership.url,
-    quote: "Leadership isn't measured by numbers alone. True leaders are architects of change, evolving their approach while others chase metrics.",
+    quote:
+      "Leadership isn't measured by numbers alone. True leaders are architects of change, evolving their approach while others chase metrics.",
     attribution: "Zeeshan Sabri",
     relatedFramework: "character-compass",
   },
   {
     slug: "brain",
     src: quoteBrain.url,
-    quote: "Under uncertainty, the brain activates threat response. Silos are not political — silos feel safe when clarity is missing.",
+    quote:
+      "Under uncertainty, the brain activates threat response. Silos are not political — silos feel safe when clarity is missing.",
     attribution: "Zeeshan Sabri",
     relatedFramework: "8c-crisis-to-clarity",
   },
   {
     slug: "act",
     src: quoteAct.url,
-    quote: "Theory becomes reality only when we dare to act on it. Every breakthrough starts with someone who believed the impossible was just waiting to be proven.",
+    quote:
+      "Theory becomes reality only when we dare to act on it. Every breakthrough starts with someone who believed the impossible was just waiting to be proven.",
     attribution: "Zeeshan Sabri",
   },
   {
@@ -292,8 +339,7 @@ export const TESTIMONIALS: Testimonial[] = [
     source: "Partner Note",
   },
   {
-    quote:
-      "Thanks to the trainer for the speed and ease with which the information was delivered.",
+    quote: "Thanks to the trainer for the speed and ease with which the information was delivered.",
     name: "Mohsen Fazili",
     title: "Procurement Specialist",
     org: "NCMS Programme — Riyadh",
@@ -357,21 +403,24 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     client: "ADNOC",
     sector: "Energy & Defence",
-    challenge: "Procurement professionals needed financial management capability to manage complex supply chains.",
+    challenge:
+      "Procurement professionals needed financial management capability to manage complex supply chains.",
     outcome: "Excellent feedback across all participants; programme extended.",
     metric: "100% participant satisfaction",
   },
   {
     client: "NCMS — National Company for Mechanical Systems",
     sector: "Defence & Manufacturing",
-    challenge: "Leadership team required decision clarity and governance redesign across 80+ workshops.",
+    challenge:
+      "Leadership team required decision clarity and governance redesign across 80+ workshops.",
     outcome: "Pyramid Framework adopted at 90–95% vs. 25% industry standard.",
     metric: "90–95% adoption rate",
   },
   {
     client: "Motorola Solutions",
     sector: "Enterprise Technology",
-    challenge: "Middle East partner enablement required cross-cultural authority and structured engagement.",
+    challenge:
+      "Middle East partner enablement required cross-cultural authority and structured engagement.",
     outcome: "Partner programme delivered across Dubai and regional offices.",
     metric: "Multi-country delivery",
   },
@@ -437,8 +486,14 @@ export const FRAMEWORKS: Framework[] = [
     summary:
       "A recursive eight-dimension protocol for moving an organisation from crisis to durable operating clarity.",
     parameters: [
-      "Clarity", "Conditions", "Control", "Capability",
-      "Calibration", "Correction", "Continuity", "Coaching",
+      "Clarity",
+      "Conditions",
+      "Control",
+      "Capability",
+      "Calibration",
+      "Correction",
+      "Continuity",
+      "Coaching",
     ],
     impact: "Reduces decision drag; installs a shared operating rhythm.",
     leadMagnet: "8C Crisis-to-Clarity Field Guide (PDF)",
@@ -448,8 +503,14 @@ export const FRAMEWORKS: Framework[] = [
     number: 2,
     title: "Exile Resilience Framework",
     eyebrow: "Resilience & Crisis Leadership",
-    summary: "How leaders forge continuity when the ground itself is being pulled out from under them.",
-    parameters: ["Displacement audit", "Identity anchors", "Continuity contracts", "Return architecture"],
+    summary:
+      "How leaders forge continuity when the ground itself is being pulled out from under them.",
+    parameters: [
+      "Displacement audit",
+      "Identity anchors",
+      "Continuity contracts",
+      "Return architecture",
+    ],
     impact: "60% faster crisis response across validated engagements.",
     leadMagnet: "Exile Resilience Framework (PDF)",
   },
@@ -500,7 +561,8 @@ export const FRAMEWORKS: Framework[] = [
     number: 7,
     title: "Market Volatility Navigation",
     eyebrow: "GCC Strategy",
-    summary: "Navigate GCC market cycles, sanctions regimes, and geopolitical shifts without losing thesis.",
+    summary:
+      "Navigate GCC market cycles, sanctions regimes, and geopolitical shifts without losing thesis.",
     parameters: ["Signal stack", "Reversibility calculus", "Hedged commitments", "Cadence review"],
     impact: "6 GCC markets navigated; cross-border authority built in 24 months.",
     leadMagnet: "Volatility Navigation Scorecard",
@@ -511,7 +573,12 @@ export const FRAMEWORKS: Framework[] = [
     title: "Crisis as Audit",
     eyebrow: "Resilience",
     summary: "Treat every crisis as a diagnostic of what the pre-crisis system was hiding.",
-    parameters: ["Crisis timeline", "Latent defects", "Ownership map", "Corrective operating rhythm"],
+    parameters: [
+      "Crisis timeline",
+      "Latent defects",
+      "Ownership map",
+      "Corrective operating rhythm",
+    ],
     impact: "60–85% organisational resilience improvement across crisis scenarios.",
     leadMagnet: "Crisis-as-Audit Debrief Template",
   },
@@ -541,7 +608,8 @@ export const FRAMEWORKS: Framework[] = [
     number: 11,
     title: "Cross-Cultural Authority",
     eyebrow: "GCC Strategy",
-    summary: "Build authority that reads legitimate across four or more cultural registers simultaneously.",
+    summary:
+      "Build authority that reads legitimate across four or more cultural registers simultaneously.",
     parameters: ["Register mapping", "Legitimacy debts", "Translation debt", "Public commitments"],
     impact: "24-month cross-border authority build in six GCC markets.",
     leadMagnet: "Cross-Cultural Authority Guide",
@@ -552,7 +620,12 @@ export const FRAMEWORKS: Framework[] = [
     title: "Super-Labor Framework",
     eyebrow: "Operating Redesign",
     summary: "Restructure subcontracted and blended labour without collapsing delivery.",
-    parameters: ["Skill bundling", "Compliance envelope", "Retention economics", "Escalation paths"],
+    parameters: [
+      "Skill bundling",
+      "Compliance envelope",
+      "Retention economics",
+      "Escalation paths",
+    ],
     impact: "75% reduction in subcontractor penalties, Oman deployment.",
     leadMagnet: "Super-Labor Design Kit",
   },
@@ -563,7 +636,12 @@ export const FRAMEWORKS: Framework[] = [
     eyebrow: "Public Sector",
     summary:
       "Design and stand up national-scale digital platforms with governance that survives political cycles.",
-    parameters: ["Citizen surface", "Sovereign stack", "Institutional patronage", "Continuity guarantees"],
+    parameters: [
+      "Citizen surface",
+      "Sovereign stack",
+      "Institutional patronage",
+      "Continuity guarantees",
+    ],
     impact: "5M+ citizens served through national platform work.",
     leadMagnet: "Digital Nation Building Brief",
   },
@@ -572,7 +650,8 @@ export const FRAMEWORKS: Framework[] = [
     number: 14,
     title: "AI Governance Integration",
     eyebrow: "AI & Governance",
-    summary: "Integrate AI capability into regulated environments without breaking the compliance envelope.",
+    summary:
+      "Integrate AI capability into regulated environments without breaking the compliance envelope.",
     parameters: ["Risk taxonomy", "Human-in-the-loop", "Auditable prompts", "Board reporting"],
     impact: "AI CERTs-certified integration path for GCC executives.",
     leadMagnet: "AI Governance Integration Checklist",
@@ -608,7 +687,6 @@ export const FRAMEWORKS: Framework[] = [
   },
 ];
 
-
 export type BookChapter = {
   number: number;
   slug: string;
@@ -622,56 +700,144 @@ export const BOOK_PARTS = [
   { number: "I", title: "The Human OS", pillar: "Clarity born in exile" },
   { number: "II", title: "The Enterprise OS", pillar: "Fortune 500 foundations · The Pyramid" },
   { number: "III", title: "The Nation OS", pillar: "Digital nation-building & AI governance" },
-  { number: "IV", title: "The Legacy OS", pillar: "Executive character & leadership sustainability" },
+  {
+    number: "IV",
+    title: "The Legacy OS",
+    pillar: "Executive character & leadership sustainability",
+  },
 ];
 
 export const BOOK_CHAPTERS: BookChapter[] = [
-  { number: 1, slug: "born-between-worlds", part: "I", title: "Born Between Worlds",
+  {
+    number: 1,
+    slug: "born-between-worlds",
+    part: "I",
+    title: "Born Between Worlds",
     lesson: "The duality of belonging. Leaders don't just read contracts. They read cultures.",
-    relatedFramework: "cultural-ecosystem-mapping" },
-  { number: 2, slug: "the-gulf-war", part: "I", title: "The Gulf War — When Systems Collapse",
-    lesson: "When systems collapse, resilience becomes your first governance framework. Clarity is born in exile, not in comfort.",
-    relatedFramework: "exile-resilience" },
-  { number: 3, slug: "return-and-reinvention", part: "I", title: "Return and Reinvention",
+    relatedFramework: "cultural-ecosystem-mapping",
+  },
+  {
+    number: 2,
+    slug: "the-gulf-war",
+    part: "I",
+    title: "The Gulf War — When Systems Collapse",
+    lesson:
+      "When systems collapse, resilience becomes your first governance framework. Clarity is born in exile, not in comfort.",
+    relatedFramework: "exile-resilience",
+  },
+  {
+    number: 3,
+    slug: "return-and-reinvention",
+    part: "I",
+    title: "Return and Reinvention",
     lesson: "Success is about adapting without losing your core.",
-    relatedFramework: "identity-preservation" },
-  { number: 4, slug: "breaking-into-the-room", part: "II", title: "Breaking Into the Room",
+    relatedFramework: "identity-preservation",
+  },
+  {
+    number: 4,
+    slug: "breaking-into-the-room",
+    part: "II",
+    title: "Breaking Into the Room",
     lesson: "No profession is too tactical to become transformational.",
-    relatedFramework: "function-reframing" },
-  { number: 5, slug: "governance-as-runway", part: "II", title: "Governance as Runway",
+    relatedFramework: "function-reframing",
+  },
+  {
+    number: 5,
+    slug: "governance-as-runway",
+    part: "II",
+    title: "Governance as Runway",
     lesson: "Governance isn't red tape. It's the runway.",
-    relatedFramework: "governance-as-accelerator" },
-  { number: 6, slug: "the-constraint-advantage", part: "II", title: "The Constraint Advantage",
+    relatedFramework: "governance-as-accelerator",
+  },
+  {
+    number: 6,
+    slug: "the-constraint-advantage",
+    part: "II",
+    title: "The Constraint Advantage",
     lesson: "Constraints are not obstacles — they are innovation accelerators.",
-    relatedFramework: "constraint-based-innovation" },
-  { number: 7, slug: "the-pyramid", part: "II", title: "The Pyramid",
+    relatedFramework: "constraint-based-innovation",
+  },
+  {
+    number: 7,
+    slug: "the-pyramid",
+    part: "II",
+    title: "The Pyramid",
     lesson: "If a framework can't guide a friend, it won't guide a Fortune 500.",
-    relatedFramework: "pyramid-framework" },
-  { number: 8, slug: "reframing-the-people", part: "II", title: "Reframing the People",
+    relatedFramework: "pyramid-framework",
+  },
+  {
+    number: 8,
+    slug: "reframing-the-people",
+    part: "II",
+    title: "Reframing the People",
     lesson: "You cannot reframe a function without reframing the people within it.",
-    relatedFramework: "function-reframing" },
-  { number: 9, slug: "reading-cultures", part: "III", title: "Reading Cultures, Not Just Contracts",
+    relatedFramework: "function-reframing",
+  },
+  {
+    number: 9,
+    slug: "reading-cultures",
+    part: "III",
+    title: "Reading Cultures, Not Just Contracts",
     lesson: "Leaders don't just read contracts. They read cultures.",
-    relatedFramework: "cultural-ecosystem-mapping" },
-  { number: 10, slug: "building-authority", part: "III", title: "Building Authority Across Borders",
-    lesson: "Authority transcends geography when built on competence, cultural respect, and consistent value delivery.",
-    relatedFramework: "cross-cultural-authority" },
-  { number: 11, slug: "super-labor", part: "III", title: "Super-Labor — Dignity at the Root",
+    relatedFramework: "cultural-ecosystem-mapping",
+  },
+  {
+    number: 10,
+    slug: "building-authority",
+    part: "III",
+    title: "Building Authority Across Borders",
+    lesson:
+      "Authority transcends geography when built on competence, cultural respect, and consistent value delivery.",
+    relatedFramework: "cross-cultural-authority",
+  },
+  {
+    number: 11,
+    slug: "super-labor",
+    part: "III",
+    title: "Super-Labor — Dignity at the Root",
     lesson: "Sustainable change begins where trust is weakest.",
-    relatedFramework: "super-labor" },
-  { number: 12, slug: "digital-nation-building", part: "III", title: "Digital Nation-Building in Oman",
+    relatedFramework: "super-labor",
+  },
+  {
+    number: 12,
+    slug: "digital-nation-building",
+    part: "III",
+    title: "Digital Nation-Building in Oman",
     lesson: "Nation-building begins with solving frustrations you've lived.",
-    relatedFramework: "digital-nation-building" },
-  { number: 13, slug: "ai-as-interpreter", part: "III", title: "AI as Interpreter, Not Replacement",
+    relatedFramework: "digital-nation-building",
+  },
+  {
+    number: 13,
+    slug: "ai-as-interpreter",
+    part: "III",
+    title: "AI as Interpreter, Not Replacement",
     lesson: "Technology becomes transformation only when leaders act as interpreters.",
-    relatedFramework: "ai-governance-integration" },
-  { number: 14, slug: "the-character-compass", part: "IV", title: "The Character Compass",
-    lesson: "Emotional intelligence is not optional. It is the architecture of sustainable leadership.",
-    relatedFramework: "character-compass" },
-  { number: 15, slug: "letters-to-my-daughters", part: "IV", title: "Letters to My Daughters",
-    lesson: "A legacy beyond business — presence under pressure, and the space you create for others to grow." },
-  { number: 16, slug: "the-mirror", part: "IV", title: "The Mirror",
-    lesson: "A mirror does not coach. It shows you what is actually there." },
+    relatedFramework: "ai-governance-integration",
+  },
+  {
+    number: 14,
+    slug: "the-character-compass",
+    part: "IV",
+    title: "The Character Compass",
+    lesson:
+      "Emotional intelligence is not optional. It is the architecture of sustainable leadership.",
+    relatedFramework: "character-compass",
+  },
+  {
+    number: 15,
+    slug: "letters-to-my-daughters",
+    part: "IV",
+    title: "Letters to My Daughters",
+    lesson:
+      "A legacy beyond business — presence under pressure, and the space you create for others to grow.",
+  },
+  {
+    number: 16,
+    slug: "the-mirror",
+    part: "IV",
+    title: "The Mirror",
+    lesson: "A mirror does not coach. It shows you what is actually there.",
+  },
 ];
 
 export const chapterPath = (chapter: BookChapter) =>
@@ -684,6 +850,7 @@ export const LISTEN_PROLOGUE = `${LISTEN_BASE}/prologue/`;
 export const LISTEN_EPILOGUE = `${LISTEN_BASE}/epilogue/`;
 
 export type ArticleSection = { heading: string; paragraphs: string[] };
+export type ArticleFaq = { question: string; answer: string };
 export type Article = {
   slug: string;
   number: string;
@@ -696,9 +863,144 @@ export type Article = {
   /** Optional listing chip, e.g. "New" — shown on Insights index card only. */
   badge?: string;
   sections: ArticleSection[];
+  /** Optional FAQ block — rendered at the end of the article and emitted as FAQPage schema. */
+  faqs?: ArticleFaq[];
 };
 
 export const ARTICLES: Article[] = [
+  {
+    slug: "human-operating-system",
+    number: "08",
+    title:
+      "Zeeshan Sabri and the Human Operating System: Why Transformation Must Begin with Clarity",
+    summary:
+      "The definitive statement of the ClarityOS thesis. Every enterprise runs two operating systems — the System OS it bought and the Human OS it actually runs. Transformation fails when the second one cannot hold, and stabilisation, not optimisation, is what makes it hold.",
+    lede: "Digital transformation has promised organizations a faster, smarter future for years. Platforms arrive, dashboards multiply, AI moves into boardroom conversations. Yet many organizations still can't answer a basic question: what happens when the technology is ready but the organization isn't?",
+    category: "Transformation architecture",
+    date: "2026-09-17",
+    badge: "New",
+    relatedFramework: "8c-crisis-to-clarity",
+    sections: [
+      {
+        heading: "The question underneath the transformation agenda",
+        paragraphs: [
+          "That question sits at the center of Zeeshan Sabri's working philosophy. Sabri, a GCC-based transformation leader, executive advisor, and supply chain specialist, built his ClarityOS methodology on a simple proposition: stabilization should come before optimization.",
+          "The distinction matters because organizations rarely experience transformation as a clean technology project. Real transformation happens through people — making decisions, interpreting information, negotiating priorities, responding to pressure, managing suppliers, escalating risk. A sophisticated system can tell an organization what should happen. It cannot guarantee that people will behave in ways that preserve value when circumstances get ambiguous or emotionally charged. ClarityOS therefore places a Human Operating System alongside the conventional System OS of software, workflows, data, and controls. The System OS tells an organization what the contract requires; the Human OS determines whether the organization behaves in a way that preserves it.",
+          "This is not an abstract concern in the GCC, where infrastructure, energy, telecom, and national transformation programmes routinely involve multiple organizations working across commercial, technical, and regulatory boundaries at once. Strategy& reported in May 2026 that the region has more than $2 trillion in mega-projects lined up through 2035, with roughly $1.5 trillion still in planning over the coming decade. At that scale, even a small execution failure becomes a material commercial event. The question is no longer whether an organization has the right systems. It's whether its operating model can convert those systems into disciplined decisions before value starts leaking away.",
+        ],
+      },
+      {
+        heading: "The transformation problem leaders keep solving with technology",
+        paragraphs: [
+          "Enterprises tend to treat transformation as a systems problem because systems are visible. You can buy an ERP platform, deploy an AI model, build a procurement dashboard. These investments are tangible, measurable, and easy to explain to a board. The hard part comes after implementation, when employees have to interpret new information, change habits, challenge assumptions, and make decisions differently. Many programmes hit friction here: the organization changed its technology without changing the behavioral conditions the technology operates in.",
+          "The Human OS concept starts in that gap. Complex work is a distributed operating system. Legal interprets contract terms, commercial negotiates value, project teams manage delivery, engineers interpret requirements, procurement manages suppliers, finance controls payments, executives manage relationships, subcontractors do the work. Each participant sees part of the picture. A contract may sit centrally in the organization's systems while the decisions that affect its value are scattered across meetings, email, site instructions, approvals, phone calls, and corridor conversations.",
+          "That creates a dangerous distance between knowledge and action. An organization may know a contractual notice is required, yet the person closest to the event doesn't recognize the clock has started. A procurement team understands the commercial terms while an operational manager makes an informal commitment that creates an obligation downstream. A senior executive promises a client something to protect the relationship, not realizing delivery can't support it. None of this starts with incompetence. It happens because information, authority, incentives, and decision-making behavior aren't aligned.",
+          "Picture a project manager preparing a response to a major customer escalation. Ten minutes, angry customer, delivery team under pressure, commercial consequences unclear. A 200-page contract library is technically available. A dashboard holds the project status. A claims system holds historical records. But if none of that reaches the decision-maker in usable form before the email goes out, the organization has still had a Human OS failure. The technology existed; the economic protection arrived too late.",
+        ],
+      },
+      {
+        heading: "The hidden economics of execution failure",
+        paragraphs: [
+          "Execution failure rarely arrives as one dramatic event. It accumulates. An assumption stays unresolved. A scope change is discussed but never recorded. A notice goes out late. A concession is granted under relationship pressure. A supplier's obligation isn't aligned with the prime contract. A meeting decision gets no owner. Eventually the organization faces a dispute and asks how much the dispute will cost. The more useful question comes earlier: how much value was already lost before the dispute became visible?",
+          "Contract disputes are late-stage symptoms of earlier operating failures. Scope ambiguity, missed notices, unclear authority, fragmented communication, emotional responses, weak project memory — each can quietly weaken a commercial position. This changes the economics of intervention. Instead of waiting for a claim to mature and then deploying legal and advisory resources, organizations can intervene closer to the moment behavior creates the exposure.",
+          "That doesn't mean every loss is preventable, or that every dispute comes down to poor behavior. Complex projects carry genuine technical uncertainty, design problems, physical conditions, market changes, regulatory events. The disciplined argument is narrower: avoidable execution failures are one category of exposure, and that category can be governed earlier.",
+        ],
+      },
+      {
+        heading: "From contract management to contract prevention",
+        paragraphs: [
+          "Traditional contract management is about administering obligations, records, milestones, notices, variations, and claims. Those functions remain essential. They still leave a gap if they stop at information visibility and never influence behavior at the point of action.",
+          "Contract prevention is a different proposition. It doesn't promise to eliminate disputes or guarantee perfect execution. It means reducing the avoidable conditions that let leakage, delay, weak evidence, unauthorized concessions, margin erosion, and relationship damage develop. Prevention is organized around five control points: structure, recognition, behavior, evidence, and learning. That moves the conversation from a narrow legal question to an enterprise operating question.",
+          "A contract is ultimately executed through thousands of human actions. Somebody sends the notice. Somebody approves the variation. Somebody tells the supplier to proceed. Somebody writes the minutes. Somebody makes the concession. The contract defines the rights and obligations, but people create the operational record through which those rights are protected or challenged. A system that can identify risk but can't change the action that follows is diagnostic. An organization that can intervene before the communication or commitment becomes irreversible preserves optionality. The sequence is context, interpretation, decision, communication, consequence — and governance belongs between decision and consequence, without building a workflow so cumbersome that users ignore it.",
+        ],
+      },
+      {
+        heading: "What the industry evidence actually shows",
+        paragraphs: [
+          "HKA's CRUX research, its eighth annual edition published in November 2025, analyzed more than 2,200 projects across 114 countries, representing roughly $2.43 trillion in project value. Sums in dispute averaged around 33.4% of contract budgets across the sample, and claimed extensions of time amounted to 65.8% of planned schedules. Those numbers describe distressed construction and engineering projects, so they shouldn't be read as a prediction for any individual organization. But they show the scale of exposure that develops when project conditions deteriorate.",
+          "World Commerce & Contracting's August 2025 research offers another benchmark. The average business loses almost 9% of value annually through poor contract management; best performers sit around 3% and the weakest at 15% or more. These are benchmarks, not universal loss rates. An organization managing hundreds of millions or billions of dollars in contracts doesn't need to recover an entire benchmark to justify better prevention. If a disciplined intervention protects a small, evidenced portion of material exposure, the economics work.",
+          "The critical discipline is measurement. Market-wide leakage benchmarks are not proof that a specific intervention will deliver a predetermined reduction in losses. Client-specific baselines, controlled deployment, and outcome linkage come first. Don't confuse the size of the problem with proof that your intervention solved it.",
+        ],
+      },
+      {
+        heading: "The Human OS: the missing layer in enterprise transformation",
+        paragraphs: [
+          "The term Human OS sounds abstract until you connect it to everyday behavior. In practical terms it describes how people interpret risk, make decisions with incomplete information, respond to pressure, communicate with stakeholders, preserve evidence, exercise authority, escalate problems, and learn from previous events. It is the behavioral, cognitive, relational, and governance layer through which people execute work under real conditions. That makes it broader than training and narrower than corporate culture. It isn't a motivational programme, and it isn't a replacement for enterprise software. It recognizes that organizational outcomes emerge from the interaction between systems and human judgment.",
+          "The distinction matters most when organizations introduce AI. AI can retrieve information, summarize contracts, detect patterns, support decisions. But a recommendation still enters a human operating environment. Someone decides whether to trust it, escalate it, override it, act on it. Governance can't stop at model accuracy; it has to cover the conditions under which recommendations are accepted and used.",
+          "Human judgment changes under pressure. A person who is methodical on a normal Tuesday responds very differently when a major client is threatening escalation, a project is behind schedule, and an executive wants an answer now. Fatigue, urgency, relationship pressure, ego, escalation avoidance, and incomplete information all shape execution behavior. So the Human OS shouldn't be designed around an idealized model of how people behave. It should be designed for how people actually behave. If the intervention requires a project manager to complete a ten-step form before responding to a customer in a crisis, the system is technically compliant and operationally useless. A better guardrail would surface three relevant obligations, identify the approval boundary, flag a potentially consequential statement, and give the decision-maker a clear route to human review.",
+          "The closest analogy is aviation cockpit design. The objective isn't to make the pilot read the entire aircraft manual every time a warning appears. It's to surface the right information at the right moment so the human makes a better decision. The same principle applies to contracts, procurement, supplier management, and programme governance.",
+        ],
+      },
+      {
+        heading: "Stabilization before optimization",
+        paragraphs: [
+          "At the center of the methodology is one principle: Stabilization Before Optimization. Organizations should not assume that adding sophisticated systems will improve performance when the underlying human operating environment is unstable.",
+          "This matters most for organizations transforming quickly. When a company scales fast, leaders tend to optimize each function independently. Procurement wants efficiency, sales wants speed, operations wants continuity, finance wants control, legal wants risk protection, technology wants standardization. Every department can be optimized and the overall system still dysfunctional, because the interfaces between departments remain unclear.",
+          "Stabilization addresses those interfaces. It asks whether the organization has a coherent operating frame before trying to maximize performance: whether roles are understood, decision rights explicit, escalation paths functional, information reliable, and priorities interpreted the same way across teams. Only after those conditions exist does optimization become sustainable. A fast process with unclear ownership accelerates mistakes. A highly automated workflow automates flawed decisions. A dashboard gives instant visibility into a problem nobody has authority to resolve. Optimizing without structural clarity is like increasing a vehicle's speed before checking whether the steering works.",
+        ],
+      },
+      {
+        heading: "The 8C Crisis-to-Clarity framework",
+        paragraphs: [
+          "The 8C Crisis-to-Clarity framework treats transformation as a sequence rather than a collection of disconnected interventions: Clarity, Conditions, Control, Capability, Calibration, Correction, Continuity, and Coaching. The value lies in the sequencing, not the labels. Transformation programmes jump straight to capability — hire specialists, buy software, deploy AI, redesign processes. The 8C sequence starts earlier, asking whether the organization has enough clarity and operating conditions to make those investments effective.",
+          "Clarity creates a single operating frame. Without it, departments optimize against different definitions of success. Conditions establish the prerequisites for change: governance, information, authority, resources, leadership alignment. Control defines decision rights and ownership — who decides, who approves a concession, who can commit resources, and what happens when the normal decision-maker is unavailable. When these questions stay ambiguous, people fill the gap themselves, and sometimes they make a commercially expensive decision. Capability then equips the organization with skills, tools, information, and routines. It deliberately comes after clarity, conditions, and control: tools are most useful when people understand the operating model those tools are supposed to function in.",
+          "Calibration creates feedback loops that show where behavior is diverging. Correction is the ability to change course without losing momentum — keep the objective, adjust the mechanism. Continuity protects the gains once the programme ends and executive attention moves elsewhere. Coaching closes the sequence: the human infrastructure that keeps leaders whole through change. Transformation is carried by people who absorb pressure and remain accountable when things drift; coaching sustains the operating discipline the other seven stages depend on.",
+          "Around the sequence runs a learning loop: observed behavior feeds intervention, outcomes feed organizational rules, and rules improve future interventions. That loop is what turns a methodology into an organizational capability.",
+        ],
+      },
+      {
+        heading: "Measuring value protected, not activity completed",
+        paragraphs: [
+          "Traditional dashboards measure activity: users trained, workflows launched, contracts uploaded, alerts generated. Useful, but incomplete. A prevention capability should measure whether behavior changed and whether the change produced an economically relevant outcome.",
+          "Leading indicators include relevant communications flagged, interventions accepted or overridden, contractual context retrieved before a decision, obligations surfaced early, decisions escalated to the right authority, and recurring failure patterns detected. Lagging indicators include avoided concessions, recovered variations, protected notices, reduced rework, lower dispute-preparation costs, faster cash realization, and fewer repeated incidents.",
+          "The discipline is to avoid claiming causality too early. Some commercial outcomes take months or years to materialize. A credible measurement programme connects behavioral signals to later economic outcomes instead of pretending every intervention produces an immediate financial result.",
+        ],
+      },
+      {
+        heading: "Applying the framework across GCC transformation environments",
+        paragraphs: [
+          "The GCC is a natural environment for this philosophy because transformation is happening simultaneously across infrastructure, energy, real estate, transportation, technology, tourism, manufacturing, logistics, and public-sector modernization. Scale like that creates opportunity, and it multiplies the interfaces where decisions carry commercial consequences.",
+          "Large programmes are rarely controlled by a single organization. Owners, programme offices, consultants, contractors, subcontractors, technology providers, financiers, regulators, local suppliers — each brings its own objectives, governance, obligations, and information systems. A local decision can have a downstream consequence far beyond the person who made it. A project doesn't fail because a dashboard failed to display a number. It fails when the right person doesn't act on the number, when authority is unclear, when escalation is delayed, or when parties interpret the same information differently.",
+          "Supply chains are a natural application because procurement decisions create obligations that extend far beyond the purchase order. Supplier selection affects lead time, quality, cash exposure, contractual risk, resilience, and downstream delivery. A sourcing decision optimized for price can create significant costs elsewhere if total risk allocation isn't understood. Resilience isn't created by adding suppliers after a disruption; it's created by designing the operating conditions, relationships, incentives, and decision structures before pressure arrives. The sequence holds everywhere: context becomes interpretation, interpretation becomes a decision, the decision becomes communication, communication creates consequence. Resilience depends partly on shortening the distance between emerging signals and disciplined action.",
+        ],
+      },
+      {
+        heading: "Clarity before scale",
+        paragraphs: [
+          "The strongest transformation strategies aren't necessarily the ones that introduce the most technology. They're the ones that understand the relationship between people, decisions, systems, structure, and economic outcomes. The answer isn't another contract platform, another dashboard, or another AI assistant. The opportunity is to govern the human moment before the consequence. A contract clause has value only when people understand it. A risk register has value only when somebody acts on it. A governance policy has value only when it changes behavior.",
+          "Stabilization Before Optimization is ultimately a reminder that organizations are not machines into which new technology can be installed. They are living operating environments made of people, relationships, incentives, authority, information, and decisions. If those elements aren't aligned, optimization accelerates dysfunction as easily as it accelerates performance. Before an organization automates, it should understand. Before it optimizes, it should stabilize. Before it expands, it should establish control. Before it deploys complex systems, it should make sure the human operating environment can support them.",
+          "The ultimate transformation question isn't whether an organization has sophisticated technology. It's whether the organization can reliably turn information into disciplined action when the stakes are high. That's the point at which transformation stops being a technology programme and becomes an operating capability.",
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "What is ClarityOS?",
+        answer:
+          "A pre-governance operating methodology created by Zeeshan Sabri, built on the principle of Stabilization Before Optimization. Its purpose is to establish clarity, operating alignment, decision discipline, and governance conditions before an organization deploys complex systems or scales structural change. It focuses on the human operating environment around transformation rather than treating technology as the complete solution.",
+      },
+      {
+        question: "What does Human OS mean in business transformation?",
+        answer:
+          "The behavioral, cognitive, relational, and governance mechanisms through which people execute work: how they interpret risk, decide with incomplete information, communicate, exercise authority, escalate, preserve evidence, and learn. It complements rather than replaces enterprise systems, and it determines whether those systems actually work in practice.",
+      },
+      {
+        question: "How is contract prevention different from contract management?",
+        answer:
+          "Contract management administers obligations, records, milestones, variations, and claims. Prevention moves the intervention closer to the point where human behavior creates or reduces exposure, targeting avoidable conditions like missed notices, unclear authority, unauthorized commitments, and weak evidence before they become expensive disputes. It doesn't try to eliminate every dispute or replace legal expertise.",
+      },
+      {
+        question: "Why is stabilization important before optimization?",
+        answer:
+          "Optimization assumes the organization has a stable enough operating structure to absorb the improvement. If roles, decision rights, communication channels, or escalation mechanisms are unclear, optimization just makes existing problems faster and larger. Stabilization establishes clarity, ownership, and behavioral alignment first.",
+      },
+      {
+        question: "How can an organization measure whether a Human OS intervention creates value?",
+        answer:
+          "Establish a baseline before the intervention, then track leading behavioral indicators (early risk recognition, communications flagged, interventions accepted or overridden, correct escalation, obligations surfaced before deadlines) and lagging commercial outcomes (recovered entitlements, reduced concessions, lower rework, faster cash realization, protected margin, fewer repeated incidents). Connect the measures over time rather than assuming immediate causality.",
+      },
+    ],
+  },
   {
     slug: "two-trillion-dollars-and-the-control-layer-nobody-owns",
     number: "07",
@@ -708,7 +1010,6 @@ export const ARTICLES: Article[] = [
     lede: "The Gulf has committed to the most concentrated delivery decade in the world. The largest risk to it is not funding, and it is not ambition. It is not even, anymore, the money.",
     category: "Governance & control",
     date: "2026-09-11",
-    badge: "New",
     relatedFramework: "governance-as-accelerator",
     sections: [
       {
@@ -793,7 +1094,7 @@ export const ARTICLES: Article[] = [
           "Resist buying a solution before establishing a baseline. The discipline runs in this order, and the order is the discipline.",
           "Establish the baseline. Measure the current pattern of missed notices, late escalations, unauthorised concessions, evidence gaps and decision rework on live packages. Without it, every subsequent improvement is anecdote. This is also, not incidentally, the missing regional number: the first organization to produce an honest GCC leakage baseline owns the reference point everyone else will be measured against.",
           "Run a controlled proof of concept — and design it to be believed. One live project or business unit, 30 to 60 days, behavioural guardrails at selected decision and communication points, with a defined decision gate at the end to scale, refine, reposition or stop. The evaluation design should be fixed before the pilot starts, not negotiated after it ends: the leading indicators chosen in advance, the comparison logic stated, the causal caveats written down. A sceptical CFO will not be persuaded by a success story. They may be persuaded by a pre-registered test that was allowed to fail.",
-          "Measure leading indicators before lagging ones. Interventions accepted or overridden, contract context retrieved before a decision, escalations routed to the correct authority. Commercial outcomes follow later, and a credible evaluation links the two without pretending causality is immediate. The honest claim after sixty days is not \"we saved X million.\" It is \"the decisions that historically produced X million of exposure now happen differently, and here is the instrumented record.\"",
+          'Measure leading indicators before lagging ones. Interventions accepted or overridden, contract context retrieved before a decision, escalations routed to the correct authority. Commercial outcomes follow later, and a credible evaluation links the two without pretending causality is immediate. The honest claim after sixty days is not "we saved X million." It is "the decisions that historically produced X million of exposure now happen differently, and here is the instrumented record."',
           "Build governance into the return. Data minimisation, access and retention control, human override, explainable rationale, audit logs and clear boundaries for sensitive communications. In a region where relationship trust is the operating currency, a capability that protects margin and erodes trust has not created value.",
           "One more thing belongs on this list in 2026 that did not a year ago. The current wave of suspensions and descoping — The Line, the Mukaab, the terminated packages at NEOM and Trojena — is a live stress test of exactly the disciplines described here. Terminations and scope cuts are the most claims-intensive events in construction, and they expose the weakest-link behaviours first: the missing notices, the verbal agreements, the evidence gaps. Organizations instrumented before the next descoping decision lands will navigate it. The rest will discover their leakage at the worst possible moment, priced by the other side.",
         ],
@@ -1166,10 +1467,20 @@ export const EXTERNAL_PUBLICATIONS: ExternalPublication[] = [
 ];
 
 export const NEWSLETTER_ISSUES = [
-  { number: 1, slug: "issue-01", title: "The Dispatch — Issue 01", date: "2025-11-01",
-    excerpt: "Why the human layer must be installed before the system layer." },
-  { number: 2, slug: "issue-02", title: "The Dispatch — Issue 02", date: "2025-12-01",
-    excerpt: "Governance as accelerator: the redesign that changes the tax rate on velocity." },
+  {
+    number: 1,
+    slug: "issue-01",
+    title: "The Dispatch — Issue 01",
+    date: "2025-11-01",
+    excerpt: "Why the human layer must be installed before the system layer.",
+  },
+  {
+    number: 2,
+    slug: "issue-02",
+    title: "The Dispatch — Issue 02",
+    date: "2025-12-01",
+    excerpt: "Governance as accelerator: the redesign that changes the tax rate on velocity.",
+  },
 ];
 
 export const SPEAKING = [
@@ -1270,7 +1581,6 @@ export const NAV = [
   { label: "Connect", href: "/connect" },
 ];
 
-
 // ---------- Film, press, and upcoming events ----------
 import videoOsh from "\@/assets/video-osh-interview.mp4.asset.json";
 import videoSuperjet from "\@/assets/video-superjet-dhofar.mp4.asset.json";
@@ -1303,10 +1613,7 @@ export const SuperJetDhofarVideo = {
   ratio: "9 / 16",
 };
 
-export const MEDIA_FILM = [
-  FILM_HERO,
-  SuperJetDhofarVideo,
-];
+export const MEDIA_FILM = [FILM_HERO, SuperJetDhofarVideo];
 
 /**
  * Delivered workshops and talks — the credibility ledger. Every entry is a
@@ -1357,7 +1664,6 @@ export const WORKSHOP_STATS = [
   { value: "12+", label: "Workshops & keynotes" },
   { value: "500+", label: "Founders and executives in the room" },
 ];
-
 
 export const PRESS_ITEMS = [
   {
