@@ -13,7 +13,8 @@ export const Route = createFileRoute("/insights/$slug")({
     const SUFFIX = " — Insights";
     const MAX = 60;
     const base = raw.split(":")[0].trim() || raw;
-    const pick = (base + SUFFIX).length <= MAX ? base : base.slice(0, MAX - SUFFIX.length - 1).trim();
+    const pick =
+      (base + SUFFIX).length <= MAX ? base : base.slice(0, MAX - SUFFIX.length - 1).trim();
     const title = loaderData ? `${pick}${SUFFIX}` : "Insight";
     const desc = loaderData?.article.summary ?? "An insight from Zeeshan Sabri.";
 
@@ -45,6 +46,22 @@ export const Route = createFileRoute("/insights/$slug")({
                 },
               }),
             },
+            ...(loaderData.article.faqs?.length
+              ? [
+                  {
+                    type: "application/ld+json",
+                    children: JSON.stringify({
+                      "@context": "https://schema.org",
+                      "@type": "FAQPage",
+                      mainEntity: loaderData.article.faqs.map((f) => ({
+                        "@type": "Question",
+                        name: f.question,
+                        acceptedAnswer: { "@type": "Answer", text: f.answer },
+                      })),
+                    }),
+                  },
+                ]
+              : []),
           ]
         : [],
     };
@@ -63,7 +80,9 @@ function ArticlePage() {
     <SiteLayout>
       <article className="mx-auto max-w-3xl px-6 pt-20 pb-24 lg:px-8">
         <nav className="mb-4 text-[11px] font-medium uppercase tracking-widest text-navy/50">
-          <Link to="/insights" className="hover:text-gold">Insights</Link>
+          <Link to="/insights" className="hover:text-gold">
+            Insights
+          </Link>
           <span className="mx-2">/</span>
           <span>{article.category}</span>
         </nav>
@@ -75,25 +94,48 @@ function ArticlePage() {
             year: "numeric",
           })}
         </Eyebrow>
-        <h1 className="font-serif text-4xl leading-tight text-navy md:text-5xl">
-          {article.title}
-        </h1>
+        <h1 className="font-serif text-4xl leading-tight text-navy md:text-5xl">{article.title}</h1>
         <p className="mt-8 text-xl leading-relaxed text-navy/70">{article.summary}</p>
 
         <div className="mt-12 space-y-10 text-lg leading-relaxed text-navy/80">
-          {article.sections.map((section: { heading: string; paragraphs: string[] }, idx: number) => (
-            <section key={section.heading}>
-              <h2 className="font-serif text-2xl text-navy md:text-3xl">{section.heading}</h2>
-              <div className="mt-4 space-y-4">
-                {section.paragraphs.map((p: string, pIdx: number) => (
-                  <p key={pIdx} className={idx === 0 && pIdx === 0 ? "first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-6xl first-letter:leading-none first-letter:text-gold" : undefined}>
-                    {p}
-                  </p>
-                ))}
-              </div>
-            </section>
-          ))}
+          {article.sections.map(
+            (section: { heading: string; paragraphs: string[] }, idx: number) => (
+              <section key={section.heading}>
+                <h2 className="font-serif text-2xl text-navy md:text-3xl">{section.heading}</h2>
+                <div className="mt-4 space-y-4">
+                  {section.paragraphs.map((p: string, pIdx: number) => (
+                    <p
+                      key={pIdx}
+                      className={
+                        idx === 0 && pIdx === 0
+                          ? "first-letter:float-left first-letter:mr-3 first-letter:font-serif first-letter:text-6xl first-letter:leading-none first-letter:text-gold"
+                          : undefined
+                      }
+                    >
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </section>
+            ),
+          )}
         </div>
+
+        {article.faqs?.length ? (
+          <section className="mt-16 border-t border-navy/10 pt-10">
+            <h2 className="font-serif text-2xl text-navy md:text-3xl">
+              Frequently asked questions
+            </h2>
+            <div className="mt-6 space-y-6">
+              {article.faqs.map((faq) => (
+                <div key={faq.question}>
+                  <h3 className="font-serif text-lg text-navy">{faq.question}</h3>
+                  <p className="mt-2 text-base leading-relaxed text-navy/75">{faq.answer}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         {framework && (
           <div className="mt-16 border-l-2 border-gold bg-paper-soft p-8">
