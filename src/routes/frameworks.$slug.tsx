@@ -1,6 +1,14 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
-import { FRAMEWORKS, BOOK_CHAPTERS, ARTICLES, SITE, canonicalUrl, chapterPath, defaultOgImageMeta } from "@/lib/site-data";
+import {
+  FRAMEWORKS,
+  BOOK_CHAPTERS,
+  ARTICLES,
+  SITE,
+  canonicalUrl,
+  chapterPath,
+  defaultOgImageMeta,
+} from "@/lib/site-data";
 import { FRAMEWORK_ENRICHMENTS } from "@/lib/v4-content";
 import { CITABLE_ASSETS } from "@/lib/citable-assets";
 

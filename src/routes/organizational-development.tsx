@@ -63,10 +63,7 @@ function OrganizationalDevelopmentPage() {
           </h1>
           <p className="hero-summary mt-6 max-w-3xl">{OD_PILLAR.lede}</p>
           <div className="hero-actions mt-8">
-            <Link
-              to="/connect"
-              className="button button-copper"
-            >
+            <Link to="/connect" className="button button-copper">
               Start a Conversation <ArrowRight aria-hidden="true" />
             </Link>
             <Link className="text-link" to="/clarityos">
