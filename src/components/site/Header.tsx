@@ -42,6 +42,9 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <a className="nav-link" href="/memoir/index.html">
+              Book
+            </a>
           </nav>
 
           <Link className="header-cta" to="/book-a-session">
@@ -79,6 +82,14 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          <a
+            className="mobile-nav-link"
+            href="/memoir/index.html"
+            tabIndex={open ? 0 : -1}
+          >
+            <span>{String(NAV.length + 1).padStart(2, "0")}</span>
+            Book
+          </a>
           <div className="mobile-nav-footer">
             <Link to="/book-a-session" tabIndex={open ? 0 : -1}>
               Book $79 Session

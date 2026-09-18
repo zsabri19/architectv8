@@ -367,9 +367,9 @@ function HomePage() {
               ))}
             </ol>
             <div className="book-actions">
-              <Link className="button button-primary" to="/book">
+              <a className="button button-primary" href="/memoir/index.html">
                 Enter the book platform <ArrowRight aria-hidden="true" />
-              </Link>
+              </a>
               <Link className="text-link" to="/newsletter">
                 Join the early interest list
               </Link>

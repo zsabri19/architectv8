@@ -252,12 +252,12 @@ function ArchitectPage() {
             >
               Start a Conversation
             </Link>
-            <Link
-              to="/book"
+            <a
+              href="/memoir/index.html"
               className="border border-navy/20 px-8 py-4 text-xs font-bold uppercase tracking-widest hover:border-navy"
             >
               Explore the Memoir
-            </Link>
+            </a>
           </div>
           <p className="mt-10 text-sm text-navy/60">
             Deeper reading:{" "}

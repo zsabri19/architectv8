@@ -28,11 +28,17 @@ export function Footer() {
         </div>
 
         <div className="footer-links" aria-label="Footer navigation">
-          {footerLinks.map((item) => (
-            <Link key={item.href} to={item.href}>
-              {item.label}
-            </Link>
-          ))}
+          {footerLinks.map((item) =>
+            item.href === "/book" ? (
+              <a key={item.href} href="/memoir/index.html">
+                {item.label}
+              </a>
+            ) : (
+              <Link key={item.href} to={item.href}>
+                {item.label}
+              </Link>
+            ),
+          )}
         </div>
 
         <div className="footer-contact">

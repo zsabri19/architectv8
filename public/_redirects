@@ -4,17 +4,50 @@ https://www.global-mkts.com/* https://global-mkts.com/:splat 301
 
 /advisory /connect 301
 /architect /the-architect 301
-/memoir /book 301
 /dispatch /newsletter 301
 /executive-profile /the-architect 301
-/book/chapter-02-the-gulf-war-and-what-it-took /book/chapter-02-the-gulf-war 301
-/book/chapter-03-learning-to-rebuild /book/chapter-03-return-and-reinvention 301
-/book/chapter-04-entering-the-fortune-500 /book/chapter-04-breaking-into-the-room 301
-/book/chapter-05-procurement-as-power /book/chapter-05-governance-as-runway 301
-/book/chapter-06-governance-lessons-in-glass-towers /book/chapter-06-the-constraint-advantage 301
-/book/chapter-07-arriving-in-the-gulf /book/chapter-09-reading-cultures 301
-/book/chapter-08-the-oman-years /book/chapter-12-digital-nation-building 301
-/book/chapter-09-the-pyramid-a-framework-for-everything /book/chapter-07-the-pyramid 301
-/book/chapter-11-constraint-as-catalyst /book/chapter-06-the-constraint-advantage 301
-/book/chapter-13-ai-and-the-governance-gap /book/chapter-13-ai-as-interpreter 301
-/book/chapter-15-from-exile-to-transformation /book/chapter-16-the-mirror 301
+
+# Static memoir. Do not send /memoir back to /book (that loops).
+/memoir /memoir/index.html 301
+/memoir/ /memoir/index.html 301
+
+/memoir/index.html /memoir/home 200
+# Keep .html URLs as 200. Pages otherwise 308s them to extensionless paths the worker 404s.
+/memoir/*.html /memoir/:splat 200
+
+# Old manuscript slugs that already had a live mapping. Destinations are the
+# static chapter files, not the React book.
+/book/chapter-02-the-gulf-war-and-what-it-took /memoir/ch-02-the-gulf-war.html 301
+/book/chapter-03-learning-to-rebuild /memoir/ch-03-return-and-reinvention.html 301
+/book/chapter-04-entering-the-fortune-500 /memoir/ch-04-breaking-into-the-room.html 301
+/book/chapter-05-procurement-as-power /memoir/ch-05-governance-as-runway.html 301
+/book/chapter-06-governance-lessons-in-glass-towers /memoir/ch-06-the-constraint-advantage.html 301
+/book/chapter-07-arriving-in-the-gulf /memoir/ch-09-reading-cultures.html 301
+/book/chapter-08-the-oman-years /memoir/ch-12-digital-nation-building.html 301
+/book/chapter-09-the-pyramid-a-framework-for-everything /memoir/ch-07-the-pyramid.html 301
+/book/chapter-11-constraint-as-catalyst /memoir/ch-06-the-constraint-advantage.html 301
+/book/chapter-13-ai-and-the-governance-gap /memoir/ch-13-ai-as-interpreter.html 301
+/book/chapter-15-from-exile-to-transformation /memoir/ch-16-the-mirror.html 301
+
+# One-line map: /book/chapter-NN-<slug> matches public/memoir/ch-NN-<slug>.html.
+/book/chapter-01-born-between-worlds /memoir/ch-01-born-between-worlds.html 301
+/book/chapter-02-the-gulf-war /memoir/ch-02-the-gulf-war.html 301
+/book/chapter-03-return-and-reinvention /memoir/ch-03-return-and-reinvention.html 301
+/book/chapter-04-breaking-into-the-room /memoir/ch-04-breaking-into-the-room.html 301
+/book/chapter-05-governance-as-runway /memoir/ch-05-governance-as-runway.html 301
+/book/chapter-06-the-constraint-advantage /memoir/ch-06-the-constraint-advantage.html 301
+/book/chapter-07-the-pyramid /memoir/ch-07-the-pyramid.html 301
+/book/chapter-08-reframing-the-people /memoir/ch-08-reframing-the-people.html 301
+/book/chapter-09-reading-cultures /memoir/ch-09-reading-cultures.html 301
+/book/chapter-10-building-authority /memoir/ch-10-building-authority.html 301
+/book/chapter-11-super-labor /memoir/ch-11-super-labor.html 301
+/book/chapter-12-digital-nation-building /memoir/ch-12-digital-nation-building.html 301
+/book/chapter-13-ai-as-interpreter /memoir/ch-13-ai-as-interpreter.html 301
+/book/chapter-14-the-character-compass /memoir/ch-14-the-character-compass.html 301
+/book/chapter-15-letters-to-my-daughters /memoir/ch-15-letters-to-my-daughters.html 301
+/book/chapter-16-the-mirror /memoir/ch-16-the-mirror.html 301
+
+# Cover for /book, and anything else under /book that is not a known chapter.
+/book /memoir/index.html 301
+/book/ /memoir/index.html 301
+/book/* /memoir/index.html 301

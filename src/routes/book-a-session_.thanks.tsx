@@ -43,9 +43,9 @@ function ThanksPage() {
         </p>
         <p className="mt-4 text-navy/70">
           The memoir — chapters to read and to listen — is also open on this browser.{" "}
-          <Link to="/book" className="text-gold">
+          <a href="/memoir/index.html" className="text-gold">
             Continue the book
-          </Link>
+          </a>
           .
         </p>
 

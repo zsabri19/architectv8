@@ -1,10 +1,17 @@
 import { useEffect } from "react";
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
 import { persistMemoirUnlock } from "@/lib/memoir/access";
 import { BOOK_CHAPTERS, illustratedChapterHref, canonicalUrl } from "@/lib/site-data";
 
 export const Route = createFileRoute("/book_/unlocked")({
+  beforeLoad: () => {
+    throw redirect({
+      href: "/memoir/index.html",
+      reloadDocument: true,
+      statusCode: 301,
+    });
+  },
   head: () => ({
     meta: [
       { title: "The rest of the book is open · Zeeshan Sabri" },
@@ -42,12 +49,12 @@ function UnlockedPage() {
           >
             Continue reading
           </a>
-          <Link
-            to="/book"
+          <a
+            href="/memoir/index.html"
             className="inline-flex border border-navy/20 px-6 py-3 text-[11px] font-bold uppercase tracking-widest text-navy"
           >
             Table of contents
-          </Link>
+          </a>
         </div>
       </section>
     </SiteLayout>

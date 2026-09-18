@@ -1,4 +1,4 @@
-import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { BOOK_CHAPTERS, illustratedChapterHref } from "@/lib/site-data";
 
 function findChapter(slug: string) {
@@ -12,8 +12,11 @@ function findChapter(slug: string) {
 export const Route = createFileRoute("/book_/$slug")({
   loader: ({ params }) => {
     const ch = findChapter(params.slug);
-    if (!ch) throw notFound();
-    throw redirect({ href: illustratedChapterHref(ch) });
+    throw redirect({
+      href: ch ? illustratedChapterHref(ch) : "/memoir/index.html",
+      reloadDocument: true,
+      statusCode: 301,
+    });
   },
   component: () => null,
 });

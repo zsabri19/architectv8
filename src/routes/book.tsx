@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 import { MemoirListenLink } from "@/components/site/MemoirListenLink";
@@ -30,6 +30,13 @@ import {
 } from "@/lib/v4-content";
 
 export const Route = createFileRoute("/book")({
+  beforeLoad: () => {
+    throw redirect({
+      href: "/memoir/index.html",
+      reloadDocument: true,
+      statusCode: 301,
+    });
+  },
   head: () => ({
     meta: [
       { title: "From Exile to Transformation — A Memoir by Zeeshan Sabri" },
