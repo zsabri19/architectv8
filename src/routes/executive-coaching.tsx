@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { EXEC_PILLAR } from "@/lib/pillar-content";
-import { SITE, canonicalUrl } from "@/lib/site-data";
+import { SITE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
 
 const TITLE = "Executive Coaching & Advisory — Zeeshan Sabri";
 const DESC =
@@ -21,6 +21,7 @@ export const Route = createFileRoute("/executive-coaching")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
+      ...defaultOgImageMeta,
     ],
     links: [{ rel: "canonical", href: canonicalUrl(URL) }],
     scripts: [
@@ -63,9 +64,9 @@ function ExecutiveCoachingPage() {
           </h1>
           <p className="hero-summary mt-6 max-w-3xl">{EXEC_PILLAR.lede}</p>
           <div className="hero-actions mt-8">
-            <a className="button button-copper" href={SITE.bookSessionUrl}>
+            <Link className="button button-copper" to="/connect">
               Start a Conversation <ArrowRight aria-hidden="true" />
-            </a>
+            </Link>
             <Link className="text-link" to="/services">
               Compare engagement paths
             </Link>
@@ -142,9 +143,9 @@ function ExecutiveCoachingPage() {
           <div>
             <h2 id="ec-closing">Bring the decision. Leave with the sequence.</h2>
             <div className="closing-actions">
-              <a className="button button-copper" href={SITE.bookSessionUrl}>
+              <Link className="button button-copper" to="/connect">
                 Start a Conversation <ArrowRight aria-hidden="true" />
-              </a>
+              </Link>
               <Link className="text-link on-dark" to="/connect">
                 Request a board briefing
               </Link>

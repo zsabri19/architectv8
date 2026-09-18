@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { PDF_PILLAR } from "@/lib/pillar-content";
-import { SITE, canonicalUrl } from "@/lib/site-data";
+import { SITE, FRAMEWORKS, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
 
 const TITLE = "Personal Development Framework — People Skills";
 const DESC =
@@ -21,6 +21,7 @@ export const Route = createFileRoute("/personal-development-framework")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
+      ...defaultOgImageMeta,
     ],
     links: [{ rel: "canonical", href: canonicalUrl(URL) }],
     scripts: [
@@ -56,6 +57,8 @@ export const Route = createFileRoute("/personal-development-framework")({
   }),
   component: PersonalDevelopmentPage,
 });
+
+const PEOPLE_GUIDE = FRAMEWORKS.find((f) => f.slug === "practical-people-skills-development");
 
 function PersonalDevelopmentPage() {
   return (
@@ -171,47 +174,71 @@ function PersonalDevelopmentPage() {
             Field Guide
           </div>
           <h3 className="mt-2 font-serif text-2xl text-navy">Practical People Skills Development Guide (PDF)</h3>
-          <form
-            onSubmit={async (e) => {
-              e.preventDefault();
-              const form = e.currentTarget;
-              const formData = new FormData(form);
-              const data = Object.fromEntries(formData);
+          {PEOPLE_GUIDE?.guidePdf ? (
+            <a
+              href={PEOPLE_GUIDE.guidePdf}
+              className="mt-4 inline-flex bg-navy px-6 py-3 text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
+            >
+              Download the guide
+            </a>
+          ) : (
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
 
-              try {
-                const response = await fetch("https://formspree.io/f/xaqrzevp", {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json",
-                  },
-                  body: JSON.stringify({ ...data, framework: "practical-people-skills-development", frameworkNumber: 16 }),
-                });
+                try {
+                  const response = await fetch("https://formspree.io/f/xaqrzevp", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                      Accept: "application/json",
+                    },
+                    body: JSON.stringify({
+                      ...data,
+                      framework: "practical-people-skills-development",
+                      frameworkNumber: 16,
+                    }),
+                  });
 
-                if (response.ok) {
-                  alert("Thank you! We've logged your interest in the Practical People Skills Development Guide. You'll be notified when the Field Guide becomes available for download.");
-                  form.reset();
-                } else {
-                  console.error("Form submission failed");
-                  alert("Submission failed. Please try again.");
+                  if (response.ok) {
+                    alert(
+                      "Thank you! We've logged your interest in the Practical People Skills Development Guide. You'll be notified when the Field Guide becomes available.",
+                    );
+                    form.reset();
+                  } else {
+                    console.error("Form submission failed");
+                    alert("Submission failed. Please try again.");
+                  }
+                } catch (error) {
+                  console.error("Error submitting form:", error);
+                  alert("Error submitting form. Please try again.");
                 }
-              } catch (error) {
-                console.error("Error submitting form:", error);
-                alert("Error submitting form. Please try again.");
-              }
-            }}
-            className="mt-4 flex flex-col gap-3 md:flex-row"
-          >
-            <input
-              type="email"
-              required
-              placeholder="Email for the Field Guide"
-              className="flex-1 border border-navy/20 bg-white px-4 py-3 text-sm outline-none focus:border-gold"
-            />
-            <button className="bg-navy px-6 py-3 text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy">
-              Get notified when available
-            </button>
-          </form>
+              }}
+              className="mt-4 flex flex-col gap-3 md:flex-row"
+            >
+              <label htmlFor="pd-guide-email" className="sr-only">
+                Email for the field-guide waitlist
+              </label>
+              <input
+                id="pd-guide-email"
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                placeholder="Email for the waitlist"
+                className="flex-1 border border-navy/20 bg-white px-4 py-3 text-sm outline-none focus:border-gold"
+              />
+              <button
+                type="submit"
+                className="bg-navy px-6 py-3 text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
+              >
+                Get notified when available
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
@@ -221,9 +248,9 @@ function PersonalDevelopmentPage() {
           <div>
             <h2 id="pd-closing">A plan without a practice ground is a wish list.</h2>
             <div className="closing-actions">
-              <a className="button button-copper" href={SITE.bookSessionUrl}>
+              <Link className="button button-copper" to="/connect">
                 Start a Conversation <ArrowRight aria-hidden="true" />
-              </a>
+              </Link>
               <Link className="text-link on-dark" to="/frameworks/$slug" params={{ slug: "practical-people-skills-development" }}>
                 View the framework
               </Link>

@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Testimonials } from "@/components/site/Testimonials";
-import { SITE, TESTIMONIALS, canonicalUrl } from "@/lib/site-data";
+import { SITE, TESTIMONIALS, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
 
 const TITLE = "Book a $79 Clarity Session — Zeeshan Sabri";
 const DESC =
@@ -20,6 +20,7 @@ export const Route = createFileRoute("/book-a-session")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
+      ...defaultOgImageMeta,
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/book-a-session") }],
     scripts: [

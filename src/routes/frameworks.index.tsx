@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
-import { FRAMEWORKS, canonicalUrl } from "@/lib/site-data";
+import { FRAMEWORKS, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
 
 export const Route = createFileRoute("/frameworks/")({
   head: () => ({
@@ -9,7 +9,7 @@ export const Route = createFileRoute("/frameworks/")({
       {
         name: "description",
         content:
-          "Sixteen frameworks that install the human layer: 8C Crisis-to-Clarity, The Pyramid, Cultural Ecosystem Mapping, Character Compass and more. Download the guides.",
+          "Sixteen frameworks that install the human layer: 8C Crisis-to-Clarity, The Pyramid, Cultural Ecosystem Mapping, Character Compass and more. Get notified when the field guides are available.",
       },
       { property: "og:title", content: "The Frameworks Library" },
       {
@@ -17,6 +17,7 @@ export const Route = createFileRoute("/frameworks/")({
         content: "The 16 frameworks behind ClarityOS.",
       },
       { property: "og:url", content: canonicalUrl("/frameworks") },
+      ...defaultOgImageMeta,
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/frameworks") }],
   }),
@@ -33,7 +34,7 @@ function FrameworksPage() {
         </h1>
         <p className="mt-6 text-lg text-navy/70">
           Each framework maps to a real deployment inside a Fortune 500, GCC institution, or
-          national platform. Download the field guides. Use them.
+          national platform. Join the waitlist for a field guide when it is ready.
         </p>
       </section>
 
@@ -54,7 +55,7 @@ function FrameworksPage() {
                 <h3 className="mt-6 font-serif text-2xl leading-tight text-navy">{f.title}</h3>
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-navy/60">{f.summary}</p>
                 <div className="mt-6 text-[10px] font-medium uppercase tracking-widest text-navy group-hover:text-gold">
-                  {f.leadMagnet} →
+                  {f.guidePdf ? "Download the guide" : "Get notified when available"} →
                 </div>
               </Link>
             ))}

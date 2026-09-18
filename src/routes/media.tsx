@@ -29,7 +29,7 @@ export const Route = createFileRoute("/media")({
       {
         name: "description",
         content:
-          "Press coverage, keynotes, and public speaking. Winner of the Entrepreneurial Excellence Award, Founders 2.0 Conference, Dubai 2025. Upcoming: Decode Conference, LUMS Lahore, Jan 2026.",
+          "Press coverage, keynotes, and public speaking. Winner of the Entrepreneurial Excellence Award, Founders 2.0 Conference, Dubai 2025. Decode Conference keynote, LUMS Lahore, 15 January 2026.",
       },
       { property: "og:title", content: "Media & Press — Zeeshan Sabri" },
       { property: "og:description", content: "Press, keynotes, and interviews." },

@@ -30,6 +30,14 @@ export const SITE = {
 
 export const canonicalUrl = (path: string) => `https://${SITE.domain}${path}`;
 
+/** Existing brand portrait — use on templates that have no page-specific preview image. */
+export const DEFAULT_OG_IMAGE = `https://${SITE.domain}/assets/hero.jpg`;
+
+export const defaultOgImageMeta = [
+  { property: "og:image" as const, content: DEFAULT_OG_IMAGE },
+  { name: "twitter:image" as const, content: DEFAULT_OG_IMAGE },
+];
+
 import logoHuawei from "@/assets/logo-huawei.png.asset.json";
 import logoMotorola from "@/assets/logo-motorola.png.asset.json";
 import logoCbo from "@/assets/logo-cbo.jpg.asset.json";
@@ -70,6 +78,7 @@ import recHuaweiMentor from "@/assets/rec-huawei-mentor.jpg.asset.json";
 import recHuaweiFarewell from "@/assets/rec-huawei-farewell.jpg.asset.json";
 import recKuwaitSummit from "@/assets/rec-kuwait-summit.jpg.asset.json";
 import certAicerts from "@/assets/cert-aicerts.pdf.asset.json";
+import peopleDevelopmentGuide from "@/assets/people-development-guide.pdf.asset.json";
 
 import archiveCricketMag from "@/assets/archive-kuwait-cricket-mag.jpg.asset.json";
 import archiveCricketNews from "@/assets/archive-kuwait-cricket-news.jpg.asset.json";
@@ -475,6 +484,8 @@ export type Framework = {
   parameters: string[];
   impact: string;
   leadMagnet: string;
+  /** Public file URL when a real guide exists. Waitlist otherwise — never promise a download without this. */
+  guidePdf?: string;
 };
 
 export const FRAMEWORKS: Framework[] = [
@@ -684,6 +695,7 @@ export const FRAMEWORKS: Framework[] = [
     ],
     impact: "A repeatable personal development cycle, not a one-off plan.",
     leadMagnet: "Practical People Skills Development Guide",
+    guidePdf: peopleDevelopmentGuide.url,
   },
 ];
 

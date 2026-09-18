@@ -87,6 +87,18 @@ export default {
     try {
       const aliasRedirect = redirectAliasHost(request);
       if (aliasRedirect) return aliasRedirect;
+
+      const pathname = new URL(request.url).pathname.replace(/\/+$/, "") || "/";
+      if (pathname === "/sitemap.xml") {
+        const { buildSitemapXml } = await import("./lib/sitemap");
+        return new Response(buildSitemapXml(), {
+          headers: {
+            "Content-Type": "application/xml; charset=utf-8",
+            "Cache-Control": "public, max-age=3600",
+          },
+        });
+      }
+
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       return await normalizeCatastrophicSsrResponse(response);

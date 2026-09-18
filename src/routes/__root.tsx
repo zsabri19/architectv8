@@ -99,12 +99,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Person",
-          name: "Zeeshan Sabri",
-          jobTitle: "Crisis-to-Clarity Architect, Founder of ClarityOS",
-          worksFor: { "@type": "Organization", name: "Global Markets Technologies LLC" },
-          award: "Entrepreneurial Excellence Award, Founders 2.0 Conference (Dubai, 2025)",
-          sameAs: [SITE.socials.linkedin],
+          "@graph": [
+            {
+              "@type": "Person",
+              "@id": `https://${SITE.domain}/#zeeshan-sabri`,
+              name: "Zeeshan Sabri",
+              jobTitle: "Crisis-to-Clarity Architect, Founder of ClarityOS",
+              url: `https://${SITE.domain}/`,
+              worksFor: { "@type": "Organization", name: "Global Markets Technologies LLC" },
+              award: "Entrepreneurial Excellence Award, Founders 2.0 Conference (Dubai, 2025)",
+              sameAs: [SITE.socials.linkedin],
+            },
+            {
+              "@type": "WebSite",
+              "@id": `https://${SITE.domain}/#website`,
+              url: `https://${SITE.domain}/`,
+              name: "Zeeshan Sabri — ClarityOS",
+              description:
+                "ClarityOS installs the Human OS before the System OS — diagnosing the real blocker and aligning decisions, ownership, and operating rhythm.",
+              inLanguage: "en",
+              publisher: { "@id": `https://${SITE.domain}/#zeeshan-sabri` },
+            },
+          ],
         }),
       },
       {

@@ -246,12 +246,12 @@ function ArchitectPage() {
             Ready to install the human layer?
           </h2>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              href={SITE.bookSessionUrl}
+            <Link
+              to="/connect"
               className="bg-navy px-8 py-4 text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
             >
               Start a Conversation
-            </a>
+            </Link>
             <Link
               to="/book"
               className="border border-navy/20 px-8 py-4 text-xs font-bold uppercase tracking-widest hover:border-navy"

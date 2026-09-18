@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
 import { QuoteCard } from "@/components/site/QuoteCard";
-import { ARTICLES, QUOTE_CARDS, EXTERNAL_PUBLICATIONS, canonicalUrl } from "@/lib/site-data";
+import { ARTICLES, QUOTE_CARDS, EXTERNAL_PUBLICATIONS, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
 
 export const Route = createFileRoute("/insights/")({
   head: () => ({
@@ -15,6 +15,7 @@ export const Route = createFileRoute("/insights/")({
       { property: "og:title", content: "Insights — The Clarity Dispatch" },
       { property: "og:description", content: "Field notes on the human layer of transformation." },
       { property: "og:url", content: canonicalUrl("/insights") },
+      ...defaultOgImageMeta,
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/insights") }],
   }),

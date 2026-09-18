@@ -8,6 +8,7 @@ import {
   BOOK_CHAPTERS,
   SITE,
   canonicalUrl,
+  defaultOgImageMeta,
   ILLUSTRATED_COVER,
   ILLUSTRATED_PROLOGUE,
   illustratedChapterHref,
@@ -44,6 +45,7 @@ export const Route = createFileRoute("/book")({
       },
       { property: "og:type", content: "book" },
       { property: "og:url", content: canonicalUrl("/book") },
+      ...defaultOgImageMeta,
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/book") }],
     scripts: [

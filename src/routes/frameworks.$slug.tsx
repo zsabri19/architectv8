@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
-import { FRAMEWORKS, BOOK_CHAPTERS, ARTICLES, SITE, canonicalUrl, chapterPath } from "@/lib/site-data";
+import { FRAMEWORKS, BOOK_CHAPTERS, ARTICLES, SITE, canonicalUrl, chapterPath, defaultOgImageMeta } from "@/lib/site-data";
 import { FRAMEWORK_ENRICHMENTS } from "@/lib/v4-content";
 import { CITABLE_ASSETS } from "@/lib/citable-assets";
 
@@ -85,6 +85,7 @@ export const Route = createFileRoute("/frameworks/$slug")({
         { property: "og:description", content: desc },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
+        ...defaultOgImageMeta,
       ],
       links: [{ rel: "canonical", href: url }],
       scripts,
@@ -285,47 +286,71 @@ function FrameworkPage() {
             Field Guide
           </div>
           <h3 className="mt-2 font-serif text-2xl text-navy">{f.leadMagnet}</h3>
-          <form
-            onSubmit={async (e) => {
-              e.preventDefault();
-              const form = e.currentTarget;
-              const formData = new FormData(form);
-              const data = Object.fromEntries(formData);
+          {f.guidePdf ? (
+            <a
+              href={f.guidePdf}
+              className="mt-4 inline-flex bg-navy px-6 py-3 text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
+            >
+              Download the guide
+            </a>
+          ) : (
+            <form
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData);
 
-              try {
-                const response = await fetch("https://formspree.io/f/xaqrzevp", {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json",
-                  },
-                  body: JSON.stringify({ ...data, framework: f.slug, frameworkNumber: f.number, }),  // Track which framework was requested
-                });
+                try {
+                  const response = await fetch("https://formspree.io/f/xaqrzevp", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                      Accept: "application/json",
+                    },
+                    body: JSON.stringify({
+                      ...data,
+                      framework: f.slug,
+                      frameworkNumber: f.number,
+                    }),
+                  });
 
-                if (response.ok) {
-                  alert(`Thank you! We've logged your interest in the ${f.title}. You'll be notified when the Field Guide becomes available for download.`);
-                  form.reset();
-                } else {
-                  console.error("Form submission failed");
-                  alert("Submission failed. Please try again.");
+                  if (response.ok) {
+                    alert(
+                      `Thank you! We've logged your interest in the ${f.title}. You'll be notified when the Field Guide becomes available.`,
+                    );
+                    form.reset();
+                  } else {
+                    console.error("Form submission failed");
+                    alert("Submission failed. Please try again.");
+                  }
+                } catch (error) {
+                  console.error("Error submitting form:", error);
+                  alert("Error submitting form. Please try again.");
                 }
-              } catch (error) {
-                console.error("Error submitting form:", error);
-                alert("Error submitting form. Please try again.");
-              }
-            }}
-            className="mt-4 flex flex-col gap-3 md:flex-row"
-          >
-            <input
-              type="email"
-              required
-              placeholder="Email for the Field Guide"
-              className="flex-1 border border-navy/20 bg-white px-4 py-3 text-sm outline-none focus:border-gold"
-            />
-            <button className="bg-navy px-6 py-3 text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy">
-              Get notified when available
-            </button>
-          </form>
+              }}
+              className="mt-4 flex flex-col gap-3 md:flex-row"
+            >
+              <label htmlFor={`guide-email-${f.slug}`} className="sr-only">
+                Email for the field-guide waitlist
+              </label>
+              <input
+                id={`guide-email-${f.slug}`}
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                placeholder="Email for the waitlist"
+                className="flex-1 border border-navy/20 bg-white px-4 py-3 text-sm outline-none focus:border-gold"
+              />
+              <button
+                type="submit"
+                className="bg-navy px-6 py-3 text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
+              >
+                Get notified when available
+              </button>
+            </form>
+          )}
         </div>
 
         {(chapters.length > 0 || articles.length > 0) && (
@@ -374,12 +399,12 @@ function FrameworkPage() {
         )}
 
         <div className="mt-16 grid gap-4 border-t border-navy/10 pt-8 md:grid-cols-2">
-          <a
-            href={SITE.bookSessionUrl}
+          <Link
+            to="/connect"
             className="bg-navy px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
           >
             Start a Conversation
-          </a>
+          </Link>
           <Link
             to="/services"
             className="border border-navy/20 px-8 py-4 text-center text-xs font-bold uppercase tracking-widest hover:border-navy"
