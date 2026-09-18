@@ -7,6 +7,8 @@ import { Testimonials } from "@/components/site/Testimonials";
 import { SITE, TESTIMONIALS, canonicalUrl } from "@/lib/site-data";
 import portraitAsset from "@/assets/portrait-3.jpg.asset.json";
 
+const OG = `https://${SITE.domain}${portraitAsset.url}`;
+
 export const Route = createFileRoute("/connect")({
   head: () => ({
     meta: [
@@ -19,6 +21,8 @@ export const Route = createFileRoute("/connect")({
       { property: "og:title", content: "Connect — ClarityOS" },
       { property: "og:description", content: "Book the $79 session or start an enterprise enquiry." },
       { property: "og:url", content: canonicalUrl("/connect") },
+      { property: "og:image", content: OG },
+      { name: "twitter:image", content: OG },
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/connect") }],
   }),

@@ -188,12 +188,12 @@ function ClarityOSPage() {
             Ready to install ClarityOS in your organisation?
           </SectionTitle>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <a
-              href={SITE.bookSessionUrl}
+            <Link
+              to="/connect"
               className="bg-gold px-8 py-4 text-xs font-bold uppercase tracking-widest text-navy hover:bg-paper"
             >
               Start a Conversation
-            </a>
+            </Link>
             <Link
               to="/connect"
               className="border border-paper/30 px-8 py-4 text-xs font-bold uppercase tracking-widest text-paper hover:border-gold hover:text-gold"

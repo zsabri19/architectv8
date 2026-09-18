@@ -1,6 +1,14 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
-import { ARTICLES, FRAMEWORKS, SITE, canonicalUrl } from "@/lib/site-data";
+import { ARTICLES, FRAMEWORKS, SITE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
+
+function toMetaDescription(text: string, max = 155): string {
+  if (text.length <= max) return text;
+  const sliced = text.slice(0, max);
+  const at = sliced.lastIndexOf(" ");
+  const cut = (at > 80 ? sliced.slice(0, at) : sliced).replace(/[\s.,;:—–-]+$/, "");
+  return `${cut}…`;
+}
 
 export const Route = createFileRoute("/insights/$slug")({
   loader: ({ params }) => {
@@ -16,7 +24,7 @@ export const Route = createFileRoute("/insights/$slug")({
     const pick =
       (base + SUFFIX).length <= MAX ? base : base.slice(0, MAX - SUFFIX.length - 1).trim();
     const title = loaderData ? `${pick}${SUFFIX}` : "Insight";
-    const desc = loaderData?.article.summary ?? "An insight from Zeeshan Sabri.";
+    const desc = toMetaDescription(loaderData?.article.summary ?? "An insight from Zeeshan Sabri.");
 
     return {
       meta: [
@@ -26,6 +34,7 @@ export const Route = createFileRoute("/insights/$slug")({
         { property: "og:description", content: desc },
         { property: "og:type", content: "article" },
         { property: "og:url", content: canonicalUrl(`/insights/${params.slug}`) },
+        ...defaultOgImageMeta,
       ],
       links: [{ rel: "canonical", href: canonicalUrl(`/insights/${params.slug}`) }],
       scripts: loaderData
@@ -155,12 +164,12 @@ function ArticlePage() {
         )}
 
         <div className="mt-16 grid gap-4 border-t border-navy/10 pt-8 md:grid-cols-2">
-          <a
-            href={SITE.bookSessionUrl}
+          <Link
+            to="/connect"
             className="bg-navy px-8 py-4 text-center text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
           >
             Start a Conversation
-          </a>
+          </Link>
           <Link
             to="/insights"
             className="border border-navy/20 px-8 py-4 text-center text-xs font-bold uppercase tracking-widest hover:border-navy"

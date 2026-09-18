@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
-import { SITE, canonicalUrl } from "@/lib/site-data";
+import { SITE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -18,6 +18,7 @@ export const Route = createFileRoute("/privacy")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: canonicalUrl("/privacy") },
+      ...defaultOgImageMeta,
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/privacy") }],
   }),
@@ -39,7 +40,7 @@ function PrivacyPage() {
         <div className="mt-16 space-y-12">
           <Block title="What is collected">
             <p>
-              Only what you type into a form. Enquiry, newsletter, and guide-download forms collect
+              Only what you type into a form. Enquiry, newsletter, waitlist, and download forms collect
               your name, email address, organisation where given, and the message you write. The
               site does not ask for, and has no way to store, payment card details.
             </p>

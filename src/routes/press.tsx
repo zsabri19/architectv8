@@ -9,6 +9,7 @@ import {
   WORKSHOP_LEDGER,
   WORKSHOP_STATS,
   METRICS,
+  defaultOgImageMeta,
 } from "@/lib/site-data";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 
@@ -31,6 +32,7 @@ export const Route = createFileRoute("/press")({
       { property: "og:description", content: DESC },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: canonicalUrl("/press") },
+      ...defaultOgImageMeta,
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/press") }],

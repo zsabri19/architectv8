@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
-import { SERVICES, SITE, canonicalUrl } from "@/lib/site-data";
+import { SERVICES, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
 import frameworkAsset from "@/assets/framework-8c.jpg.asset.json";
 
 export const Route = createFileRoute("/services")({
@@ -15,6 +15,7 @@ export const Route = createFileRoute("/services")({
       { property: "og:title", content: "Services — ClarityOS" },
       { property: "og:description", content: "Choose the level of clarity you need." },
       { property: "og:url", content: canonicalUrl("/services") },
+      ...defaultOgImageMeta,
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/services") }],
     scripts: [
@@ -146,12 +147,12 @@ function ServicesPage() {
             Start with a Clarity Session. Diagnose the situation before you commit to the wrong
             kind of solution.
           </p>
-          <a
-            href={SITE.bookSessionUrl}
+          <Link
+            to="/connect"
             className="mt-8 inline-block bg-gold px-8 py-4 text-xs font-bold uppercase tracking-widest text-navy hover:bg-paper"
           >
             Start a Conversation
-          </a>
+          </Link>
         </div>
       </section>
     </SiteLayout>

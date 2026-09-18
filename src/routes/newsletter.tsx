@@ -1,20 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
-import { NEWSLETTER_ISSUES, canonicalUrl } from "@/lib/site-data";
+import { NEWSLETTER_ISSUES, SITE, canonicalUrl } from "@/lib/site-data";
 import portraitAsset from "@/assets/portrait-6.jpg.asset.json";
+
+const OG = `https://${SITE.domain}${portraitAsset.url}`;
 
 export const Route = createFileRoute("/newsletter")({
   head: () => ({
     meta: [
-      { title: "The Clarity Dispatch — Weekly Newsletter · Zeeshan Sabri" },
+      { title: "The Clarity Dispatch — Newsletter · Zeeshan Sabri" },
       {
         name: "description",
         content:
-          "Weekly executive brief on installing the human operating layer before transformation. Delivered to leaders in the GCC and beyond.",
+          "Executive brief on installing the human operating layer before transformation. Published issues for leaders in the GCC and beyond.",
       },
       { property: "og:title", content: "The Clarity Dispatch" },
-      { property: "og:description", content: "Weekly executive brief on the human layer." },
+      {
+        property: "og:description",
+        content: "Executive brief on the human layer of transformation.",
+      },
       { property: "og:url", content: canonicalUrl("/newsletter") },
+      { property: "og:image", content: OG },
+      { name: "twitter:image", content: OG },
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/newsletter") }],
   }),
@@ -31,12 +38,12 @@ function NewsletterPage() {
             The Clarity Dispatch
           </h1>
           <p className="mt-6 text-lg text-navy/70">
-            A weekly executive brief on the human layer of transformation — field notes, framework
-            unpacks, and GCC leadership intelligence. Each issue connects one real pattern to one
-            actionable framework.
+            An executive brief on the human layer of transformation — field notes, framework
+            unpacks, and GCC leadership intelligence. Each published issue connects one real pattern
+            to one actionable framework.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-navy/60">
-            <li>One pattern from the field, every week</li>
+            <li>One pattern from the field, each issue</li>
             <li>One framework unpack with practical application</li>
             <li>No fluff — only what transfers to your next decision</li>
           </ul>

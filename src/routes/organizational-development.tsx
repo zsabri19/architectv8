@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { OD_PILLAR } from "@/lib/pillar-content";
-import { SITE, canonicalUrl } from "@/lib/site-data";
+import { SITE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
 
 const TITLE = "Organizational Development: The Human Layer";
 const DESC =
@@ -21,6 +21,7 @@ export const Route = createFileRoute("/organizational-development")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESC },
+      ...defaultOgImageMeta,
     ],
     links: [{ rel: "canonical", href: canonicalUrl(URL) }],
     scripts: [
@@ -62,9 +63,9 @@ function OrganizationalDevelopmentPage() {
           </h1>
           <p className="hero-summary mt-6 max-w-3xl">{OD_PILLAR.lede}</p>
           <div className="hero-actions mt-8">
-            <a className="button button-copper" href={SITE.bookSessionUrl}>
+            <Link to="/connect" className="button button-copper">
               Start a Conversation <ArrowRight aria-hidden="true" />
-            </a>
+            </Link>
             <Link className="text-link" to="/clarityos">
               See the ClarityOS methodology
             </Link>
@@ -146,9 +147,9 @@ function OrganizationalDevelopmentPage() {
           <div>
             <h2 id="od-closing">Change the human layer before you change the system.</h2>
             <div className="closing-actions">
-              <a className="button button-copper" href={SITE.bookSessionUrl}>
+              <Link className="button button-copper" to="/connect">
                 Start a Conversation <ArrowRight aria-hidden="true" />
-              </a>
+              </Link>
               <Link className="text-link on-dark" to="/connect">
                 Discuss an enterprise programme
               </Link>
