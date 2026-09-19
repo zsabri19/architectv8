@@ -9,7 +9,7 @@ export const Route = createFileRoute("/frameworks/")({
       {
         name: "description",
         content:
-          "Sixteen frameworks that install the human layer: 8C Crisis-to-Clarity, The Pyramid, Cultural Ecosystem Mapping, Character Compass and more. Get notified when the field guides are available.",
+          "16 frameworks for the human layer — 8C Crisis-to-Clarity, The Pyramid, Cultural Ecosystem Mapping, Character Compass. Get notified when field guides ship.",
       },
       { property: "og:title", content: "The Frameworks Library" },
       {

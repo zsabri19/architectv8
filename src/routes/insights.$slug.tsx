@@ -48,6 +48,7 @@ export const Route = createFileRoute("/insights/$slug")({
                 description: loaderData.article.summary,
                 datePublished: loaderData.article.date,
                 articleSection: loaderData.article.category,
+                image: `https://${SITE.domain}/assets/hero.jpg`,
                 author: { "@type": "Person", name: "Zeeshan Sabri" },
                 mainEntityOfPage: {
                   "@type": "WebPage",

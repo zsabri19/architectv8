@@ -122,6 +122,51 @@ function ServicesPage() {
         </div>
       </section>
 
+      <section className="border-t border-navy/10 bg-white py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <Eyebrow>Related Practices</Eyebrow>
+          <SectionTitle>Go deeper into the human layer</SectionTitle>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <Link
+              to="/executive-coaching"
+              className="border border-navy/10 bg-paper-soft p-8 transition-colors hover:border-gold"
+            >
+              <h3 className="font-serif text-2xl text-navy">Executive Coaching & Advisory</h3>
+              <p className="mt-3 text-sm text-navy/70">
+                One-to-one clarity for leaders navigating crisis, succession, and transformation.
+              </p>
+              <span className="mt-6 inline-block text-xs font-bold uppercase tracking-widest text-gold">
+                Explore →
+              </span>
+            </Link>
+            <Link
+              to="/organizational-development"
+              className="border border-navy/10 bg-paper-soft p-8 transition-colors hover:border-gold"
+            >
+              <h3 className="font-serif text-2xl text-navy">Organizational Development</h3>
+              <p className="mt-3 text-sm text-navy/70">
+                The human layer beneath governance, culture, and operating rhythm.
+              </p>
+              <span className="mt-6 inline-block text-xs font-bold uppercase tracking-widest text-gold">
+                Explore →
+              </span>
+            </Link>
+            <Link
+              to="/personal-development-framework"
+              className="border border-navy/10 bg-paper-soft p-8 transition-colors hover:border-gold"
+            >
+              <h3 className="font-serif text-2xl text-navy">Personal Development Framework</h3>
+              <p className="mt-3 text-sm text-navy/70">
+                Practical people-skills architecture for leaders and teams.
+              </p>
+              <span className="mt-6 inline-block text-xs font-bold uppercase tracking-widest text-gold">
+                Explore →
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-navy/10 bg-paper-soft py-24">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
           <Eyebrow>Additional Practice</Eyebrow>

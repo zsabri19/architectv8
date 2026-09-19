@@ -13,10 +13,6 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book</loc>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
     <loc>https://global-mkts.com/frameworks</loc>
     <changefreq>weekly</changefreq>
   </url>
@@ -129,67 +125,87 @@
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-01-born-between-worlds</loc>
+    <loc>https://global-mkts.com/memoir/index.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-02-the-gulf-war</loc>
+    <loc>https://global-mkts.com/memoir/prologue.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-03-return-and-reinvention</loc>
+    <loc>https://global-mkts.com/memoir/ch-01-born-between-worlds.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-04-breaking-into-the-room</loc>
+    <loc>https://global-mkts.com/memoir/ch-02-the-gulf-war.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-05-governance-as-runway</loc>
+    <loc>https://global-mkts.com/memoir/ch-03-return-and-reinvention.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-06-the-constraint-advantage</loc>
+    <loc>https://global-mkts.com/memoir/ch-04-breaking-into-the-room.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-07-the-pyramid</loc>
+    <loc>https://global-mkts.com/memoir/ch-05-governance-as-runway.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-08-reframing-the-people</loc>
+    <loc>https://global-mkts.com/memoir/ch-06-the-constraint-advantage.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-09-reading-cultures</loc>
+    <loc>https://global-mkts.com/memoir/ch-07-the-pyramid.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-10-building-authority</loc>
+    <loc>https://global-mkts.com/memoir/ch-08-reframing-the-people.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-11-super-labor</loc>
+    <loc>https://global-mkts.com/memoir/ch-09-reading-cultures.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-12-digital-nation-building</loc>
+    <loc>https://global-mkts.com/memoir/ch-10-building-authority.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-13-ai-as-interpreter</loc>
+    <loc>https://global-mkts.com/memoir/ch-11-super-labor.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-14-the-character-compass</loc>
+    <loc>https://global-mkts.com/memoir/ch-12-digital-nation-building.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-15-letters-to-my-daughters</loc>
+    <loc>https://global-mkts.com/memoir/ch-13-ai-as-interpreter.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://global-mkts.com/book/chapter-16-the-mirror</loc>
+    <loc>https://global-mkts.com/memoir/ch-14-the-character-compass.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://global-mkts.com/memoir/ch-15-letters-to-my-daughters.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://global-mkts.com/memoir/ch-16-the-mirror.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://global-mkts.com/memoir/epilogue.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://global-mkts.com/memoir/appendix.html</loc>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://global-mkts.com/memoir/listen.html</loc>
     <changefreq>weekly</changefreq>
   </url>
   <url>

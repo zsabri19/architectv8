@@ -4,6 +4,7 @@ import { SITE } from "@/lib/site-data";
 const footerLinks = [
   { label: "ClarityOS", href: "/clarityos" },
   { label: "Services", href: "/services" },
+  { label: "Insights", href: "/insights" },
   { label: "Book a $79 Session", href: "/book-a-session" },
   { label: "Media", href: "/media" },
   { label: "Connect", href: "/connect" },

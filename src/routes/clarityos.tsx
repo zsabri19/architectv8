@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
 import { SITE, canonicalUrl } from "@/lib/site-data";
 import { CLARITY_FAQS } from "@/lib/v4-content";
-import coverAsset from "@/assets/cover.png.asset.json";
+import coverAsset from "@/assets/cover.jpg.asset.json";
 
 const OG = `https://${SITE.domain}${coverAsset.url}`;
 

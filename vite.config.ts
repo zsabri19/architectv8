@@ -12,4 +12,6 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Pages project version-7 expects cloudflare-pages layout (dist/_worker.js)
+  nitro: { preset: "cloudflare-pages" },
 });

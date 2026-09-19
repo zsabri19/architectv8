@@ -1596,6 +1596,7 @@ export const SPEAKING = [
 export const NAV = [
   { label: "ClarityOS", href: "/clarityos" },
   { label: "Services", href: "/services" },
+  { label: "Insights", href: "/insights" },
   { label: "Media", href: "/media" },
   { label: "Connect", href: "/connect" },
 ];

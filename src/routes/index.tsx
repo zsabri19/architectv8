@@ -22,7 +22,7 @@ import { EnquiryForm } from "@/components/site/EnquiryForm";
 
 import { BOOK_ROADMAP } from "@/lib/v4-content";
 import heroAsset from "@/assets/hero.jpg.asset.json";
-import coverAsset from "@/assets/cover.png.asset.json";
+import coverAsset from "@/assets/cover.jpg.asset.json";
 import frameworkCompass from "@/assets/framework-8c.jpg.asset.json";
 import talkStage from "@/assets/talk-stage.jpg.asset.json";
 import fieldOshFounders from "@/assets/field-osh-founders.jpg.asset.json";
