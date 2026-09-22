@@ -53,6 +53,10 @@ const LEGACY_PATHS: Record<string, string> = {
   "/architect": "/the-architect",
   "/dispatch": "/newsletter",
   "/executive-profile": "/the-architect",
+  // GSC: /index.html 404s — land on apex home on every host.
+  "/index.html": "/",
+  // Old 1.4MB cover hotlinks → compressed jpg (~154KB).
+  "/assets/cover.png": "/assets/cover.jpg",
 };
 
 // Same destinations already used by the old aliases, now the static chapters.
@@ -107,7 +111,10 @@ function redirectAliasHost(request: Request): Response | null {
   const legacy = memoirRedirect(path) ?? LEGACY_PATHS[path];
   const hostNeedsCanonical = ALIAS_HOSTS.has(host);
 
-  if (!hostNeedsCanonical && !legacy) return null;
+  // robots.txt is served by this worker (not a static asset), so www can 301.
+  const robotsToApex = hostNeedsCanonical && path === "/robots.txt";
+
+  if (!hostNeedsCanonical && !legacy && !robotsToApex) return null;
 
   url.hostname = CANONICAL_HOST;
   url.protocol = "https:";
@@ -123,6 +130,17 @@ export default {
       if (aliasRedirect) return aliasRedirect;
 
       const pathname = new URL(request.url).pathname.replace(/\/+$/, "") || "/";
+      if (pathname === "/robots.txt") {
+        return new Response(
+          "User-agent: *\nAllow: /\n\nSitemap: https://global-mkts.com/sitemap.xml\n",
+          {
+            headers: {
+              "Content-Type": "text/plain; charset=utf-8",
+              "Cache-Control": "public, max-age=3600",
+            },
+          },
+        );
+      }
       if (pathname === "/sitemap.xml") {
         const { buildSitemapXml } = await import("./lib/sitemap");
         return new Response(buildSitemapXml(), {
