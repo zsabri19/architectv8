@@ -39,11 +39,16 @@ export function sitemapPaths(): string[] {
   return [...staticPaths, ...frameworkPaths, ...memoirPaths(), ...articlePaths];
 }
 
-export function buildSitemapXml(): string {
+/** W3C Datetime date (YYYY-MM-DD) for <lastmod>. */
+export function sitemapLastmod(date = new Date()): string {
+  return date.toISOString().slice(0, 10);
+}
+
+export function buildSitemapXml(lastmod = sitemapLastmod()): string {
   const urls = sitemapPaths()
     .map(
       (path) =>
-        `  <url>\n    <loc>${SITEMAP_BASE_URL}${path}</loc>\n    <changefreq>weekly</changefreq>\n  </url>`,
+        `  <url>\n    <loc>${SITEMAP_BASE_URL}${path}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>weekly</changefreq>\n  </url>`,
     )
     .join("\n");
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;

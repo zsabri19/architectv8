@@ -1,3 +1,14 @@
+# GSC: /index.html must land on apex home (not stay on /index.html).
+/index.html https://global-mkts.com/ 301
+https://www.global-mkts.com/index.html https://global-mkts.com/ 301
+
+# Explicit www→apex for robots.txt (static file can bypass host splat on some edges).
+https://www.global-mkts.com/robots.txt https://global-mkts.com/robots.txt 301
+
+# Old 1.4MB cover hotlinks → compressed jpg (~154KB).
+/assets/cover.png /assets/cover.jpg 301
+https://www.global-mkts.com/assets/cover.png https://global-mkts.com/assets/cover.jpg 301
+
 # Serve www the same as the apex, including static files such as robots.txt.
 # HTML already 301s www → apex at the host; robots.txt was still 200 on www.
 https://www.global-mkts.com/* https://global-mkts.com/:splat 301
