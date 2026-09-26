@@ -34,6 +34,7 @@ The toxic PBN backlinks are the real inherited liability, not the pages. That's 
 
 ## Technical notes
 
+- Canonical host is `https://global-mkts.com` (apex). `www.global-mkts.com` and `architect.global-mkts.com` are aliases that 301 to the apex. They are not canonical.
 - Canonicals, sitemap, robots, and MCP strings already point at `global-mkts.com`, so no code reversal is needed for this choice.
 - Google Search Console verification uses the META method and needs the token in the root `<head>` before verify is called — so it must happen after the domain is live, not before.
 - Redirects for legacy URLs will be handled as TanStack routes; no `_redirects` or `vercel.json` files.

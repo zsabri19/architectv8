@@ -20,6 +20,50 @@ dist-ssr
 .wrangler/
 .dev.vars
 
+# OS junk
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Retired content-engine drafts and local SQLite. Not the site source of truth.
+scripts/output/
+*.db
+*.sqlite
+*.sqlite3
+
+# Media served from R2 (binding MEDIA, bucket global-mkts-media).
+# Do not re-commit. History rewrite is a later coordinated step — see docs/media-r2.md.
+*.mp3
+*.mp4
+*.wav
+*.spoken.js
+*.spoken.json
+public/assets/cxo-magazine-april-2026.pdf
+public/assets/osh-what-you-cant-predict-ar.pdf
+public/assets/archive-kuwait-cricket-news.jpg
+public/assets/osh-18.jpg
+public/assets/quote-act.png
+public/assets/team-ilmversity-1.jpg
+public/assets/team-ilmversity-2.jpg
+public/memoir/assets/photos/ch01-born-1984.jpg
+public/memoir/assets/photos/ch02-kuwait-1986.jpg
+public/memoir/assets/photos/ch03-u19-tour-clipping-2001.jpg
+public/memoir/assets/photos/ch04-Motorola-project-meeting.jpg
+public/memoir/assets/photos/ch04-uk-leadership-dinner.jpg
+public/memoir/assets/photos/ch04-warehouse-aramex-motorola oman.jpg
+public/memoir/assets/photos/ch05-Gov-oman-site-visit.jpg
+public/memoir/assets/photos/ch06-huawei-bahrain-subcon.jpg
+public/memoir/assets/photos/ch07-kuwait-cricket.jpg
+public/memoir/assets/photos/ch08-huawei-bahrain-2018.jpg
+public/memoir/assets/photos/ch08-huawei-best-mentor-award.jpg
+public/memoir/assets/photos/ch08-msi-event.png
+public/memoir/assets/photos/ch09-pyramid.png
+public/memoir/assets/photos/ch11-super-labor-site-visit.jpg
+public/memoir/assets/photos/ch13-oman-digital-drift-workshop.jpg
+public/memoir/assets/photos/ch14-umrah-friends-2024.jpg
+public/memoir/assets/photos/ch15-children-uk-2023.jpg
+public/memoir/assets/photos/epilogue-40th-birthday.jpg
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
