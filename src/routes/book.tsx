@@ -80,7 +80,7 @@ function BookPage() {
         <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2 lg:px-8">
           <a href={ILLUSTRATED_COVER} className="mx-auto block aspect-[3/4] w-full max-w-sm overflow-hidden border border-paper/10">
             <img
-              src="/read/assets/photos/cover-headshot.jpeg"
+              src="/memoir/assets/photos/cover-headshot.jpeg"
               alt="From Exile to Transformation — cover portrait of Zeeshan Sabri"
               className="h-full w-full object-cover object-top"
               width={532}
@@ -271,7 +271,7 @@ function BookPage() {
         </div>
         <div className="mt-10 flex flex-wrap gap-6">
           <a
-            href="/read/epilogue.html"
+            href="/memoir/epilogue.html"
             className="inline-flex text-[11px] font-medium uppercase tracking-widest text-navy hover:text-gold"
           >
             Read the illustrated epilogue →

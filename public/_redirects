@@ -62,3 +62,39 @@ https://www.global-mkts.com/* https://global-mkts.com/:splat 301
 /book /memoir/index.html 301
 /book/ /memoir/index.html 301
 /book/* /memoir/index.html 301
+
+# architect.global-mkts.com is an alias of the apex, same as www. Not canonical.
+https://architect.global-mkts.com/index.html https://global-mkts.com/ 301
+https://architect.global-mkts.com/robots.txt https://global-mkts.com/robots.txt 301
+https://architect.global-mkts.com/assets/cover.png https://global-mkts.com/assets/cover.jpg 301
+https://architect.global-mkts.com/* https://global-mkts.com/:splat 301
+
+# Retired duplicate illustrated reader. public/read is gone; URLs 301 to /memoir.
+/read /memoir/index.html 301
+/read/ /memoir/index.html 301
+
+# Placeholder memoir photo filenames → final names.
+# Specific rules precede the /read/* splat so the rename is one hop.
+/memoir/assets/photos/ch02-replace%20with%20niagra%20falls%20-%20kuw-1986.jpg /memoir/assets/photos/ch02-kuwait-1986.jpg 301
+/read/assets/photos/ch02-replace%20with%20niagra%20falls%20-%20kuw-1986.jpg /memoir/assets/photos/ch02-kuwait-1986.jpg 301
+/memoir/assets/photos/ch05-add-Dubai%202024%20SCM%20%26%20Procurment%20Muscles.jpg /memoir/assets/photos/ch05-dubai-2024-scm-procurement.jpg 301
+/read/assets/photos/ch05-add-Dubai%202024%20SCM%20%26%20Procurment%20Muscles.jpg /memoir/assets/photos/ch05-dubai-2024-scm-procurement.jpg 301
+/memoir/assets/photos/ch06-add-HUW%20Bah%20Subcon.jpg /memoir/assets/photos/ch06-huawei-bahrain-subcon.jpg 301
+/read/assets/photos/ch06-add-HUW%20Bah%20Subcon.jpg /memoir/assets/photos/ch06-huawei-bahrain-subcon.jpg 301
+/memoir/assets/photos/ch06-add-huawei-reception-desk.jpg /memoir/assets/photos/ch06-huawei-reception-desk.jpg 301
+/read/assets/photos/ch06-add-huawei-reception-desk.jpg /memoir/assets/photos/ch06-huawei-reception-desk.jpg 301
+/memoir/assets/photos/ch07-replace%20with%20kuwait%20cricket%20image.jpg /memoir/assets/photos/ch07-kuwait-cricket.jpg 301
+/read/assets/photos/ch07-replace%20with%20kuwait%20cricket%20image.jpg /memoir/assets/photos/ch07-kuwait-cricket.jpg 301
+/memoir/assets/photos/ch08-add-Huw%20best%20mentor%20award.jpg /memoir/assets/photos/ch08-huawei-best-mentor-award.jpg 301
+/read/assets/photos/ch08-add-Huw%20best%20mentor%20award.jpg /memoir/assets/photos/ch08-huawei-best-mentor-award.jpg 301
+/memoir/assets/photos/ch08-replace%20with%20huawei%20bah%20day%20image%20.jpg /memoir/assets/photos/ch08-huawei-bahrain-2018.jpg 301
+/read/assets/photos/ch08-replace%20with%20huawei%20bah%20day%20image%20.jpg /memoir/assets/photos/ch08-huawei-bahrain-2018.jpg 301
+/memoir/assets/photos/ch11-add-Super%20labor%20-%20site%20visit-.jpg /memoir/assets/photos/ch11-super-labor-site-visit.jpg 301
+/read/assets/photos/ch11-add-Super%20labor%20-%20site%20visit-.jpg /memoir/assets/photos/ch11-super-labor-site-visit.jpg 301
+/memoir/assets/photos/ch14-add-HUW%20Bah%20Virtual%20Farwell%20%28Covid%20Days%29.jpg /memoir/assets/photos/ch14-huawei-bahrain-virtual-farewell.jpg 301
+/read/assets/photos/ch14-add-HUW%20Bah%20Virtual%20Farwell%20%28Covid%20Days%29.jpg /memoir/assets/photos/ch14-huawei-bahrain-virtual-farewell.jpg 301
+/memoir/assets/photos/ch14-add-umrah-frnds-2024.jpg /memoir/assets/photos/ch14-umrah-friends-2024.jpg 301
+/read/assets/photos/ch14-add-umrah-frnds-2024.jpg /memoir/assets/photos/ch14-umrah-friends-2024.jpg 301
+/memoir/assets/photos/ch15-add-Children%20in%20UK%202023.jpg /memoir/assets/photos/ch15-children-uk-2023.jpg 301
+/read/assets/photos/ch15-add-Children%20in%20UK%202023.jpg /memoir/assets/photos/ch15-children-uk-2023.jpg 301
+/read/* /memoir/:splat 301
