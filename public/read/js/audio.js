@@ -103,6 +103,80 @@
   var lastPersist = 0;
   var activeSeg = null;
   var segments = [];
+  var chapterId = chapterIdFromSrc(src);
+  var audioPlaySent = false;
+  var audioCompleteSent = false;
+  var audioProgressArmed = false;
+  /* 100% is memoir_audio_complete, kept distinct from progress. */
+  var audioMilestones = { 25: false, 50: false, 75: false };
+
+  function chapterIdFromSrc(fileSrc) {
+    var match = String(fileSrc || '').match(/([^/?#]+)\.mp3/i);
+    return match ? match[1] : 'memoir';
+  }
+
+  function sendMemoirEvent(name, params) {
+    if (typeof window.memoirTrack === 'function') {
+      window.memoirTrack(name, params);
+      return;
+    }
+    var payload = params || {};
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', name, payload);
+      return;
+    }
+    window.dataLayer = window.dataLayer || [];
+    var entry = { event: name };
+    var key;
+    for (key in payload) {
+      if (Object.prototype.hasOwnProperty.call(payload, key)) entry[key] = payload[key];
+    }
+    window.dataLayer.push(entry);
+  }
+
+  function trackAudioPlay() {
+    if (audioPlaySent) return;
+    audioPlaySent = true;
+    sendMemoirEvent('memoir_audio_play', {
+      chapter_id: chapterId,
+      chapter: title
+    });
+  }
+
+  function silenceAudioMilestones() {
+    if (!audio.duration) return;
+    var pct = (audio.currentTime / audio.duration) * 100;
+    var marks = [25, 50, 75];
+    for (var i = 0; i < marks.length; i++) {
+      if (pct >= marks[i]) audioMilestones[marks[i]] = true;
+    }
+  }
+
+  function trackAudioProgress() {
+    if (!audioProgressArmed || !audio.duration || audio.paused) return;
+    var pct = (audio.currentTime / audio.duration) * 100;
+    var marks = [25, 50, 75];
+    for (var i = 0; i < marks.length; i++) {
+      var mark = marks[i];
+      if (!audioMilestones[mark] && pct >= mark) {
+        audioMilestones[mark] = true;
+        sendMemoirEvent('memoir_audio_progress', {
+          chapter_id: chapterId,
+          chapter: title,
+          percent: mark
+        });
+      }
+    }
+  }
+
+  function trackAudioComplete() {
+    if (audioCompleteSent) return;
+    audioCompleteSent = true;
+    sendMemoirEvent('memoir_audio_complete', {
+      chapter_id: chapterId,
+      chapter: title
+    });
+  }
 
   paintMute();
   paintSpeed();
@@ -598,10 +672,13 @@
     paintAria();
     persistPosition(false);
     syncFollow();
+    trackAudioProgress();
   });
   audio.addEventListener('loadedmetadata', function () {
     timeEl.textContent = '0:00 / ' + formatTime(audio.duration);
     restorePosition();
+    silenceAudioMilestones();
+    audioProgressArmed = true;
     paintAria();
     if (audio.currentTime > 0) {
       timeEl.textContent = formatTime(audio.currentTime) + ' / ' + formatTime(audio.duration);
@@ -611,12 +688,14 @@
   audio.addEventListener('playing', function () {
     setPlaying(true);
     syncFollow(true);
+    trackAudioPlay();
   });
   audio.addEventListener('pause', function () {
     persistPosition(true);
     if (!audio.ended) setPlaying(false);
   });
   audio.addEventListener('ended', function () {
+    trackAudioComplete();
     setPlaying(false);
     audio.currentTime = 0;
     fill.style.width = '0%';
