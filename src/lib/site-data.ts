@@ -9,6 +9,7 @@ export const SITE = {
   heroSub:
     "ClarityOS helps founders, executives, and leadership teams diagnose the real blocker, align decisions and ownership, and install the operating rhythm that makes change stick.",
   email: "zeeshan@global-mkts.com",
+  phone: "+968 7707 4345",
   // SEO target domain. All canonicals, og:url tags, and the sitemap derive
   // from this constant — keep it as the single source of truth.
   domain: "global-mkts.com",

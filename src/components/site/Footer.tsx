@@ -49,6 +49,7 @@ export function Footer() {
         <div className="footer-contact">
           <p className="footer-label">Direct</p>
           <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          <a href="tel:+96877074345">{SITE.phone}</a>
           <p className="footer-label footer-label-spaced">Verified channels</p>
           <a href={SITE.socials.linkedin} target="_blank" rel="noreferrer">
             LinkedIn
