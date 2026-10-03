@@ -57,6 +57,8 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: canonicalUrl("/") },
       { property: "og:image", content: HERO_OG },
+      { property: "og:image:width", content: "900" },
+      { property: "og:image:height", content: "1408" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Zeeshan Sabri — ClarityOS" },
       {

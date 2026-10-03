@@ -23,6 +23,8 @@ export const Route = createFileRoute("/the-architect")({
       { property: "og:type", content: "profile" },
       { property: "og:url", content: canonicalUrl("/the-architect") },
       { property: "og:image", content: OG },
+      { property: "og:image:width", content: "1050" },
+      { property: "og:image:height", content: "1232" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: OG },
     ],

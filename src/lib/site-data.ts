@@ -35,6 +35,8 @@ export const DEFAULT_OG_IMAGE = `https://${SITE.domain}/assets/hero.jpg`;
 
 export const defaultOgImageMeta = [
   { property: "og:image" as const, content: DEFAULT_OG_IMAGE },
+  { property: "og:image:width" as const, content: "900" },
+  { property: "og:image:height" as const, content: "1408" },
   { name: "twitter:image" as const, content: DEFAULT_OG_IMAGE },
 ];
 

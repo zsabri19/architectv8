@@ -23,6 +23,8 @@ export const Route = createFileRoute("/newsletter")({
       { name: "twitter:description", content: "Executive brief on the human layer of transformation." },
       { property: "og:url", content: canonicalUrl("/newsletter") },
       { property: "og:image", content: OG },
+      { property: "og:image:width", content: "900" },
+      { property: "og:image:height", content: "1600" },
       { name: "twitter:image", content: OG },
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/newsletter") }],

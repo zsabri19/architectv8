@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { OD_PILLAR } from "@/lib/pillar-content";
-import { SITE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
+import { DEFAULT_OG_IMAGE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
+import { authorRef, publisherRef } from "@/lib/seo";
 
 const TITLE = "Organizational Development: The Human Layer";
 const DESC =
@@ -32,7 +33,10 @@ export const Route = createFileRoute("/organizational-development")({
           "@type": "Article",
           headline: OD_PILLAR.title,
           description: DESC,
-          author: { "@type": "Person", name: SITE.name, jobTitle: SITE.role },
+          author: authorRef,
+          publisher: publisherRef,
+          image: DEFAULT_OG_IMAGE,
+          mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl(URL) },
         }),
       },
       {

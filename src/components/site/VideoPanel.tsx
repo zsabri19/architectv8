@@ -30,12 +30,7 @@ export function VideoPanel({ item, className = "" }: { item: VideoItem; classNam
           className="video-player"
         />
       ) : (
-        <button
-          type="button"
-          className="video-poster"
-          onClick={() => setPlaying(true)}
-          aria-label={`Play video: ${item.title}`}
-        >
+        <button type="button" className="video-poster" onClick={() => setPlaying(true)}>
           <img src={item.poster} alt={item.title} loading="lazy" />
           <span className="video-scrim" aria-hidden="true" />
           <span className="video-play" aria-hidden="true">

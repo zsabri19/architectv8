@@ -37,6 +37,8 @@ export const Route = createFileRoute("/media")({
       { name: "twitter:description", content: "Press, keynotes, and interviews." },
       { property: "og:url", content: canonicalUrl("/media") },
       { property: "og:image", content: OG },
+      { property: "og:image:width", content: "1400" },
+      { property: "og:image:height", content: "788" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: OG },
     ],

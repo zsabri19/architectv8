@@ -24,6 +24,8 @@ export const Route = createFileRoute("/connect")({
       { name: "twitter:description", content: "Book the $79 session or start an enterprise enquiry." },
       { property: "og:url", content: canonicalUrl("/connect") },
       { property: "og:image", content: OG },
+      { property: "og:image:width", content: "900" },
+      { property: "og:image:height", content: "1600" },
       { name: "twitter:image", content: OG },
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/connect") }],
