@@ -14,7 +14,7 @@ export const Route = createFileRoute("/the-architect")({
       {
         name: "description",
         content:
-          "22 years across Fortune 500, government, and ventures. Chartered MCIPS. AI CERTs certified trainer. Winner, Founders 2.0 Entrepreneurial Excellence Award, Dubai 2025.",
+          "22 years across Fortune 500, government, and ventures. Chartered MCIPS. AI CERTs certified trainer. Entrepreneurial Excellence Award winner (2026), ClarityOS methodology.",
       },
       { property: "og:title", content: "The Architect — Zeeshan Sabri" },
       { name: "twitter:title", content: "The Architect — Zeeshan Sabri" },
@@ -78,7 +78,9 @@ function ArchitectPage() {
 
       <section className="mx-auto max-w-4xl px-6 py-24 lg:px-8">
         <Eyebrow>Recognition</Eyebrow>
-        <h2 className="font-serif text-3xl text-navy md:text-4xl">Founders 2.0 Award, Dubai 2025</h2>
+        <h2 className="font-serif text-3xl text-navy md:text-4xl">
+          Entrepreneurial Excellence Award winner (2026), ClarityOS methodology
+        </h2>
         <p className="mt-6 text-navy/70">
           The Entrepreneurial Excellence Award recognised ClarityOS as the world's first
           Pre-Governance Operating System, currently deployed across national-scale digital
@@ -88,7 +90,7 @@ function ArchitectPage() {
           "We are seeing a maturity shift in the GCC. Leaders are realising that you cannot install
           a First World governance system on a broken human operating system."
           <footer className="mt-4 text-sm not-italic uppercase tracking-widest text-navy/50">
-            — Zeeshan Sabri, Founders 2.0 Conference, Dubai
+            — Zeeshan Sabri
           </footer>
         </blockquote>
         <a

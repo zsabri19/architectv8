@@ -20,9 +20,7 @@ export const SITE = {
     linkedin: "https://www.linkedin.com/in/zeeshan-sabri-75760a26/",
   },
   award: {
-    title: "Entrepreneurial Excellence Award — Founders 2.0 Conference",
-    location: "Dubai",
-    date: "December 2025",
+    title: "Entrepreneurial Excellence Award winner (2026), ClarityOS methodology",
     pressUrl:
       "https://news.marketersmedia.com/paradigm-shift-in-gcc-transformation-zeeshan-sabri-wins-entrepreneurial-excellence-award-for-pioneering-clarityos-methodology/89181228",
   },
@@ -1514,11 +1512,11 @@ export const SPEAKING = [
     band: "keynote" as const,
   },
   {
-    title: "Entrepreneurial Excellence Award — Keynote",
+    title: "Founders 2.0 Conference",
     org: "Founders 2.0 Conference",
     venue: "Dubai",
-    date: "December 2025",
-    role: "Award Recipient · Keynote",
+    date: "2025",
+    role: "Nominee",
     band: "keynote" as const,
   },
   {
@@ -1689,10 +1687,9 @@ export const WORKSHOP_STATS = [
 
 export const PRESS_ITEMS = [
   {
-    title:
-      "Paradigm Shift in GCC Transformation: Zeeshan Sabri Wins Entrepreneurial Excellence Award for Pioneering ClarityOS Methodology",
+    title: "Entrepreneurial Excellence Award winner (2026), ClarityOS methodology",
     outlet: "MarketersMedia",
-    date: "December 2025",
+    date: "January 2026",
     url: SITE.award.pressUrl,
     cover: null as string | null,
   },

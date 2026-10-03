@@ -417,7 +417,7 @@ function BookPage() {
             "A masterclass in institutional resilience."
           </blockquote>
           <p className="mt-4 text-xs font-medium uppercase tracking-widest text-navy/50">
-            {SITE.award.title} · {SITE.award.location} · {SITE.award.date}
+            {SITE.award.title}
           </p>
           <a
             href={SITE.award.pressUrl}

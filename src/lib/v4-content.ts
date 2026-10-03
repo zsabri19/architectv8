@@ -366,18 +366,18 @@ export const BOOK_ABOUT = {
 } as const;
 
 export const BOOK_PRESS = {
-  eyebrow: "As Seen In MarketersMEDIA — Founders 2.0 Conference, Dubai, December 2025",
+  eyebrow: "As Seen In MarketersMEDIA — Entrepreneurial Excellence Award winner (2026), ClarityOS methodology",
   quote:
     "We are seeing a maturity shift in the GCC. Leaders are realizing that you cannot install a First World governance system on a broken human operating system.",
-  attribution: "Zeeshan Sabri, Founders 2.0 Conference, Dubai",
+  attribution: "Zeeshan Sabri",
   description:
-    "The Entrepreneurial Excellence Award recognized ClarityOS as the world's first Pre-Governance Operating System, currently deployed across national-scale digital banking, telecom, and defense procurement transformations serving 5 million+ users. Press coverage published January 29, 2026.",
+    "Entrepreneurial Excellence Award winner (2026), ClarityOS methodology. The methodology is described as the world's first Pre-Governance Operating System, currently deployed across national-scale digital banking, telecom, and defense procurement transformations serving 5 million+ users. Press coverage published January 29, 2026.",
   cta: "Read the Press Release",
 } as const;
 
 export const BOOK_PROLOGUE = [
-  "Muscat, December 2025. I was sitting in my home office, thousands of kilometers from the Founders 2.0 Conference stage in Dubai. Visa logistics and travel constraints had made the trip impossible — a familiar pattern for someone who has spent a career navigating borders that do not always open on schedule. So I watched the ceremony through a screen, the way I had learned to participate in a world that does not always make space for you at the table.",
-  "When they called my name for the Entrepreneurial Excellence Award, the applause was distant, filtered through a video feed. But what I felt was immediate. Not pride, exactly — something closer to recognition. Not the kind the audience was giving me, but the kind you give yourself when the pattern you have been building for decades is finally seen by others.",
+  "Muscat, December 2025. I was sitting in my home office, thousands of kilometers from the Founders 2.0 Conference stage in Dubai, where ClarityOS was nominated. Visa logistics and travel constraints had made the trip impossible — a familiar pattern for someone who has spent a career navigating borders that do not always open on schedule. So I watched from a screen, the way I had learned to participate in a world that does not always make space for you at the table.",
+  "Entrepreneurial Excellence Award winner (2026), ClarityOS methodology. What I felt was immediate. Not pride, exactly — something closer to recognition. Not the kind an audience gives, but the kind you give yourself when the pattern you have been building for decades is finally seen by others.",
   "They don't give awards for playing it safe. Crisis forces clarity that comfort never could.",
   "The award was for ClarityOS — a methodology the citation described as the world's first Pre-Governance Operating System. But ClarityOS did not begin in a strategy session or a product lab. It began on a night in 1990, in a city under siege, in the grip of a mother trying to keep her family together as the world she had built dissolved around her.",
   "Kuwait, August 2, 1990. The sirens started at dusk. Not the test alarms we had grown accustomed to in Kuwait City, but the real ones — the kind that turned ordinary evenings into something you remember for the rest of your life. I was young, barely old enough to understand the geopolitics of what was happening, but old enough to feel the weight of it in my mother's grip as we moved through corridors lit by emergency generators.",

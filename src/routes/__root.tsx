@@ -120,7 +120,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               jobTitle: "Crisis-to-Clarity Architect, Founder of ClarityOS",
               url: `https://${SITE.domain}/`,
               worksFor: { "@id": ORGANIZATION_ID },
-              award: "Entrepreneurial Excellence Award, Founders 2.0 Conference (Dubai, 2025)",
+              award: SITE.award.title,
               sameAs: [SITE.socials.linkedin],
             },
             organizationNode,
