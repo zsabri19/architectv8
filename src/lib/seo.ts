@@ -15,7 +15,7 @@ export const organizationNode = {
   legalName: "Global Markets Technologies LLC",
   url: canonicalUrl("/"),
   email: SITE.email,
-  telephone: SITE.phone,
+  telephone: "+96877074345",
   // The GMT logo already shown in the ventures logo strip. No street address: the site does not
   // state a company address (press kit "Based in Muscat" describes Zeeshan, not GMT).
   logo: { "@type": "ImageObject", url: canonicalUrl("/assets/gmt.png") },
@@ -70,7 +70,7 @@ const PAGE_NAMES: Record<string, string> = {
   "/media": "Media",
   "/newsletter": "The Clarity Dispatch",
   "/connect": "Connect",
-  "/book-a-session": "Book a $79 Session",
+  "/book-a-session": "Book a Session",
   "/organizational-development": "Organizational Development",
   "/executive-coaching": "Executive Coaching & Advisory",
   "/personal-development-framework": "Personal Development Framework",
