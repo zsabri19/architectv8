@@ -5,7 +5,10 @@ export const SITEMAP_BASE_URL = "https://global-mkts.com";
 
 /** Final HTTP 200 memoir paths (canonical). Keep /book-a-session; omit redirecting /book/*. */
 function memoirPaths(): string[] {
-  const chapters = BOOK_CHAPTERS.map((c) => illustratedChapterHref(c));
+  // Chapter 15 is a private family chapter: keep the URL, keep it out of the sitemap.
+  const chapters = BOOK_CHAPTERS.filter((c) => c.slug !== "letters-to-my-daughters").map((c) =>
+    illustratedChapterHref(c),
+  );
   return [
     "/memoir/index.html",
     "/memoir/prologue.html",

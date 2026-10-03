@@ -36,9 +36,12 @@ if (keyBody !== KEY) {
   process.exit(1);
 }
 
-const urlList = paths.length
+// Private family chapter. Never submit it, even if a caller passes the path.
+const PRIVATE_PATHS = new Set(["/memoir/ch-15-letters-to-my-daughters.html"]);
+const urlList = (paths.length
   ? paths.map((p) => new URL(p, ORIGIN).toString())
-  : await sitemapUrls();
+  : await sitemapUrls()
+).filter((u) => !PRIVATE_PATHS.has(new URL(u).pathname));
 const offHost = urlList.filter((u) => new URL(u).host !== HOST);
 if (offHost.length) {
   console.error("Refusing to ping URLs that are not on the production host:", offHost);
