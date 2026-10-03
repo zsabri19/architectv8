@@ -25,6 +25,8 @@ export const Route = createFileRoute("/clarityos")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: canonicalUrl("/clarityos") },
       { property: "og:image", content: OG },
+      { property: "og:image:width", content: "928" },
+      { property: "og:image:height", content: "986" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: OG },
     ],
@@ -83,13 +85,40 @@ function ClarityOSPage() {
         <div className="lg:col-span-7">
           <Eyebrow>Methodology</Eyebrow>
           <h1 className="font-serif text-4xl leading-[1.1] text-navy md:text-6xl">
-            ClarityOS is the prerequisite, <span className="italic text-gold">not</span> the upgrade.
+            ClarityOS — The Pre-Governance Operating System
           </h1>
+          <p className="mt-4 font-serif text-2xl leading-snug text-navy/80 md:text-3xl">
+            ClarityOS is the prerequisite, <span className="italic text-gold">not</span> the upgrade.
+          </p>
           <p className="mt-8 max-w-3xl text-lg leading-relaxed text-navy/70">
             You cannot install a First World governance system on a broken human operating system.
             ClarityOS sits underneath everything you already run — ERP, AI, governance frameworks —
             and installs the shared clarity architecture the rest depends on.
           </p>
+          <nav className="mt-8 flex max-w-3xl flex-col gap-2 text-sm" aria-label="Related">
+            <Link className="underline underline-offset-4 hover:text-gold" to="/book-a-session">
+              Book a $79 Clarity Session
+            </Link>
+            <Link
+              className="underline underline-offset-4 hover:text-gold"
+              to="/frameworks/$slug"
+              params={{ slug: "8c-crisis-to-clarity" }}
+            >
+              The 8C Crisis-to-Clarity Framework
+            </Link>
+            <Link className="underline underline-offset-4 hover:text-gold" to="/insights">
+              Insights — The Clarity Dispatch
+            </Link>
+            <a className="underline underline-offset-4 hover:text-gold" href="/memoir/index.html">
+              From Exile to Transformation
+            </a>
+            <Link
+              className="underline underline-offset-4 hover:text-gold"
+              to="/organizational-development"
+            >
+              Organizational Development: The Human Layer
+            </Link>
+          </nav>
         </div>
         <div className="mt-12 lg:col-span-5 lg:mt-0">
           <div className="overflow-hidden border border-navy/10 shadow-2xl">

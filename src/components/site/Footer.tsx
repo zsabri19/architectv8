@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { ARTICLES, SITE } from "@/lib/site-data";
+import { ARTICLES, FRAMEWORKS, SITE } from "@/lib/site-data";
 
 const footerLinks = [
   { label: "ClarityOS", href: "/clarityos" },
@@ -15,8 +15,8 @@ const footerLinks = [
   { label: "Executive Coaching", href: "/executive-coaching" },
   { label: "Personal Development Framework", href: "/personal-development-framework" },
   { label: "Press Kit", href: "/press" },
+  { label: "The Clarity Dispatch", href: "/newsletter" },
 ] as const;
-
 
 export function Footer() {
   return (
@@ -56,6 +56,21 @@ export function Footer() {
         </div>
       </div>
 
+      <nav className="site-shell footer-insights" aria-label="Frameworks">
+        <p className="footer-label">
+          <Link to="/frameworks">Frameworks</Link>
+        </p>
+        <ul>
+          {FRAMEWORKS.map((f) => (
+            <li key={f.slug}>
+              <Link to="/frameworks/$slug" params={{ slug: f.slug }}>
+                {f.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
       <nav className="site-shell footer-insights" aria-label="Insights">
         <p className="footer-label">
           <Link to="/insights">Insights</Link>
@@ -77,7 +92,6 @@ export function Footer() {
           ClarityOS is proprietary positioning and methodology. <Link to="/privacy">Privacy</Link>
         </p>
       </div>
-
     </footer>
   );
 }

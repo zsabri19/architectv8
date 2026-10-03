@@ -30,12 +30,36 @@ function InsightsPage() {
       <section className="mx-auto max-w-4xl px-6 pt-20 pb-16 lg:px-8">
         <Eyebrow>Insights</Eyebrow>
         <h1 className="font-serif text-4xl leading-[1.1] text-navy md:text-6xl">
-          Field notes from the human layer of transformation.
+          Insights — The Clarity Dispatch
         </h1>
+        <p className="mt-4 font-serif text-2xl leading-snug text-navy/80">
+          Field notes from the human layer of transformation.
+        </p>
         <p className="mt-6 text-lg text-navy/70">
           Case studies, framework deep-dives, and GCC market intelligence — from live engagements
           inside boards, national platforms, and Fortune 500 portfolios.
         </p>
+        <nav className="mt-8 flex flex-col gap-2 text-sm" aria-label="Related">
+          <Link className="underline underline-offset-4 hover:text-gold" to="/clarityos">
+            ClarityOS — The Pre-Governance Operating System
+          </Link>
+          <Link
+            className="underline underline-offset-4 hover:text-gold"
+            to="/frameworks/$slug"
+            params={{ slug: "8c-crisis-to-clarity" }}
+          >
+            The 8C Crisis-to-Clarity Framework
+          </Link>
+          <Link className="underline underline-offset-4 hover:text-gold" to="/book-a-session">
+            Book a $79 Clarity Session
+          </Link>
+          <Link className="underline underline-offset-4 hover:text-gold" to="/newsletter">
+            The Clarity Dispatch — Newsletter
+          </Link>
+          <a className="underline underline-offset-4 hover:text-gold" href="/memoir/index.html">
+            From Exile to Transformation
+          </a>
+        </nav>
       </section>
 
       <section className="border-t border-navy/10 bg-white py-16">
