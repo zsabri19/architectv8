@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -12,10 +13,14 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SITE } from "@/lib/site-data";
+import { ORGANIZATION_ID, PERSON_ID, breadcrumbJsonLd, organizationNode } from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-paper px-4">
+      {/* React 19 hoists these into <head>; the worker response status stays 404. */}
+      <title>Page not found — Zeeshan Sabri</title>
+      <meta name="robots" content="noindex" />
       <div className="max-w-md text-center">
         <div className="text-xs font-medium uppercase tracking-[0.3em] text-gold">Error 404</div>
         <h1 className="mt-4 font-serif text-6xl text-navy">Off the path</h1>
@@ -102,14 +107,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@graph": [
             {
               "@type": "Person",
-              "@id": `https://${SITE.domain}/#zeeshan-sabri`,
+              "@id": PERSON_ID,
               name: "Zeeshan Sabri",
               jobTitle: "Crisis-to-Clarity Architect, Founder of ClarityOS",
               url: `https://${SITE.domain}/`,
-              worksFor: { "@type": "Organization", name: "Global Markets Technologies LLC" },
+              worksFor: { "@id": ORGANIZATION_ID },
               award: "Entrepreneurial Excellence Award, Founders 2.0 Conference (Dubai, 2025)",
               sameAs: [SITE.socials.linkedin],
             },
+            organizationNode,
             {
               "@type": "WebSite",
               "@id": `https://${SITE.domain}/#website`,
@@ -118,7 +124,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               description:
                 "ClarityOS installs the Human OS before the System OS — diagnosing the real blocker and aligning decisions, ownership, and operating rhythm.",
               inLanguage: "en",
-              publisher: { "@id": `https://${SITE.domain}/#zeeshan-sabri` },
+              publisher: { "@id": PERSON_ID },
             },
           ],
         }),
@@ -150,11 +156,20 @@ function RootShell({ children }: { children: ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        <BreadcrumbJsonLd />
         {children}
         <Scripts />
       </body>
     </html>
   );
+}
+
+/** BreadcrumbList for the current route, server-rendered so crawlers see it without JS. */
+function BreadcrumbJsonLd() {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const json = breadcrumbJsonLd(pathname);
+  if (!json) return null;
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />;
 }
 
 function RootComponent() {

@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
 import { ARTICLES, FRAMEWORKS, SITE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
+import { authorRef, isoDate, publisherRef } from "@/lib/seo";
 
 function toMetaDescription(text: string, max = 155): string {
   if (text.length <= max) return text;
@@ -31,7 +32,9 @@ export const Route = createFileRoute("/insights/$slug")({
         { title },
         { name: "description", content: desc },
         { property: "og:title", content: title },
+        { name: "twitter:title", content: title },
         { property: "og:description", content: desc },
+        { name: "twitter:description", content: desc },
         { property: "og:type", content: "article" },
         { property: "og:url", content: canonicalUrl(`/insights/${params.slug}`) },
         ...defaultOgImageMeta,
@@ -46,10 +49,12 @@ export const Route = createFileRoute("/insights/$slug")({
                 "@type": "Article",
                 headline: loaderData.article.title,
                 description: loaderData.article.summary,
-                datePublished: loaderData.article.date,
+                datePublished: isoDate(loaderData.article.date),
                 articleSection: loaderData.article.category,
                 image: `https://${SITE.domain}/assets/hero.jpg`,
-                author: { "@type": "Person", name: "Zeeshan Sabri" },
+                url: canonicalUrl(`/insights/${params.slug}`),
+                author: authorRef,
+                publisher: publisherRef,
                 mainEntityOfPage: {
                   "@type": "WebPage",
                   "@id": `https://${SITE.domain}/insights/${params.slug}`,

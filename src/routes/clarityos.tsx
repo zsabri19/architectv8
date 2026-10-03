@@ -16,10 +16,12 @@ export const Route = createFileRoute("/clarityos")({
           "ClarityOS is the world's first Pre-Governance OS — the 8C Framework installs decision clarity, aligned ownership, and operating rhythm.",
       },
       { property: "og:title", content: "ClarityOS — The Pre-Governance Operating System" },
+      { name: "twitter:title", content: "ClarityOS — The Pre-Governance Operating System" },
       {
         property: "og:description",
         content: "The 8C Framework and the human layer of transformation.",
       },
+      { name: "twitter:description", content: "The 8C Framework and the human layer of transformation." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: canonicalUrl("/clarityos") },
       { property: "og:image", content: OG },

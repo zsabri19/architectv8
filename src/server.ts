@@ -96,6 +96,10 @@ const MEMOIR_CHAPTERS = new Set([
 
 function memoirRedirect(path: string): string | null {
   if (path === "/book" || path === "/memoir") return MEMOIR_COVER;
+  // /read/ was a duplicate copy of the memoir pages (no canonical). Pages only, not /read/assets/*.
+  if (path === "/read" || path === "/read/index.html") return MEMOIR_COVER;
+  const readPage = path.match(/^\/read\/([a-z0-9-]+\.html)$/);
+  if (readPage) return `/memoir/${readPage[1]}`;
   const alias = BOOK_ALIASES[path];
   if (alias) return alias;
   const chapter = path.match(/^\/book\/chapter-(\d{2}-[a-z0-9-]+)$/);
@@ -104,6 +108,9 @@ function memoirRedirect(path: string): string | null {
   return null;
 }
 
+// Static trees keep their own URL shape (/memoir/ serves the cover; files are .html).
+const SLASH_EXEMPT_PREFIXES = ["/memoir/", "/read/", "/assets/", "/.well-known/", "/.mcp/"];
+
 function redirectAliasHost(request: Request): Response | null {
   const url = new URL(request.url);
   const host = url.hostname.toLowerCase();
@@ -111,15 +118,24 @@ function redirectAliasHost(request: Request): Response | null {
   const legacy = memoirRedirect(path) ?? LEGACY_PATHS[path];
   const hostNeedsCanonical = ALIAS_HOSTS.has(host);
 
-  // robots.txt is served by this worker (not a static asset), so www can 301.
-  const robotsToApex = hostNeedsCanonical && path === "/robots.txt";
+  // React routes are canonical without a trailing slash. Without this, TanStack answers
+  // "/insights/" with a 307. Fold it into the same single 301 as host/legacy fixes.
+  const trailingSlash =
+    url.pathname !== path &&
+    path !== "/" &&
+    !SLASH_EXEMPT_PREFIXES.some((prefix) => url.pathname.startsWith(prefix));
 
-  if (!hostNeedsCanonical && !legacy && !robotsToApex) return null;
+  // robots.txt and sitemap.xml are served by this worker (not static assets), so www 301s them too.
+  if (!hostNeedsCanonical && !legacy && !trailingSlash) return null;
 
-  url.hostname = CANONICAL_HOST;
-  url.protocol = "https:";
-  url.port = "";
-  if (legacy) url.pathname = legacy;
+  // Only rewrite the host for our own alias hosts. Preview/pages.dev hosts keep their host
+  // so a preview never bounces to production for a path fix.
+  if (hostNeedsCanonical) {
+    url.hostname = CANONICAL_HOST;
+    url.protocol = "https:";
+    url.port = "";
+  }
+  url.pathname = legacy ?? (trailingSlash ? path : url.pathname);
   return Response.redirect(url.toString(), 301);
 }
 
@@ -132,7 +148,8 @@ export default {
       const pathname = new URL(request.url).pathname.replace(/\/+$/, "") || "/";
       if (pathname === "/robots.txt") {
         return new Response(
-          "User-agent: *\nAllow: /\n\nSitemap: https://global-mkts.com/sitemap.xml\n",
+          // /cdn-cgi/ is Cloudflare's own path (email-obfuscation links 404 for crawlers).
+          "User-agent: *\nAllow: /\nDisallow: /cdn-cgi/\n\nSitemap: https://global-mkts.com/sitemap.xml\n",
           {
             headers: {
               "Content-Type": "text/plain; charset=utf-8",

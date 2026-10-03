@@ -384,6 +384,12 @@
 .footer-contact { display: flex; flex-direction: column; align-items: flex-start; gap: 0.6rem; }
 .footer-label { margin: 0; color: #dba27c; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; }
 .footer-label-spaced { margin-top: 1rem; }
+.footer-insights { margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.16); padding-top: 1.5rem; }
+.footer-insights .footer-label a { color: inherit; text-decoration: none; }
+.footer-insights ul { display: grid; gap: 0.55rem 2rem; margin: 0.9rem 0 0; padding: 0; list-style: none; }
+.footer-insights li a { color: #aebbc5; font-size: 0.72rem; text-decoration: none; }
+.footer-insights li a:hover, .footer-insights .footer-label a:hover { color: #efbc99; }
+@media (min-width: 48rem) { .footer-insights ul { grid-template-columns: repeat(3, minmax(0,1fr)); } }
 .footer-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.7rem 2rem; margin-top: 3.5rem; border-top: 1px solid rgba(255,255,255,0.16); padding-top: 1.25rem; color: #93a2ae; font-size: 0.62rem; }
 .footer-base p { margin: 0; }
 

@@ -15,6 +15,7 @@ export const Route = createFileRoute("/book-a-session_/thanks")({
       },
       { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "Session paid — send two times" },
+      { name: "twitter:title", content: "Session paid — send two times" },
       { property: "og:url", content: canonicalUrl("/book-a-session/thanks") },
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/book-a-session/thanks") }],

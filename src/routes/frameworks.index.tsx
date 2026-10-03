@@ -12,10 +12,12 @@ export const Route = createFileRoute("/frameworks/")({
           "16 frameworks for the human layer — 8C Crisis-to-Clarity, The Pyramid, Cultural Ecosystem Mapping, Character Compass. Get notified when field guides ship.",
       },
       { property: "og:title", content: "The Frameworks Library" },
+      { name: "twitter:title", content: "The Frameworks Library" },
       {
         property: "og:description",
         content: "The 16 frameworks behind ClarityOS.",
       },
+      { name: "twitter:description", content: "The 16 frameworks behind ClarityOS." },
       { property: "og:url", content: canonicalUrl("/frameworks") },
       ...defaultOgImageMeta,
     ],

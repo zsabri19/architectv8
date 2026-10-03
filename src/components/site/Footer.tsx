@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { SITE } from "@/lib/site-data";
+import { ARTICLES, SITE } from "@/lib/site-data";
 
 const footerLinks = [
   { label: "ClarityOS", href: "/clarityos" },
@@ -11,6 +11,10 @@ const footerLinks = [
   { label: "The Architect", href: "/the-architect" },
   { label: "Frameworks", href: "/frameworks" },
   { label: "The Book", href: "/book" },
+  { label: "Organizational Development", href: "/organizational-development" },
+  { label: "Executive Coaching", href: "/executive-coaching" },
+  { label: "Personal Development Framework", href: "/personal-development-framework" },
+  { label: "Press Kit", href: "/press" },
 ] as const;
 
 
@@ -51,6 +55,21 @@ export function Footer() {
           </a>
         </div>
       </div>
+
+      <nav className="site-shell footer-insights" aria-label="Insights">
+        <p className="footer-label">
+          <Link to="/insights">Insights</Link>
+        </p>
+        <ul>
+          {ARTICLES.map((a) => (
+            <li key={a.slug}>
+              <Link to="/insights/$slug" params={{ slug: a.slug }}>
+                {a.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
 
       <div className="site-shell footer-base">
         <p>© {new Date().getFullYear()} Zeeshan Sabri. All rights reserved.</p>

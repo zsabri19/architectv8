@@ -22,6 +22,13 @@ https://www.global-mkts.com/* https://global-mkts.com/:splat 301
 /memoir /memoir/index.html 301
 /memoir/ /memoir/index.html 301
 
+# /read/ was a duplicate copy of the memoir HTML with no canonical. Send the pages
+# to the /memoir/ originals. /read/assets/* (photos) is left as is. The worker
+# (src/server.ts memoirRedirect) does the same; these lines cover asset-server hits.
+# read/index.html is removed so /read/ is not served as a directory index.
+/read /memoir/index.html 301
+/read/*.html /memoir/:splat.html 301
+
 /memoir/index.html /memoir/home 200
 # Keep .html URLs as 200. Pages otherwise 308s them to extensionless paths the worker 404s.
 /memoir/*.html /memoir/:splat 200

@@ -12,10 +12,12 @@ export const Route = createFileRoute("/privacy")({
           "How enquiry forms, newsletter sign-ups, analytics, and session payments handle your data on global-mkts.com.",
       },
       { property: "og:title", content: "Privacy Policy — Zeeshan Sabri" },
+      { name: "twitter:title", content: "Privacy Policy — Zeeshan Sabri" },
       {
         property: "og:description",
         content: "How this site handles enquiry data, analytics, and payments.",
       },
+      { name: "twitter:description", content: "How this site handles enquiry data, analytics, and payments." },
       { property: "og:type", content: "website" },
       { property: "og:url", content: canonicalUrl("/privacy") },
       ...defaultOgImageMeta,

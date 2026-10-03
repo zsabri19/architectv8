@@ -46,10 +46,12 @@ export const Route = createFileRoute("/book")({
           "Four parts, sixteen chapters. From Exile to Transformation — the illustrated memoir behind ClarityOS. Read the digital edition now; join the waitlist for print.",
       },
       { property: "og:title", content: "From Exile to Transformation" },
+      { name: "twitter:title", content: "From Exile to Transformation" },
       {
         property: "og:description",
         content: "A memoir beyond techniques. The book behind ClarityOS.",
       },
+      { name: "twitter:description", content: "A memoir beyond techniques. The book behind ClarityOS." },
       { property: "og:type", content: "book" },
       { property: "og:url", content: canonicalUrl("/book") },
       ...defaultOgImageMeta,

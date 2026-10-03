@@ -15,10 +15,12 @@ export const Route = createFileRoute("/newsletter")({
           "Executive brief on installing the human operating layer before transformation. Published issues for leaders in the GCC and beyond.",
       },
       { property: "og:title", content: "The Clarity Dispatch" },
+      { name: "twitter:title", content: "The Clarity Dispatch" },
       {
         property: "og:description",
         content: "Executive brief on the human layer of transformation.",
       },
+      { name: "twitter:description", content: "Executive brief on the human layer of transformation." },
       { property: "og:url", content: canonicalUrl("/newsletter") },
       { property: "og:image", content: OG },
       { name: "twitter:image", content: OG },
