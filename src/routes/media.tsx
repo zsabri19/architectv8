@@ -29,7 +29,7 @@ export const Route = createFileRoute("/media")({
       {
         name: "description",
         content:
-          "Press, keynotes, and speaking. Entrepreneurial Excellence Award winner (2026), ClarityOS methodology. Decode Conference keynote, LUMS Lahore, 15 January 2026.",
+          "Press, keynotes, and speaking. Entrepreneurial Excellence Award, Founders 2.0 Dubai 2025. Decode Conference keynote, LUMS Lahore, 15 January 2026.",
       },
       { property: "og:title", content: "Media & Press — Zeeshan Sabri" },
       { name: "twitter:title", content: "Media & Press — Zeeshan Sabri" },

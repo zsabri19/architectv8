@@ -366,13 +366,12 @@ export const BOOK_ABOUT = {
 } as const;
 
 export const BOOK_PRESS = {
-  eyebrow:
-    "As Seen In MarketersMEDIA — Entrepreneurial Excellence Award winner (2026), ClarityOS methodology",
+  eyebrow: "As Seen In MarketersMEDIA — Founders 2.0 Conference, Dubai, December 2025",
   quote:
     "We are seeing a maturity shift in the GCC. Leaders are realizing that you cannot install a First World governance system on a broken human operating system.",
-  attribution: "Zeeshan Sabri",
+  attribution: "Zeeshan Sabri, Founders 2.0 Conference, Dubai",
   description:
-    "Entrepreneurial Excellence Award winner (2026), ClarityOS methodology. The methodology is described as the world's first Pre-Governance Operating System, currently deployed across national-scale digital banking, telecom, and defense procurement transformations serving 5 million+ users. Press coverage published January 29, 2026.",
+    "The Entrepreneurial Excellence Award recognized ClarityOS as the world's first Pre-Governance Operating System, currently deployed across national-scale digital banking, telecom, and defense procurement transformations serving 5 million+ users. Press coverage published January 29, 2026.",
   cta: "Read the Press Release",
 } as const;
 

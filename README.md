@@ -40,7 +40,7 @@ Visit https://architect.global-mkts.com and every linked page. Extract, catalogu
 - Sub-positioning: "ClarityOS is the prerequisite, not the upgrade."
 - Hero H1: "Transformation fails when the human layer underneath it cannot hold."
 - Signature concept: ClarityOS as the world's first Pre-Governance Operating System.
-- Award: Entrepreneurial Excellence Award winner (2026), ClarityOS methodology. Founders 2.0 was a nomination only.
+- Award: Winner, Entrepreneurial Excellence Award — Founders 2.0 Conference, Dubai, December 2025.
 - Book / Memoir: "From Exile to Transformation: A Memoir Beyond Techniques" — 15 chapters, 6 parts, epilogue, 14 frameworks, coming 2026.
 - Newsletter: The Clarity Dispatch.
 - Email: zeeshan@global-mkts.com.
@@ -220,7 +220,7 @@ The site must be designed for search intent, not just visual appeal. Every page 
 - Seed with 6 launch articles derived from the book and current site content.
 
 #### 9. Media / Press (Pillar: Social Proof)
-- Target: "Zeeshan Sabri keynote", "Zeeshan Sabri media", "Entrepreneurial Excellence Award".
+- Target: "Zeeshan Sabri keynote", "Zeeshan Sabri media", "Founders 2.0 award".
 - YouTube channel embed, reels, speaking photos, press coverage, press kit download.
 
 #### 10. Contact / Connect
