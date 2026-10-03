@@ -53,6 +53,11 @@ const LEGACY_PATHS: Record<string, string> = {
   "/architect": "/the-architect",
   "/dispatch": "/newsletter",
   "/executive-profile": "/the-architect",
+  // Common guesses that 404ed in the 2026-10-03 crawl; send them to the matching page.
+  "/about": "/the-architect",
+  "/contact": "/connect",
+  "/blog": "/insights",
+  "/prologue": "/memoir/prologue.html",
   // GSC: /index.html 404s — land on apex home on every host.
   "/index.html": "/",
   // Old 1.4MB cover hotlinks → compressed jpg (~154KB).

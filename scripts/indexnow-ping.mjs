@@ -30,7 +30,9 @@ async function sitemapUrls() {
 const keyRes = await fetch(KEY_LOCATION, { redirect: "manual" });
 const keyBody = keyRes.status === 200 ? (await keyRes.text()).trim() : "";
 if (keyBody !== KEY) {
-  console.error(`Key file check failed: ${KEY_LOCATION} -> ${keyRes.status}. Deploy to production first.`);
+  console.error(
+    `Key file check failed: ${KEY_LOCATION} -> ${keyRes.status}. Deploy to production first.`,
+  );
   process.exit(1);
 }
 

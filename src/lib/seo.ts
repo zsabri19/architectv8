@@ -20,12 +20,27 @@ export const organizationNode = {
 };
 
 /** Shared author/publisher references for Article nodes. */
-export const authorRef = { "@type": "Person", "@id": PERSON_ID, name: SITE.name, url: canonicalUrl("/the-architect") };
+export const authorRef = {
+  "@type": "Person",
+  "@id": PERSON_ID,
+  name: SITE.name,
+  url: canonicalUrl("/the-architect"),
+};
 export const publisherRef = { "@id": ORGANIZATION_ID };
 
 const MONTHS = [
-  "january", "february", "march", "april", "may", "june",
-  "july", "august", "september", "october", "november", "december",
+  "january",
+  "february",
+  "march",
+  "april",
+  "may",
+  "june",
+  "july",
+  "august",
+  "september",
+  "october",
+  "november",
+  "december",
 ];
 
 /** "September 2026" -> "2026-09"; "2025" -> "2025"; ISO input is returned as-is. */
