@@ -109,6 +109,13 @@ function memoirRedirect(path: string): string | null {
   if (alias) return alias;
   const chapter = path.match(/^\/book\/chapter-(\d{2}-[a-z0-9-]+)$/);
   if (chapter && MEMOIR_CHAPTERS.has(chapter[1])) return `/memoir/ch-${chapter[1]}.html`;
+  // /book/<page>.html and root-level /<page>.html memoir forms -> the /memoir/ file.
+  const memoirFile = path.match(
+    /^(?:\/book)?\/(prologue|epilogue|appendix|listen|listen-(?:\d{2}|prologue|epilogue)|ch-(\d{2}-[a-z0-9-]+))\.html$/,
+  );
+  if (memoirFile && (!memoirFile[2] || MEMOIR_CHAPTERS.has(memoirFile[2]))) {
+    return `/memoir/${memoirFile[1]}.html`;
+  }
   if (path.startsWith("/book/")) return MEMOIR_COVER;
   return null;
 }
@@ -120,18 +127,18 @@ function redirectAliasHost(request: Request): Response | null {
   const url = new URL(request.url);
   const host = url.hostname.toLowerCase();
   const path = url.pathname.replace(/\/+$/, "") || "/";
-  const legacy = memoirRedirect(path) ?? LEGACY_PATHS[path];
+  const legacy = memoirRedirect(path) ?? LEGACY_PATHS[path] ?? LEGACY_PATHS[path.toLowerCase()];
   const hostNeedsCanonical = ALIAS_HOSTS.has(host);
 
   // React routes are canonical without a trailing slash. Without this, TanStack answers
   // "/insights/" with a 307. Fold it into the same single 301 as host/legacy fixes.
-  const trailingSlash =
-    url.pathname !== path &&
-    path !== "/" &&
-    !SLASH_EXEMPT_PREFIXES.some((prefix) => url.pathname.startsWith(prefix));
+  const exempt = SLASH_EXEMPT_PREFIXES.some((prefix) => url.pathname.startsWith(prefix));
+  const trailingSlash = url.pathname !== path && path !== "/" && !exempt;
+  // React routes are lowercase; /CLARITYOS would otherwise render a duplicate 200.
+  const lowered = !exempt && !legacy && path !== path.toLowerCase() ? path.toLowerCase() : null;
 
   // robots.txt and sitemap.xml are served by this worker (not static assets), so www 301s them too.
-  if (!hostNeedsCanonical && !legacy && !trailingSlash) return null;
+  if (!hostNeedsCanonical && !legacy && !trailingSlash && !lowered) return null;
 
   // Only rewrite the host for our own alias hosts. Preview/pages.dev hosts keep their host
   // so a preview never bounces to production for a path fix.
@@ -140,8 +147,32 @@ function redirectAliasHost(request: Request): Response | null {
     url.protocol = "https:";
     url.port = "";
   }
-  url.pathname = legacy ?? (trailingSlash ? path : url.pathname);
+  url.pathname = legacy ?? lowered ?? (trailingSlash ? path : url.pathname);
   return Response.redirect(url.toString(), 301);
+}
+
+// Static files get these from Pages; SSR responses did not. No includeSubDomains: some
+// global-mkts.com subdomains are not confirmed HTTPS-only.
+const SECURITY_HEADERS: Record<string, string> = {
+  "Strict-Transport-Security": "max-age=31536000",
+  "X-Content-Type-Options": "nosniff",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "X-Frame-Options": "SAMEORIGIN",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+};
+
+function withSecurityHeaders(response: Response): Response {
+  const type = response.headers.get("content-type") ?? "";
+  if (!type.includes("text/html")) return response;
+  const headers = new Headers(response.headers);
+  for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
+    if (!headers.has(name)) headers.set(name, value);
+  }
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 }
 
 export default {
@@ -175,7 +206,7 @@ export default {
 
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      return withSecurityHeaders(await normalizeCatastrophicSsrResponse(response));
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {

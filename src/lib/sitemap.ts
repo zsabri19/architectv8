@@ -12,7 +12,8 @@ function memoirPaths(): string[] {
     ...chapters,
     "/memoir/epilogue.html",
     "/memoir/appendix.html",
-    // /memoir/listen.html is intentionally noindex (audio player shell), so it is not listed.
+    // Public listen hub: indexable (self-canonical). The per-chapter listen-NN players stay noindex.
+    "/memoir/listen.html",
   ];
 }
 

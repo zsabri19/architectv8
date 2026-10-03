@@ -15,8 +15,10 @@ export const organizationNode = {
   legalName: "Global Markets Technologies LLC",
   url: canonicalUrl("/"),
   email: SITE.email,
+  // The GMT logo already shown in the ventures logo strip. No address/phone: the site does not
+  // state a company address (press kit "Based in Muscat" describes Zeeshan, not GMT).
+  logo: { "@type": "ImageObject", url: canonicalUrl("/assets/gmt.png") },
   founder: { "@id": PERSON_ID },
-  sameAs: [SITE.socials.linkedin],
 };
 
 /** Shared author/publisher references for Article nodes. */
