@@ -366,7 +366,8 @@ export const BOOK_ABOUT = {
 } as const;
 
 export const BOOK_PRESS = {
-  eyebrow: "As Seen In MarketersMEDIA — Entrepreneurial Excellence Award winner (2026), ClarityOS methodology",
+  eyebrow:
+    "As Seen In MarketersMEDIA — Entrepreneurial Excellence Award winner (2026), ClarityOS methodology",
   quote:
     "We are seeing a maturity shift in the GCC. Leaders are realizing that you cannot install a First World governance system on a broken human operating system.",
   attribution: "Zeeshan Sabri",
