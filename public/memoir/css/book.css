@@ -973,6 +973,17 @@ main {
   text-wrap: balance;
 }
 .hero-title .tl-to { margin-top: 0.1em; }
+.hero-title .hero-kicker {
+  display: block;
+  margin-top: 0.85em;
+  color: var(--gold-soft);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  line-height: 1.5;
+  text-align: center;
+}
 .bridge {
   display: flex;
   align-items: center;
@@ -1402,6 +1413,12 @@ a.back-contents {
   font-size: 15px;
 }
 a.back-contents:hover { color: var(--gold); }
+.blurb a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.blurb a:hover { color: var(--gold); }
 
 /* ============================================================
    Motion system — reading progress, chapter reveals, hovers.
@@ -1581,6 +1598,7 @@ a.back-contents:hover::after {
   color: var(--navy);
 }
 img { max-width: 100%; height: auto; }
+picture { display: block; }
 
 .listen-btn {
   display: inline-flex;
