@@ -1,2 +1,8 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+/memoir/assets/photos/ch15-*
+  X-Robots-Tag: noindex
+
+/read/assets/photos/ch15-*
+  X-Robots-Tag: noindex
