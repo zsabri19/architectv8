@@ -26,7 +26,7 @@ export function Header() {
     <>
       <header className="site-header">
         <div className="site-shell header-inner">
-          <Link className="wordmark" to="/" aria-label="Zeeshan Sabri home">
+          <Link className="wordmark" to="/">
             <span className="wordmark-name">Zeeshan Sabri</span>
             <span className="wordmark-role">Crisis-to-Clarity Architect</span>
           </Link>

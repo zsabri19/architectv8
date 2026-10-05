@@ -66,8 +66,11 @@ function BookSessionPage() {
         <div className="site-shell" style={{ maxWidth: "68rem" }}>
           <p className="eyebrow">ClarityOS Personal Session · $79</p>
           <h1 id="bas-title" className="font-serif text-4xl leading-[1.1] md:text-6xl">
-            90 minutes. One blocker. One sequenced next step.
+            Book a $79 Clarity Session
           </h1>
+          <p className="mt-4 font-serif text-2xl leading-snug">
+            90 minutes. One blocker. One sequenced next step.
+          </p>
           <p className="hero-summary mt-6 max-w-2xl">{DESC}</p>
           <div className="hero-actions mt-8">
             <a className="button button-copper" href={SITE.bookSessionUrl}>
@@ -77,6 +80,32 @@ function BookSessionPage() {
               Compare all engagement paths
             </Link>
           </div>
+          <nav className="mt-8 flex max-w-2xl flex-col gap-2 text-sm" aria-label="Related">
+            <Link className="underline underline-offset-4" to="/clarityos">
+              ClarityOS — The Pre-Governance Operating System
+            </Link>
+            <Link
+              className="underline underline-offset-4"
+              to="/frameworks/$slug"
+              params={{ slug: "8c-crisis-to-clarity" }}
+            >
+              The 8C Crisis-to-Clarity Framework
+            </Link>
+            <Link className="underline underline-offset-4" to="/insights">
+              Insights — The Clarity Dispatch
+            </Link>
+            <Link
+              className="underline underline-offset-4"
+              to="/insights/$slug"
+              params={{ slug: "human-operating-system" }}
+            >
+              Zeeshan Sabri and the Human Operating System: Why Transformation Must Begin with
+              Clarity
+            </Link>
+            <a className="underline underline-offset-4" href="/memoir/index.html">
+              From Exile to Transformation
+            </a>
+          </nav>
           <p className="mt-4 max-w-2xl text-sm text-navy/55">
             After payment, send two times that work. I confirm the session the same day at{" "}
             <a className="underline underline-offset-4" href={`mailto:${SITE.email}`}>

@@ -6,9 +6,10 @@ import {
   ARTICLES,
   SITE,
   canonicalUrl,
-  chapterPath,
   defaultOgImageMeta,
+  illustratedChapterHref,
 } from "@/lib/site-data";
+import { publisherRef } from "@/lib/seo";
 import { FRAMEWORK_ENRICHMENTS } from "@/lib/v4-content";
 import { CITABLE_ASSETS } from "@/lib/citable-assets";
 
@@ -50,7 +51,7 @@ export const Route = createFileRoute("/frameworks/$slug")({
             jobTitle: SITE.role,
             url: canonicalUrl("/the-architect"),
           },
-          publisher: { "@type": "Person", name: SITE.name, url: canonicalUrl("/") },
+          publisher: publisherRef,
         }),
       });
       scripts.push({
@@ -90,7 +91,9 @@ export const Route = createFileRoute("/frameworks/$slug")({
         { title },
         { name: "description", content: desc },
         { property: "og:title", content: title },
+        { name: "twitter:title", content: title },
         { property: "og:description", content: desc },
+        { name: "twitter:description", content: desc },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
         ...defaultOgImageMeta,
@@ -371,13 +374,12 @@ function FrameworkPage() {
                 <ul className="mt-3 space-y-2">
                   {chapters.map((c) => (
                     <li key={c.slug}>
-                      <Link
-                        to="/book/$slug"
-                        params={{ slug: chapterPath(c) }}
+                      <a
+                        href={illustratedChapterHref(c)}
                         className="font-serif text-lg text-navy hover:text-gold"
                       >
                         Ch. {c.number}: {c.title}
-                      </Link>
+                      </a>
                     </li>
                   ))}
                 </ul>

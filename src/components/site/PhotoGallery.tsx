@@ -1,7 +1,31 @@
 import { useCallback, useEffect, useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { IMAGE_DIMS } from "@/lib/image-dims";
 
 export type GalleryPhoto = { src: string; caption: string; tag?: string };
+
+function SizedPhoto({ src, alt, className }: { src: string; alt: string; className?: string }) {
+  const dim = IMAGE_DIMS[src];
+  const img = (
+    <img
+      src={src}
+      alt={alt}
+      width={dim?.width}
+      height={dim?.height}
+      loading="lazy"
+      decoding="async"
+      className={className}
+    />
+  );
+  if (!dim) return img;
+  const webp = src.replace(/\.(png|jpe?g)$/i, ".webp");
+  return (
+    <picture className="contents">
+      <source srcSet={webp} type="image/webp" />
+      {img}
+    </picture>
+  );
+}
 
 /**
  * Clickable photo gallery with a full-size, uncropped lightbox.
@@ -51,12 +75,7 @@ export function PhotoGallery({
             className="photo-tile group relative aspect-[4/5] overflow-hidden bg-navy/5 text-left"
             aria-label={`Open photo: ${p.caption}`}
           >
-            <img
-              src={p.src}
-              alt={p.caption}
-              loading="lazy"
-              className="h-full w-full object-cover"
-            />
+            <SizedPhoto src={p.src} alt={p.caption} className="h-full w-full object-cover" />
             <span className="pointer-events-none absolute inset-0 bg-navy/0 transition-colors duration-300 group-hover:bg-navy/15" />
 
             <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent p-4">
@@ -97,7 +116,7 @@ export function PhotoGallery({
             <ChevronLeft aria-hidden="true" />
           </button>
           <figure className="lightbox-figure" onClick={(e) => e.stopPropagation()}>
-            <img src={active.src} alt={active.caption} />
+            <SizedPhoto src={active.src} alt={active.caption} />
             <figcaption>
               {active.tag && <span className="lightbox-tag">{active.tag}</span>}
               <span>{active.caption}</span>

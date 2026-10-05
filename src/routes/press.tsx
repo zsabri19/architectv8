@@ -11,6 +11,7 @@ import {
   METRICS,
   defaultOgImageMeta,
 } from "@/lib/site-data";
+import { PERSON_ID } from "@/lib/seo";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
 
 const TITLE = "Press Kit — Zeeshan Sabri, Crisis-to-Clarity Architect";
@@ -29,7 +30,9 @@ export const Route = createFileRoute("/press")({
       { title: TITLE },
       { name: "description", content: DESC },
       { property: "og:title", content: TITLE },
+      { name: "twitter:title", content: TITLE },
       { property: "og:description", content: DESC },
+      { name: "twitter:description", content: DESC },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: canonicalUrl("/press") },
       ...defaultOgImageMeta,
@@ -42,6 +45,7 @@ export const Route = createFileRoute("/press")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
+          "@id": PERSON_ID,
           name: SITE.name,
           jobTitle: SITE.role,
           description: SHORT_BIO,

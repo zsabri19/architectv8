@@ -17,6 +17,7 @@ export const Route = createFileRoute("/book_/unlocked")({
       { title: "The rest of the book is open · Zeeshan Sabri" },
       { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "The rest of the book is open" },
+      { name: "twitter:title", content: "The rest of the book is open" },
       { property: "og:url", content: canonicalUrl("/book/unlocked") },
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/book/unlocked") }],

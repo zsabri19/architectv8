@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
 import { ARTICLES, FRAMEWORKS, SITE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
+import { authorRef, isoDate, publisherRef } from "@/lib/seo";
 
 function toMetaDescription(text: string, max = 155): string {
   if (text.length <= max) return text;
@@ -31,7 +32,9 @@ export const Route = createFileRoute("/insights/$slug")({
         { title },
         { name: "description", content: desc },
         { property: "og:title", content: title },
+        { name: "twitter:title", content: title },
         { property: "og:description", content: desc },
+        { name: "twitter:description", content: desc },
         { property: "og:type", content: "article" },
         { property: "og:url", content: canonicalUrl(`/insights/${params.slug}`) },
         ...defaultOgImageMeta,
@@ -46,10 +49,12 @@ export const Route = createFileRoute("/insights/$slug")({
                 "@type": "Article",
                 headline: loaderData.article.title,
                 description: loaderData.article.summary,
-                datePublished: loaderData.article.date,
+                datePublished: isoDate(loaderData.article.date),
                 articleSection: loaderData.article.category,
                 image: `https://${SITE.domain}/assets/hero.jpg`,
-                author: { "@type": "Person", name: "Zeeshan Sabri" },
+                url: canonicalUrl(`/insights/${params.slug}`),
+                author: authorRef,
+                publisher: publisherRef,
                 mainEntityOfPage: {
                   "@type": "WebPage",
                   "@id": `https://${SITE.domain}/insights/${params.slug}`,
@@ -85,6 +90,11 @@ function ArticlePage() {
   const framework = article.relatedFramework
     ? FRAMEWORKS.find((f) => f.slug === article.relatedFramework)
     : null;
+  const others = ARTICLES.filter((a) => a.slug !== article.slug);
+  const relatedInsights = [
+    ...others.filter((a) => a.category === article.category),
+    ...others.filter((a) => a.category !== article.category),
+  ].slice(0, 3);
 
   return (
     <SiteLayout>
@@ -147,20 +157,38 @@ function ArticlePage() {
           </section>
         ) : null}
 
+        <nav className="mt-16 border-t border-navy/10 pt-8" aria-label="Related insights">
+          <h2 className="font-serif text-2xl text-navy">Related insights</h2>
+          <ul className="mt-4 space-y-3">
+            {relatedInsights.map((item) => (
+              <li key={item.slug}>
+                <Link
+                  to="/insights/$slug"
+                  params={{ slug: item.slug }}
+                  className="font-serif text-lg text-navy hover:text-gold"
+                >
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         {framework && (
           <div className="mt-16 border-l-2 border-gold bg-paper-soft p-8">
             <div className="text-[10px] font-medium uppercase tracking-widest text-gold">
               Related Framework
             </div>
-            <h3 className="mt-2 font-serif text-2xl text-navy">{framework.title}</h3>
+            <h3 className="mt-2 font-serif text-2xl text-navy">
+              <Link
+                to="/frameworks/$slug"
+                params={{ slug: framework.slug }}
+                className="hover:text-gold"
+              >
+                {framework.title}
+              </Link>
+            </h3>
             <p className="mt-3 text-navy/70">{framework.summary}</p>
-            <Link
-              to="/frameworks/$slug"
-              params={{ slug: framework.slug }}
-              className="mt-4 inline-block text-xs font-medium uppercase tracking-widest text-navy hover:text-gold"
-            >
-              Read the framework →
-            </Link>
           </div>
         )}
 

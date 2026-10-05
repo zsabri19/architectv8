@@ -9,6 +9,7 @@ export const SITE = {
   heroSub:
     "ClarityOS helps founders, executives, and leadership teams diagnose the real blocker, align decisions and ownership, and install the operating rhythm that makes change stick.",
   email: "zeeshan@global-mkts.com",
+  phone: "+968 7707 4345",
   // SEO target domain. All canonicals, og:url tags, and the sitemap derive
   // from this constant — keep it as the single source of truth.
   domain: "global-mkts.com",
@@ -35,6 +36,8 @@ export const DEFAULT_OG_IMAGE = `https://${SITE.domain}/assets/hero.jpg`;
 
 export const defaultOgImageMeta = [
   { property: "og:image" as const, content: DEFAULT_OG_IMAGE },
+  { property: "og:image:width" as const, content: "900" },
+  { property: "og:image:height" as const, content: "1408" },
   { name: "twitter:image" as const, content: DEFAULT_OG_IMAGE },
 ];
 
@@ -1690,7 +1693,7 @@ export const PRESS_ITEMS = [
     title:
       "Paradigm Shift in GCC Transformation: Zeeshan Sabri Wins Entrepreneurial Excellence Award for Pioneering ClarityOS Methodology",
     outlet: "MarketersMedia",
-    date: "December 2025",
+    date: "29 Jan 2026",
     url: SITE.award.pressUrl,
     cover: null as string | null,
   },
