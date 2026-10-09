@@ -64,7 +64,7 @@ function BookSessionPage() {
     <SiteLayout>
       <section className="section" aria-labelledby="bas-title">
         <div className="site-shell" style={{ maxWidth: "68rem" }}>
-          <p className="eyebrow">ClarityOS Personal Session · $79</p>
+          <p className="eyebrow">ClarityOS™ Personal Session · $79</p>
           <h1 id="bas-title" className="font-serif text-4xl leading-[1.1] md:text-6xl">
             Book a $79 Clarity Session
           </h1>
@@ -82,7 +82,7 @@ function BookSessionPage() {
           </div>
           <nav className="mt-8 flex max-w-2xl flex-col gap-2 text-sm" aria-label="Related">
             <Link className="underline underline-offset-4" to="/clarityos">
-              ClarityOS — The Pre-Governance Operating System
+              ClarityOS™ — The Pre-Governance Operating System
             </Link>
             <Link
               className="underline underline-offset-4"

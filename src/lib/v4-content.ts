@@ -358,7 +358,7 @@ export const BOOK_ABOUT = {
   lead:
     "In August 1990, when war forced his family from Kuwait to Pakistan, Zeeshan Sabri experienced exile before he understood the word.",
   body: [
-    "Those early years of uncertainty became the compass for a life dedicated to building clarity in chaos, dignity in work, and governance in transformation. This memoir blends personal narrative with The Pyramid — Governance, Strategy, Insights, Performance — and the fourteen frameworks that later became ClarityOS.",
+    "Those early years of uncertainty became the compass for a life dedicated to building clarity in chaos, dignity in work, and governance in transformation. This memoir blends personal narrative with The Pyramid — Governance, Strategy, Insights, Performance — and the fourteen frameworks that later became ClarityOS™.",
     "From Fortune 500 boardrooms at Huawei and Motorola to national-scale projects in Oman, the journey captures what it takes to lead under pressure, reframe procurement into progress, and stabilize the human operating system before any system upgrade is asked to hold.",
     "For anyone navigating disruption — in life, business, or nation — this book is a reminder that resilience is not a reaction. It is a discipline.",
   ],
@@ -366,7 +366,7 @@ export const BOOK_ABOUT = {
 } as const;
 
 export const BOOK_PRESS = {
-  eyebrow: "As Seen In MarketersMEDIA — Founders 2.0 Conference, Dubai, December 2025",
+  eyebrow: "As Seen In MarketersMEDIA — 29 January 2026",
   quote:
     "We are seeing a maturity shift in the GCC. Leaders are realizing that you cannot install a First World governance system on a broken human operating system.",
   attribution: "Zeeshan Sabri, Founders 2.0 Conference, Dubai",

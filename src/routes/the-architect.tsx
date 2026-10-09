@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
 import { PhotoGallery } from "@/components/site/PhotoGallery";
 import { LogoMarquee } from "@/components/site/LogoMarquee";
-import { SITE, METRICS, LOGOS_INSTITUTIONS, LOGOS_VENTURES, RECOGNITION, FIELD_PHOTOS, CERT_AICERTS_PDF, CERTIFICATIONS, ARCHIVE_CRICKET, canonicalUrl } from "@/lib/site-data";
+import { IdentityLine } from "@/components/site/IdentityLine";
+import { BRAND_TM, SITE, METRICS, LOGOS_INSTITUTIONS, LOGOS_VENTURES, RECOGNITION, FIELD_PHOTOS, CERT_AICERTS_PDF, CERTIFICATIONS, ARCHIVE_CRICKET, canonicalUrl } from "@/lib/site-data";
 import originAsset from "@/assets/origin.jpg.asset.json";
 
 const OG = `https://${SITE.domain}${originAsset.url}`;
@@ -18,8 +19,8 @@ export const Route = createFileRoute("/the-architect")({
       },
       { property: "og:title", content: "The Architect — Zeeshan Sabri" },
       { name: "twitter:title", content: "The Architect — Zeeshan Sabri" },
-      { property: "og:description", content: "The origin story behind ClarityOS." },
-      { name: "twitter:description", content: "The origin story behind ClarityOS." },
+      { property: "og:description", content: `The origin story behind ${BRAND_TM}.` },
+      { name: "twitter:description", content: `The origin story behind ${BRAND_TM}.` },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: canonicalUrl("/the-architect") },
       { property: "og:image", content: OG },
@@ -43,11 +44,12 @@ function ArchitectPage() {
             Born from displacement. Forged in Fortune 500 transformation. Built because nothing else
             worked.
           </h1>
+          <IdentityLine className="mt-5 text-sm" />
           <p className="mt-8 text-lg leading-relaxed text-navy/70">
             My family evacuated Kuwait during the Gulf War. I spent 20 years inside Huawei, Motorola
             Solutions, and major procurement and transformation portfolios across the GCC. The
             pattern was always the same: organisations invest in systems and ignore the humans
-            running them. ClarityOS is what I built when I got tired of watching the same failure
+            running them. {BRAND_TM} is what I built when I got tired of watching the same failure
             repeat.
           </p>
         </div>
@@ -64,7 +66,7 @@ function ArchitectPage() {
       </section>
 
       <section className="bg-navy py-16 text-paper">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-paper/10 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-paper/10 lg:grid-cols-5">
           {METRICS.map((m) => (
             <div key={m.label} className="bg-navy p-10 text-center">
               <div className="font-serif text-4xl text-gold">{m.value}</div>
