@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
-import { SITE, canonicalUrl } from "@/lib/site-data";
+import { BRAND_TM, SITE, WHAT_YOU_RECEIVE, canonicalUrl } from "@/lib/site-data";
 import { CLARITY_FAQS } from "@/lib/v4-content";
 import coverAsset from "@/assets/cover.jpg.asset.json";
 
@@ -9,14 +9,14 @@ const OG = `https://${SITE.domain}${coverAsset.url}`;
 export const Route = createFileRoute("/clarityos")({
   head: () => ({
     meta: [
-      { title: "ClarityOS — The Pre-Governance Operating System" },
+      { title: `${BRAND_TM} — The Pre-Governance Operating System` },
       {
         name: "description",
         content:
           "ClarityOS is the world's first Pre-Governance OS — the 8C Framework installs decision clarity, aligned ownership, and operating rhythm.",
       },
-      { property: "og:title", content: "ClarityOS — The Pre-Governance Operating System" },
-      { name: "twitter:title", content: "ClarityOS — The Pre-Governance Operating System" },
+      { property: "og:title", content: `${BRAND_TM} — The Pre-Governance Operating System` },
+      { name: "twitter:title", content: `${BRAND_TM} — The Pre-Governance Operating System` },
       {
         property: "og:description",
         content: "The 8C Framework and the human layer of transformation.",
@@ -85,7 +85,7 @@ function ClarityOSPage() {
         <div className="lg:col-span-7">
           <Eyebrow>Methodology</Eyebrow>
           <h1 className="font-serif text-4xl leading-[1.1] text-navy md:text-6xl">
-            ClarityOS — The Pre-Governance Operating System
+            {BRAND_TM} — The Pre-Governance Operating System
           </h1>
           <p className="mt-4 font-serif text-2xl leading-snug text-navy/80 md:text-3xl">
             ClarityOS is the prerequisite, <span className="italic text-gold">not</span> the upgrade.
@@ -145,6 +145,34 @@ function ClarityOSPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-navy/10 bg-paper-soft py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <Eyebrow>{WHAT_YOU_RECEIVE.eyebrow}</Eyebrow>
+        <SectionTitle className="max-w-2xl">{WHAT_YOU_RECEIVE.title}</SectionTitle>
+        <div className="mt-16 grid gap-px border border-navy/10 bg-navy/10 md:grid-cols-2 lg:grid-cols-5">
+          {WHAT_YOU_RECEIVE.cards.map((c, i) => (
+            <div key={c.title} className="bg-white p-8">
+              <div className="font-serif text-4xl text-gold">{String(i + 1).padStart(2, "0")}</div>
+              <p className="mt-6 text-sm leading-relaxed text-navy/60">
+                <strong className="font-semibold text-navy">{c.title}</strong> {c.body}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-10 max-w-3xl text-lg leading-relaxed text-navy/70">
+          {WHAT_YOU_RECEIVE.footnote}
+        </p>
+        <div className="mt-8">
+          <Link
+            to={WHAT_YOU_RECEIVE.cta.href}
+            className="inline-block bg-navy px-8 py-4 text-xs font-bold uppercase tracking-widest text-paper hover:bg-gold hover:text-navy"
+          >
+            {WHAT_YOU_RECEIVE.cta.label}
+          </Link>
+        </div>
         </div>
       </section>
 

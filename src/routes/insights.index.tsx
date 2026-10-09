@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
 import { QuoteCard } from "@/components/site/QuoteCard";
 import { ARTICLES, QUOTE_CARDS, EXTERNAL_PUBLICATIONS, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
+import { formatDisplayDate } from "@/lib/format-date";
 
 export const Route = createFileRoute("/insights/")({
   head: () => ({
@@ -41,7 +42,7 @@ function InsightsPage() {
         </p>
         <nav className="mt-8 flex flex-col gap-2 text-sm" aria-label="Related">
           <Link className="underline underline-offset-4 hover:text-gold" to="/clarityos">
-            ClarityOS — The Pre-Governance Operating System
+            ClarityOS™ — The Pre-Governance Operating System
           </Link>
           <Link
             className="underline underline-offset-4 hover:text-gold"
@@ -100,11 +101,7 @@ function InsightsPage() {
                     ) : null}
                   </div>
                   <time className="mt-1 block text-xs text-navy/50">
-                    {new Date(a.date).toLocaleDateString("en-US", {
-                      month: "long",
-                      day: "numeric",
-                      year: "numeric",
-                    })}
+                    {formatDisplayDate(a.date)}
                   </time>
                 </div>
                 <div className="md:col-span-9">
@@ -136,11 +133,7 @@ function InsightsPage() {
                     </div>
                     {p.date && (
                       <time className="mt-1 block text-xs text-navy/50">
-                        {new Date(p.date).toLocaleDateString("en-US", {
-                          month: "long",
-                          day: "numeric",
-                          year: "numeric",
-                        })}
+                        {formatDisplayDate(p.date)}
                       </time>
                     )}
                   </div>

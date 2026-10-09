@@ -27,7 +27,7 @@ window.__MEMOIR_SPOKEN__ = {
     },
     {
       "kind": "h2",
-      "text": "The Evolution: From Frameworks to ClarityOS.",
+      "text": "The Evolution: From Frameworks to ClarityOS™.",
       "words": 6,
       "highlights": []
     },

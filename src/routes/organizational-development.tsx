@@ -7,7 +7,7 @@ import { authorRef, publisherRef } from "@/lib/seo";
 
 const TITLE = "Organizational Development: The Human Layer";
 const DESC =
-  "What organizational development is, why most OD programmes fail, and the ClarityOS frameworks that install the human layer beneath transformation.";
+  "What organizational development is, why most OD programmes fail, and the ClarityOS™ frameworks that install the human layer beneath transformation.";
 const URL = "/organizational-development";
 
 export const Route = createFileRoute("/organizational-development")({
@@ -71,7 +71,7 @@ function OrganizationalDevelopmentPage() {
               Start a Conversation <ArrowRight aria-hidden="true" />
             </Link>
             <Link className="text-link" to="/clarityos">
-              See the ClarityOS methodology
+              See the ClarityOS™ methodology
             </Link>
           </div>
         </div>

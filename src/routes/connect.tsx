@@ -18,8 +18,8 @@ export const Route = createFileRoute("/connect")({
         content:
           "Two lanes: book a $79 Clarity Session now, or send an enterprise, advisory, or speaking enquiry. Response within 48 hours.",
       },
-      { property: "og:title", content: "Connect — ClarityOS" },
-      { name: "twitter:title", content: "Connect — ClarityOS" },
+      { property: "og:title", content: "Connect — ClarityOS™" },
+      { name: "twitter:title", content: "Connect — ClarityOS™" },
       { property: "og:description", content: "Book the $79 session or start an enterprise enquiry." },
       { name: "twitter:description", content: "Book the $79 session or start an enterprise enquiry." },
       { property: "og:url", content: canonicalUrl("/connect") },
@@ -87,7 +87,7 @@ function ConnectPage() {
             </p>
             <h2 className="mt-3 font-serif text-3xl text-navy">Enterprise discovery enquiry</h2>
             <p className="mt-4 text-navy/70">
-              For ClarityOS 90-day work, board advisory, speaking, or partnership. Outline the
+              For ClarityOS™ 90-day work, board advisory, speaking, or partnership. Outline the
               context. Initial response within 48 hours; a scoped proposal within 5 business days.
             </p>
             <div className="mt-8 overflow-hidden bg-navy">

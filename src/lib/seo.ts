@@ -63,7 +63,7 @@ export function isoDate(value: string | undefined): string | undefined {
 /** Labels match the existing nav, footer, and page H1/title wording. */
 const PAGE_NAMES: Record<string, string> = {
   "/the-architect": "The Architect",
-  "/clarityos": "ClarityOS",
+  "/clarityos": "ClarityOS™",
   "/frameworks": "Frameworks",
   "/services": "Services",
   "/insights": "Insights",

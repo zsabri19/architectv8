@@ -26,7 +26,7 @@ export const OD_PILLAR = {
       ],
     },
     {
-      heading: "The ClarityOS view of organizational development",
+      heading: "The ClarityOS™ view of organizational development",
       paragraphs: [
         "ClarityOS treats OD as an installation problem, not a training problem. The 8C Crisis-to-Clarity Framework sequences the eight conditions — clarity, conditions, control, capability, calibration, correction, continuity, coaching — that must hold for change to survive contact with reality.",
         "Cultural Ecosystem Mapping surfaces the invisible operating system beneath a GCC organisation before any intervention is designed. The Pyramid Framework sequences transformation maturity so that foundation work precedes scale. The Character Compass keeps the leadership layer durable while the system is being rebuilt.",

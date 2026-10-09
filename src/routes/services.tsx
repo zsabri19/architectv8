@@ -1,19 +1,27 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
-import { SERVICES, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
-import frameworkAsset from "@/assets/framework-8c.jpg.asset.json";
+import {
+  BRAND_TM,
+  SERVICES,
+  WHAT_YOU_RECEIVE,
+  canonicalUrl,
+  defaultOgImageMeta,
+} from "@/lib/site-data";
+
+/** Optional /services list: "What you receive" cards 1, 2 and 4 (approved copy). */
+const ENTERPRISE_RECEIVE = [0, 1, 3].map((i) => WHAT_YOU_RECEIVE.cards[i]);
 
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — ClarityOS Personal, Enterprise, Board Advisory" },
+      { title: `Services — ${BRAND_TM} Personal, Enterprise, Board Advisory` },
       {
         name: "description",
         content:
           "Three engagement paths: ClarityOS Personal, Enterprise 90-Day Program, and Board Advisory & Speaking for GCC organisations.",
       },
-      { property: "og:title", content: "Services — ClarityOS" },
-      { name: "twitter:title", content: "Services — ClarityOS" },
+      { property: "og:title", content: `Services — ${BRAND_TM}` },
+      { name: "twitter:title", content: `Services — ${BRAND_TM}` },
       { property: "og:description", content: "Choose the level of clarity you need." },
       { name: "twitter:description", content: "Choose the level of clarity you need." },
       { property: "og:url", content: canonicalUrl("/services") },
@@ -44,29 +52,19 @@ export const Route = createFileRoute("/services")({
 function ServicesPage() {
   return (
     <SiteLayout>
-      <section className="mx-auto max-w-7xl px-6 pt-20 pb-16 lg:grid lg:grid-cols-12 lg:gap-12 lg:px-8">
-        <div className="lg:col-span-8">
+      <section className="mx-auto max-w-7xl px-6 pt-20 pb-16 lg:px-8">
+        <div className="max-w-4xl">
           <Eyebrow>Engagement Paths</Eyebrow>
           <h1 className="font-serif text-4xl leading-[1.1] text-navy md:text-6xl">
             Three paths, one methodology: how deep does the problem go?
           </h1>
           <p className="mt-6 text-lg text-navy/70">
-            Choose the level of clarity you need across the ClarityOS framework.
+            Choose the level of clarity you need across the {BRAND_TM} framework.
           </p>
           <p className="mt-3 text-sm text-navy/50">
             Built on the 8C Crisis-to-Clarity Framework · Initial response within 48 hours · Tailored proposal within 5 business days · Every
             engagement starts with a clarity diagnosis.
           </p>
-        </div>
-        <div className="mt-12 lg:col-span-4 lg:mt-0">
-          <div className="overflow-hidden bg-navy shadow-2xl">
-            <img
-              src={frameworkAsset.url}
-              alt="The 8C Crisis-to-Clarity Framework — ClarityOS methodology"
-              className="h-full w-full object-cover"
-              loading="eager"
-            />
-          </div>
         </div>
       </section>
 
@@ -87,9 +85,36 @@ function ServicesPage() {
               <h2 className={`mt-4 font-serif text-2xl ${i === 1 ? "text-paper" : "text-navy"}`}>
                 {s.title}
               </h2>
-              <p className={`mt-4 flex-1 text-sm leading-relaxed ${i === 1 ? "text-paper/70" : "text-navy/60"}`}>
-                {s.description}
-              </p>
+              <div className="mt-4 flex-1">
+                <p className={`text-sm leading-relaxed ${i === 1 ? "text-paper/70" : "text-navy/60"}`}>
+                  {s.description}
+                </p>
+                {"proof" in s && s.proof ? (
+                  <p className={`mt-4 text-sm font-semibold ${i === 1 ? "text-gold" : "text-navy"}`}>
+                    {s.proof}
+                  </p>
+                ) : null}
+                {s.slug === "enterprise-90-day" ? (
+                  <div className="mt-6">
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-gold">
+                      {WHAT_YOU_RECEIVE.eyebrow}
+                    </div>
+                    <ul className="mt-3 space-y-3">
+                      {ENTERPRISE_RECEIVE.map((c) => (
+                        <li
+                          key={c.title}
+                          className={`border-l-2 border-gold pl-3 text-xs leading-relaxed ${
+                            i === 1 ? "text-paper/70" : "text-navy/60"
+                          }`}
+                        >
+                          <strong className={i === 1 ? "text-paper" : "text-navy"}>{c.title}</strong>{" "}
+                          {c.body}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
+              </div>
               <div className={`mt-6 font-serif text-3xl ${i === 1 ? "italic text-gold" : "text-gold"}`}>
                 {s.price}
               </div>
