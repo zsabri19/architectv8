@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout";
 import { NEWSLETTER_ISSUES, SITE, canonicalUrl } from "@/lib/site-data";
+import { trackEvent } from "@/lib/analytics";
 import portraitAsset from "@/assets/portrait-6.jpg.asset.json";
 
 const OG = `https://${SITE.domain}${portraitAsset.url}`;
@@ -69,6 +70,7 @@ function NewsletterPage() {
                 });
 
                 if (response.ok) {
+                  trackEvent("newsletter_signup", { form_location: "newsletter_page" });
                   alert("Thank you for subscribing!");
                   form.reset();
                 } else {
