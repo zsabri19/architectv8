@@ -4,6 +4,7 @@ import { Loader2 } from "lucide-react";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
 import { persistMemoirUnlock } from "@/lib/memoir/access";
 import { SITE, canonicalUrl } from "@/lib/site-data";
+import { trackEventOnce } from "@/lib/analytics";
 
 export const Route = createFileRoute("/book-a-session_/thanks")({
   head: () => ({
@@ -29,6 +30,7 @@ function ThanksPage() {
 
   useEffect(() => {
     persistMemoirUnlock();
+    trackEventOnce("booking_session", { booking_step: "payment_confirmed" });
   }, []);
 
   return (
