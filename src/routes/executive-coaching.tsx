@@ -30,7 +30,7 @@ export const Route = createFileRoute("/executive-coaching")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          name: "Executive Coaching & Advisory — ClarityOS",
+          name: "Executive Coaching & Advisory — ClarityOS™",
           serviceType: ["Executive Coaching", "Executive Advisory", "Board Advisory"],
           areaServed: "GCC and international",
           provider: { "@type": "Person", name: SITE.name, jobTitle: SITE.role },

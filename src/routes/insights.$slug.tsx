@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
 import { ARTICLES, FRAMEWORKS, SITE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
 import { authorRef, isoDate, publisherRef } from "@/lib/seo";
+import { formatDisplayDate } from "@/lib/format-date";
 
 function toMetaDescription(text: string, max = 155): string {
   if (text.length <= max) return text;
@@ -108,11 +109,7 @@ function ArticlePage() {
         </nav>
         <Eyebrow>
           {article.category} ·{" "}
-          {new Date(article.date).toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
+          {formatDisplayDate(article.date)}
         </Eyebrow>
         <h1 className="font-serif text-4xl leading-tight text-navy md:text-5xl">{article.title}</h1>
         <p className="mt-8 text-xl leading-relaxed text-navy/70">{article.summary}</p>

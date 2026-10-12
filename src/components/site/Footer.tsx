@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ARTICLES, FRAMEWORKS, SITE } from "@/lib/site-data";
+import { ARTICLES, BRAND_TM, FRAMEWORKS, SITE } from "@/lib/site-data";
+import { IdentityLine } from "./IdentityLine";
 
 const footerLinks = [
   { label: "ClarityOS", href: "/clarityos" },
@@ -25,11 +26,12 @@ export function Footer() {
         <div className="footer-intro">
           <p className="eyebrow on-dark">Clarity before installation</p>
           <h2>The Human OS before the System OS.</h2>
-          <p>
-            Zeeshan Sabri is the Crisis-to-Clarity Architect and founder of ClarityOS — a
+          <p className="footer-intro-copy">
+            Zeeshan Sabri is the Crisis-to-Clarity Architect and founder of {BRAND_TM} — a
             methodology for strengthening the human layer beneath governance, technology, and
             transformation.
           </p>
+          <IdentityLine className="on-dark" />
         </div>
 
         <div className="footer-links" aria-label="Footer navigation">
@@ -90,7 +92,7 @@ export function Footer() {
       <div className="site-shell footer-base">
         <p>© {new Date().getFullYear()} Zeeshan Sabri. All rights reserved.</p>
         <p>
-          ClarityOS is proprietary positioning and methodology. <Link to="/privacy">Privacy</Link>
+          {BRAND_TM} is proprietary positioning and methodology. <Link to="/privacy">Privacy</Link>
         </p>
       </div>
     </footer>

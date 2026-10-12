@@ -5,7 +5,7 @@ import { FRAMEWORKS, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
 export const Route = createFileRoute("/frameworks/")({
   head: () => ({
     meta: [
-      { title: "The Frameworks Library — 16 Frameworks Behind ClarityOS" },
+      { title: "The Frameworks Library — 16 Frameworks Behind ClarityOS™" },
       {
         name: "description",
         content:
@@ -15,9 +15,9 @@ export const Route = createFileRoute("/frameworks/")({
       { name: "twitter:title", content: "The Frameworks Library" },
       {
         property: "og:description",
-        content: "The 16 frameworks behind ClarityOS.",
+        content: "The 16 frameworks behind ClarityOS™.",
       },
-      { name: "twitter:description", content: "The 16 frameworks behind ClarityOS." },
+      { name: "twitter:description", content: "The 16 frameworks behind ClarityOS™." },
       { property: "og:url", content: canonicalUrl("/frameworks") },
       ...defaultOgImageMeta,
     ],

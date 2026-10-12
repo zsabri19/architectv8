@@ -4,6 +4,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { LogoMarquee } from "@/components/site/LogoMarquee";
 import { Testimonials } from "@/components/site/Testimonials";
 import {
+  BRAND_TM,
   SITE,
   LOGOS_INSTITUTIONS,
   LOGOS_VENTURES,
@@ -23,7 +24,6 @@ import { EnquiryForm } from "@/components/site/EnquiryForm";
 import { BOOK_ROADMAP } from "@/lib/v4-content";
 import heroAsset from "@/assets/hero.jpg.asset.json";
 import coverAsset from "@/assets/cover.jpg.asset.json";
-import frameworkCompass from "@/assets/framework-8c.jpg.asset.json";
 import talkStage from "@/assets/talk-stage.jpg.asset.json";
 import fieldOshFounders from "@/assets/field-osh-founders.jpg.asset.json";
 
@@ -43,13 +43,13 @@ const EIGHT_C = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Zeeshan Sabri — Crisis-to-Clarity Architect · ClarityOS" },
+      { title: `Zeeshan Sabri — Crisis-to-Clarity Architect · ${BRAND_TM}` },
       {
         name: "description",
         content:
           "ClarityOS installs the Human OS before the System OS — diagnosing the real blocker and aligning decisions, ownership, and operating rhythm.",
       },
-      { property: "og:title", content: "Zeeshan Sabri — ClarityOS" },
+      { property: "og:title", content: `Zeeshan Sabri — ${BRAND_TM}` },
       {
         property: "og:description",
         content: "The Human OS before the System OS. ClarityOS by Zeeshan Sabri.",
@@ -60,7 +60,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image:width", content: "900" },
       { property: "og:image:height", content: "1408" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Zeeshan Sabri — ClarityOS" },
+      { name: "twitter:title", content: `Zeeshan Sabri — ${BRAND_TM}` },
       {
         name: "twitter:description",
         content: "The Human OS before the System OS. ClarityOS by Zeeshan Sabri.",
@@ -82,7 +82,7 @@ function HomePage() {
       <section className="hero-section" aria-labelledby="hero-title">
         <div className="site-shell hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">ClarityOS · Pre-Governance Operating System</p>
+            <p className="eyebrow">{BRAND_TM} · Pre-Governance Operating System</p>
             <h1 id="hero-title">{SITE.heroH1}</h1>
             <p className="hero-tagline">{SITE.tagline}</p>
             <p className="hero-summary">{SITE.heroSub}</p>
@@ -278,11 +278,7 @@ function HomePage() {
             ))}
           </ol>
 
-          <div className="method-visual-grid">
-            <figure className="method-image">
-              <img src={frameworkCompass.url} alt="The 8C Crisis-to-Clarity Framework diagram" loading="lazy" />
-              <figcaption>The 8C sequence — ClarityOS internal operating model.</figcaption>
-            </figure>
+          <div className="method-visual-grid method-visual-grid--single">
             <div className="method-note">
               <p className="eyebrow">Proprietary positioning</p>
               <blockquote>

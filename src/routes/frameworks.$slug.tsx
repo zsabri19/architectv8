@@ -24,11 +24,11 @@ export const Route = createFileRoute("/frameworks/$slug")({
     const title = loaderData
       ? citable
         ? `The Continuity Gap — ${loaderData.framework.title}`
-        : `${loaderData.framework.title} — ClarityOS Framework`
+        : `${loaderData.framework.title} — ClarityOS™ Framework`
       : "Framework";
     const desc = citable
       ? "Most organisations do not fail a crisis at impact. They fail weeks later, when emergency authority is never formally returned. A diagnostic for the Continuity Gap."
-      : (loaderData?.framework.summary ?? "A ClarityOS framework.");
+      : (loaderData?.framework.summary ?? "A ClarityOS™ framework.");
     const url = canonicalUrl(`/frameworks/${params.slug}`);
     const faqs = FRAMEWORK_ENRICHMENTS[params.slug]?.faqs ?? [];
 

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout, Eyebrow } from "@/components/site/SiteLayout";
 import {
+  BRAND_TM,
   SITE,
   canonicalUrl,
   PRESS_ITEMS,
@@ -13,13 +14,14 @@ import {
 } from "@/lib/site-data";
 import { PERSON_ID } from "@/lib/seo";
 import { EnquiryForm } from "@/components/site/EnquiryForm";
+import { IdentityLine } from "@/components/site/IdentityLine";
 
 const TITLE = "Press Kit — Zeeshan Sabri, Crisis-to-Clarity Architect";
 const DESC =
   "Media resources for journalists and event organisers: verified biography, credentials, delivered workshop ledger, award coverage, and direct contact.";
 
 const SHORT_BIO =
-  "Zeeshan Sabri is a Crisis-to-Clarity Architect working with founders, executives, and leadership teams across the GCC and South Asia. He is the creator of ClarityOS, a methodology for diagnosing the human layer beneath failed transformation, and the author of the 8C Crisis-to-Clarity Framework.";
+  `Zeeshan Sabri is a Crisis-to-Clarity Architect working with founders, executives, and leadership teams across the GCC and South Asia. He is the creator of ${BRAND_TM}, a methodology for diagnosing the human layer beneath failed transformation, and the author of the 8C Crisis-to-Clarity Framework.`;
 
 const LONG_BIO =
   "Zeeshan Sabri has spent his career at the intersection of enterprise procurement, transformation programmes, and leadership development — at Huawei, Motorola, and across public-sector and startup ecosystems in Oman, Qatar, Saudi Arabia, Kuwait, and Pakistan. His work argues that transformation programmes fail not on their technical design but on the human operating system underneath them: unclear decision rights, unowned authority, and governance that formally exists but no longer binds. ClarityOS is his response — a set of sixteen diagnostic frameworks for naming the real blocker before designing the change. He was awarded the Entrepreneurial Excellence Award at the Founders 2.0 Conference in Dubai in December 2025, and is a Chartered MCIPS professional.";
@@ -98,10 +100,14 @@ function PressPage() {
           <div className="text-[10px] font-medium uppercase tracking-widest text-gold">
             Short — 50 words
           </div>
+          <p className="mt-3 font-serif text-xl text-navy">{SITE.name}</p>
+          <IdentityLine className="mt-1" />
           <p className="mt-3 leading-relaxed text-navy/80">{SHORT_BIO}</p>
           <div className="mt-10 text-[10px] font-medium uppercase tracking-widest text-gold">
             Long — 150 words
           </div>
+          <p className="mt-3 font-serif text-xl text-navy">{SITE.name}</p>
+          <IdentityLine className="mt-1" />
           <p className="mt-3 leading-relaxed text-navy/80">{LONG_BIO}</p>
           <dl className="mt-10 grid gap-x-8 gap-y-4 border-t border-navy/10 pt-6 sm:grid-cols-2">
             <div>
@@ -120,7 +126,7 @@ function PressPage() {
               <dt className="text-[10px] font-medium uppercase tracking-widest text-navy/40">
                 Methodology
               </dt>
-              <dd className="mt-1 text-navy">ClarityOS</dd>
+              <dd className="mt-1 text-navy">{BRAND_TM}</dd>
             </div>
             <div>
               <dt className="text-[10px] font-medium uppercase tracking-widest text-navy/40">
@@ -133,7 +139,7 @@ function PressPage() {
 
         <Section title="Facts and figures">
           <div className="grid gap-8 sm:grid-cols-3">
-            {[...WORKSHOP_STATS, ...METRICS].slice(0, 6).map((m) => (
+            {[...WORKSHOP_STATS, ...METRICS].slice(0, 9).map((m) => (
               <div key={m.label} className="border-t border-navy/10 pt-4">
                 <div className="font-serif text-4xl text-navy">{m.value}</div>
                 <div className="mt-2 text-sm text-navy/60">{m.label}</div>

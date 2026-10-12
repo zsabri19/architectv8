@@ -29,6 +29,13 @@ export const SITE = {
   },
 };
 
+/** Brand mark with ™: use on first, headline and title uses of ClarityOS (brand guidelines). */
+export const BRAND_TM = "ClarityOS™";
+
+/** Locked identity line (brand guidelines): verbatim, never reworded. */
+export const IDENTITY_LINE =
+  "Clarifier | Founder of Award-Winning ClarityOS™ | Stabilization Before Optimization";
+
 export const canonicalUrl = (path: string) => `https://${SITE.domain}${path}`;
 
 /** Existing brand portrait — use on templates that have no page-specific preview image. */
@@ -298,6 +305,7 @@ export const METRICS = [
   { value: "22", label: "Years across Fortune 500, government, ventures" },
   { value: "5M+", label: "Citizens served via national platforms" },
   { value: "90–95%", label: "Pyramid Framework adoption vs. 25% industry" },
+  { value: "USD 12M", label: "Ungoverned local spend identified" },
 ];
 
 export type Testimonial = {
@@ -369,7 +377,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
       "AI doesn't transform businesses by itself — people, systems, and clarity do. Zeeshan consistently brings the conversation back to something more fundamental: organizations need clarity before complexity, and stability before optimization.",
-    name: "Makarand Upat",
+    name: "Makarand Utpat",
     title: "AI Readiness & Automation",
     date: "June 2026",
     source: "LinkedIn Recommendation",
@@ -424,7 +432,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     client: "NCMS — National Company for Mechanical Systems",
     sector: "Defence & Manufacturing",
     challenge:
-      "Leadership team required decision clarity and governance redesign across 80+ workshops.",
+      "Leadership team required decision clarity and governance redesign across 3 strategic NCMS workshops.",
     outcome: "Pyramid Framework adopted at 90–95% vs. 25% industry standard.",
     metric: "90–95% adoption rate",
   },
@@ -445,6 +453,40 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 ];
 
+/**
+ * "What you receive" deliverables (approved copy, Baba 2026-10-09: use word for word).
+ * /clarityos renders all five; /services renders cards 1, 2 and 4 under the Enterprise program.
+ */
+export const WHAT_YOU_RECEIVE = {
+  eyebrow: "What you receive",
+  title: "Five deliverables. One decision gate.",
+  cards: [
+    {
+      title: "Clarity diagnosis.",
+      body: "A written diagnosis that names the real blocker, function by function, before any proposal is written.",
+    },
+    {
+      title: "Decision-rights and ownership map.",
+      body: "Who decides, who escalates and who owns each critical decision.",
+    },
+    {
+      title: "Drift baseline.",
+      body: "The current pattern of late escalations, unauthorised concessions and decision rework, measured, so progress is evidence and not anecdote.",
+    },
+    {
+      title: "One 30 to 60-day pilot.",
+      body: "One live project or business unit, leading indicators fixed up front, and a decision gate at the end: scale, refine or stop.",
+    },
+    {
+      title: "Installed operating rhythm.",
+      body: "Cadence, governance calendar and board briefings, so it holds after the engagement ends.",
+    },
+  ],
+  footnote:
+    "For founders, the 90-minute ClarityOS™ Personal Session delivers a one-page diagnosis and the next three decisions to make.",
+  cta: { label: "Scope a 60-day pilot", href: "/connect" },
+} as const;
+
 export const SERVICES = [
   {
     slug: "clarity-session",
@@ -464,6 +506,7 @@ export const SERVICES = [
     cadence: "Structured team engagement",
     description:
       "A structured engagement for leadership teams that need decision clarity, aligned ownership, and governance before transformation spend multiplies confusion.",
+    proof: "USD 12M of ungoverned local spend identified.",
     cta: { label: "Discuss Enterprise Needs", href: "/connect" },
   },
   {
@@ -1427,7 +1470,6 @@ export const EXTERNAL_PUBLICATIONS: ExternalPublication[] = [
     title: "Zeeshan Sabri — Author profile",
     summary:
       "Author profile highlighting work as a strategist in AI, governance, operating design, and leadership systems focused on Oman's digital transformation.",
-    url: "https://techoman.om/author/zeeshansabri/",
   },
   {
     publisher: "Tech Oman",

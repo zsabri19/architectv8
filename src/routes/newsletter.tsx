@@ -3,6 +3,7 @@ import { SiteLayout, Eyebrow, SectionTitle } from "@/components/site/SiteLayout"
 import { NEWSLETTER_ISSUES, SITE, canonicalUrl } from "@/lib/site-data";
 import { trackEvent } from "@/lib/analytics";
 import portraitAsset from "@/assets/portrait-6.jpg.asset.json";
+import { formatDisplayDate } from "@/lib/format-date";
 
 const OG = `https://${SITE.domain}${portraitAsset.url}`;
 
@@ -120,10 +121,7 @@ function NewsletterPage() {
               <li key={i.slug} className="py-6">
                 <div className="text-[10px] font-medium uppercase tracking-widest text-gold">
                   Issue {String(i.number).padStart(2, "0")} ·{" "}
-                  {new Date(i.date).toLocaleDateString("en-US", {
-                    month: "long",
-                    year: "numeric",
-                  })}
+                  {formatDisplayDate(i.date, { month: "long", year: "numeric" })}
                 </div>
                 <div className="mt-2 font-serif text-2xl text-navy">{i.title}</div>
                 <p className="mt-2 text-navy/60">{i.excerpt}</p>
