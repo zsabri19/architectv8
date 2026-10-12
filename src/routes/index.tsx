@@ -43,16 +43,16 @@ const EIGHT_C = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Zeeshan Sabri — Crisis-to-Clarity Architect · ClarityOS" },
+      { title: "Transformation Architect & Organizational Design | Zeeshan Sabri | ClarityOS" },
       {
         name: "description",
         content:
-          "ClarityOS installs the Human OS before the System OS — diagnosing the real blocker and aligning decisions, ownership, and operating rhythm.",
+          "Transformation architect specializing in governance, organizational design, and decision clarity. Crisis-to-Clarity methodology for enterprise change and executive advisory.",
       },
-      { property: "og:title", content: "Zeeshan Sabri — ClarityOS" },
+      { property: "og:title", content: "Transformation Architect & Organizational Design | Zeeshan Sabri" },
       {
         property: "og:description",
-        content: "The Human OS before the System OS. ClarityOS by Zeeshan Sabri.",
+        content: "Transformation architect specializing in governance, organizational design, and decision clarity. Crisis-to-Clarity methodology for enterprise change and executive advisory.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: canonicalUrl("/") },
@@ -60,12 +60,49 @@ export const Route = createFileRoute("/")({
       { property: "og:image:width", content: "900" },
       { property: "og:image:height", content: "1408" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Zeeshan Sabri — ClarityOS" },
+      { name: "twitter:title", content: "Transformation Architect & Organizational Design | Zeeshan Sabri" },
       {
         name: "twitter:description",
-        content: "The Human OS before the System OS. ClarityOS by Zeeshan Sabri.",
+        content: "Governance architect specializing in organizational transformation, decision clarity, and executive advisory. ClarityOS methodology.",
       },
       { name: "twitter:image", content: HERO_OG },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        innerHTML: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "@id": `https://${SITE.domain}/#zeeshan-sabri`,
+          name: "Zeeshan Sabri",
+          jobTitle: "Transformation Architect & Organizational Design Strategist",
+          description:
+            "Crisis-to-Clarity architect specializing in governance, organizational transformation, and executive advisory. Founder of ClarityOS.",
+          url: canonicalUrl("/"),
+          image: HERO_OG,
+          email: SITE.email,
+          knowsAbout: [
+            "Organizational Design",
+            "Governance Architecture",
+            "Digital Transformation",
+            "Executive Coaching",
+            "Supply Chain Strategy",
+            "Procurement Advisory",
+            "Change Management",
+            "Decision Architecture",
+          ],
+          worksFor: {
+            "@type": "Organization",
+            "@id": `https://${SITE.domain}/#organization`,
+            name: "Global Markets Technologies",
+            url: canonicalUrl("/"),
+          },
+          sameAs: [
+            "https://linkedin.com/in/zeeshansabri",
+            `https://${SITE.domain}/the-architect`,
+          ],
+        }).replace(/</g, "\\u003c"),
+      },
     ],
     links: [{ rel: "canonical", href: canonicalUrl("/") }],
   }),
