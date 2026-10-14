@@ -14,7 +14,7 @@ export const Route = createFileRoute("/the-architect")({
       {
         name: "description",
         content:
-          "22 years across Fortune 500, government, and ventures. Chartered MCIPS. AI CERTs certified trainer. Winner, Founders 2.0 Entrepreneurial Excellence Award, Dubai 2025.",
+          "22 years across Fortune 500, government and ventures. Chartered MCIPS. AI CERTs trainer. Winner, Founders 2.0 Entrepreneurial Excellence Award, Dubai 2025.",
       },
       { property: "og:title", content: "The Architect — Zeeshan Sabri" },
       { name: "twitter:title", content: "The Architect — Zeeshan Sabri" },

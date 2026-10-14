@@ -5,9 +5,9 @@ export const SITE = {
   name: "Zeeshan Sabri",
   role: "Crisis-to-Clarity Architect",
   tagline: "The Human OS before the System OS.",
-  heroH1: "Transformation fails when the human layer underneath it cannot hold.",
+  heroH1: "Zeeshan Sabri: Crisis-to-Clarity Architect and founder of ClarityOS™.",
   heroSub:
-    "ClarityOS helps founders, executives, and leadership teams diagnose the real blocker, align decisions and ownership, and install the operating rhythm that makes change stick.",
+    "Most transformations do not fail on strategy. They fail when the human layer underneath it cannot hold. ClarityOS helps founders, executives, and leadership teams diagnose the real blocker, align decisions and ownership, and install the operating rhythm that makes change stick.",
   email: "zeeshan@global-mkts.com",
   phone: "+968 7707 4345",
   // SEO target domain. All canonicals, og:url tags, and the sitemap derive
@@ -684,7 +684,7 @@ export const FRAMEWORKS: Framework[] = [
   {
     slug: "practical-people-skills-development",
     number: 16,
-    title: "Practical People Skills Development Framework",
+    title: "Practical People Skills Framework",
     eyebrow: "Personal Development",
     summary:
       "Six people-skill capabilities and a six-month observe, practise, reflect track that turns a development plan into observable behaviour.",

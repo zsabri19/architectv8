@@ -25,7 +25,7 @@ const OG = `https://${SITE.domain}${decodeBanner.url}`;
 export const Route = createFileRoute("/media")({
   head: () => ({
     meta: [
-      { title: "Media & Press — Zeeshan Sabri · Keynotes, Interviews, Coverage" },
+      { title: "Media & Press — Zeeshan Sabri · Keynotes" },
       {
         name: "description",
         content:

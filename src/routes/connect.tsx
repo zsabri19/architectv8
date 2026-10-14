@@ -12,7 +12,7 @@ const OG = `https://${SITE.domain}${portraitAsset.url}`;
 export const Route = createFileRoute("/connect")({
   head: () => ({
     meta: [
-      { title: "Connect — Book $79 or start an enterprise enquiry · Zeeshan Sabri" },
+      { title: "Connect — Book a $79 Clarity Session or enterprise enquiry" },
       {
         name: "description",
         content:
@@ -42,10 +42,11 @@ function ConnectPage() {
       <section className="mx-auto max-w-7xl px-6 pt-20 pb-10 lg:px-8">
         <Eyebrow>Connect</Eyebrow>
         <h1 className="font-serif text-4xl leading-[1.1] text-navy md:text-6xl">
-          Two lanes. Pick the one that fits.
+          Book a Clarity Session or send an enterprise enquiry.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-navy/70">
-          The paid session and the enterprise path stay separate by design. Choose yours and move.
+          Two lanes, separate by design: the paid session and the enterprise path. Choose yours
+          and move.
         </p>
       </section>
 

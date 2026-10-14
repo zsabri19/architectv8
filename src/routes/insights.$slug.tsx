@@ -22,8 +22,17 @@ export const Route = createFileRoute("/insights/$slug")({
     const SUFFIX = " — Insights";
     const MAX = 60;
     const base = raw.split(":")[0].trim() || raw;
-    const pick =
-      (base + SUFFIX).length <= MAX ? base : base.slice(0, MAX - SUFFIX.length - 1).trim();
+    // Fit inside MAX without cutting mid-word: drop whole words from the end.
+    const room = MAX - SUFFIX.length - 1;
+    let pick = base;
+    if ((base + SUFFIX).length > MAX) {
+      let out = "";
+      for (const word of base.split(" ")) {
+        if ((out ? `${out} ${word}` : word).length > room) break;
+        out = out ? `${out} ${word}` : word;
+      }
+      pick = out.trim() || base.slice(0, room).trim();
+    }
     const title = loaderData ? `${pick}${SUFFIX}` : "Insight";
     const desc = toMetaDescription(loaderData?.article.summary ?? "An insight from Zeeshan Sabri.");
 

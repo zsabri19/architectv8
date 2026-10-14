@@ -43,16 +43,17 @@ const EIGHT_C = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Transformation Architect & Organizational Design | Zeeshan Sabri | ClarityOS" },
+      { title: "Zeeshan Sabri — Crisis-to-Clarity Architect — ClarityOS" },
       {
         name: "description",
         content:
-          "Transformation architect specializing in governance, organizational design, and decision clarity. Crisis-to-Clarity methodology for enterprise change and executive advisory.",
+          "Crisis-to-Clarity architect. Governance, organizational design, and decision clarity for enterprise change and executive advisory.",
       },
-      { property: "og:title", content: "Transformation Architect & Organizational Design | Zeeshan Sabri" },
+      { property: "og:title", content: "Zeeshan Sabri — Crisis-to-Clarity Architect — ClarityOS" },
       {
         property: "og:description",
-        content: "Transformation architect specializing in governance, organizational design, and decision clarity. Crisis-to-Clarity methodology for enterprise change and executive advisory.",
+        content:
+          "Crisis-to-Clarity architect. Governance, organizational design, and decision clarity for enterprise change and executive advisory.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: canonicalUrl("/") },
@@ -60,7 +61,7 @@ export const Route = createFileRoute("/")({
       { property: "og:image:width", content: "900" },
       { property: "og:image:height", content: "1408" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Transformation Architect & Organizational Design | Zeeshan Sabri" },
+      { name: "twitter:title", content: "Zeeshan Sabri — Crisis-to-Clarity Architect — ClarityOS" },
       {
         name: "twitter:description",
         content: "Governance architect specializing in organizational transformation, decision clarity, and executive advisory. ClarityOS methodology.",
@@ -75,7 +76,7 @@ export const Route = createFileRoute("/")({
           "@type": "Person",
           "@id": `https://${SITE.domain}/#zeeshan-sabri`,
           name: "Zeeshan Sabri",
-          jobTitle: "Transformation Architect & Organizational Design Strategist",
+          jobTitle: "Crisis-to-Clarity Architect",
           description:
             "Crisis-to-Clarity architect specializing in governance, organizational transformation, and executive advisory. Founder of ClarityOS.",
           url: canonicalUrl("/"),

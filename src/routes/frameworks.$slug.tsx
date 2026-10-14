@@ -27,7 +27,7 @@ export const Route = createFileRoute("/frameworks/$slug")({
         : `${loaderData.framework.title} — ClarityOS Framework`
       : "Framework";
     const desc = citable
-      ? "Most organisations do not fail a crisis at impact. They fail weeks later, when emergency authority is never formally returned. A diagnostic for the Continuity Gap."
+      ? "Most organisations do not fail a crisis at impact but weeks later, when emergency authority is never returned. A diagnostic for the Continuity Gap."
       : (loaderData?.framework.summary ?? "A ClarityOS framework.");
     const url = canonicalUrl(`/frameworks/${params.slug}`);
     const faqs = FRAMEWORK_ENRICHMENTS[params.slug]?.faqs ?? [];

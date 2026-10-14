@@ -48,10 +48,11 @@ function ServicesPage() {
         <div className="lg:col-span-8">
           <Eyebrow>Engagement Paths</Eyebrow>
           <h1 className="font-serif text-4xl leading-[1.1] text-navy md:text-6xl">
-            Three paths, one methodology: how deep does the problem go?
+            ClarityOS services: Personal, Enterprise, Board Advisory.
           </h1>
           <p className="mt-6 text-lg text-navy/70">
-            Choose the level of clarity you need across the ClarityOS framework.
+            Three paths, one methodology: how deep does the problem go? Choose the level of
+            clarity you need across the ClarityOS framework.
           </p>
           <p className="mt-3 text-sm text-navy/50">
             Built on the 8C Crisis-to-Clarity Framework · Initial response within 48 hours · Tailored proposal within 5 business days · Every
