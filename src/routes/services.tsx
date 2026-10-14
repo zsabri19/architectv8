@@ -33,6 +33,7 @@ export const Route = createFileRoute("/services")({
             "Board Advisory",
             "Keynote Speaking",
             "AI Training & Certification",
+            "AI Governance Advisory",
           ],
         }),
       },

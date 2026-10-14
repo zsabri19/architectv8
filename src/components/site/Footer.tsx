@@ -13,6 +13,7 @@ const footerLinks = [
   { label: "The Book", href: "/book" },
   { label: "Organizational Development", href: "/organizational-development" },
   { label: "Executive Coaching", href: "/executive-coaching" },
+  { label: "AI Governance", href: "/ai-governance" },
   { label: "Personal Development Framework", href: "/personal-development-framework" },
   { label: "Press Kit", href: "/press" },
   { label: "The Clarity Dispatch", href: "/newsletter" },

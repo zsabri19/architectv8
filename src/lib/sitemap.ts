@@ -35,6 +35,7 @@ export function sitemapPaths(): string[] {
     "/book-a-session",
     "/organizational-development",
     "/executive-coaching",
+    "/ai-governance",
     "/personal-development-framework",
     "/press",
     "/privacy",
