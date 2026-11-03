@@ -2,7 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { AI_GOV_PILLAR } from "@/lib/pillar-content";
-import { SITE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
+import { SITE, DEFAULT_OG_IMAGE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
+import { authorRef, publisherRef } from "@/lib/seo";
+import { SITE_LASTMOD } from "@/lib/sitemap";
 
 const TITLE = "AI Governance for GCC Enterprises — ClarityOS";
 const DESC =
@@ -25,6 +27,21 @@ export const Route = createFileRoute("/ai-governance")({
     ],
     links: [{ rel: "canonical", href: canonicalUrl(URL) }],
     scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: AI_GOV_PILLAR.title,
+          description: DESC,
+          datePublished: SITE_LASTMOD,
+          dateModified: SITE_LASTMOD,
+          image: DEFAULT_OG_IMAGE,
+          author: authorRef,
+          publisher: publisherRef,
+          mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl(URL) },
+        }),
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({

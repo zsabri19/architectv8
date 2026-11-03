@@ -44,6 +44,9 @@ export const Route = createFileRoute("/frameworks/$slug")({
           description: desc,
           datePublished: citable.datePublished,
           dateModified: citable.datePublished,
+          ...(params.slug === "8c-crisis-to-clarity"
+            ? { image: canonicalUrl("/assets/framework-8c.jpg") }
+            : {}),
           mainEntityOfPage: { "@type": "WebPage", "@id": url },
           author: {
             "@type": "Person",
