@@ -155,6 +155,16 @@ function ConnectPage() {
                   });
 
                   if (response.ok) {
+                    const gtag = (
+                      window as Window & {
+                        gtag?: (
+                          command: "event",
+                          name: "generate_lead",
+                          params: { form: "enquiry" },
+                        ) => void;
+                      }
+                    ).gtag;
+                    gtag?.("event", "generate_lead", { form: "enquiry" });
                     setStatus("idle");
                     setSubmitted(true);
                   } else {

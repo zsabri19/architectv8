@@ -4,6 +4,7 @@ import { SiteLayout } from "@/components/site/SiteLayout";
 import { OD_PILLAR } from "@/lib/pillar-content";
 import { DEFAULT_OG_IMAGE, canonicalUrl, defaultOgImageMeta } from "@/lib/site-data";
 import { authorRef, publisherRef } from "@/lib/seo";
+import { SITE_LASTMOD } from "@/lib/sitemap";
 
 const TITLE = "Organizational Development: The Human Layer";
 const DESC =
@@ -33,6 +34,8 @@ export const Route = createFileRoute("/organizational-development")({
           "@type": "Article",
           headline: OD_PILLAR.title,
           description: DESC,
+          datePublished: SITE_LASTMOD,
+          dateModified: SITE_LASTMOD,
           author: authorRef,
           publisher: publisherRef,
           image: DEFAULT_OG_IMAGE,

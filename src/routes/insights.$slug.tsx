@@ -59,6 +59,7 @@ export const Route = createFileRoute("/insights/$slug")({
                 headline: loaderData.article.title,
                 description: loaderData.article.summary,
                 datePublished: isoDate(loaderData.article.date),
+                dateModified: isoDate(loaderData.article.date),
                 articleSection: loaderData.article.category,
                 image: `https://${SITE.domain}/assets/hero.jpg`,
                 url: canonicalUrl(`/insights/${params.slug}`),

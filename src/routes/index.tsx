@@ -97,6 +97,12 @@ export const Route = createFileRoute("/")({
             "@id": `https://${SITE.domain}/#organization`,
             name: "Global Markets Technologies",
             url: canonicalUrl("/"),
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Muscat",
+              addressCountry: "OM",
+            },
+            sameAs: [SITE.socials.linkedin],
           },
           sameAs: [
             "https://linkedin.com/in/zeeshansabri",

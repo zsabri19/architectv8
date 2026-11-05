@@ -16,8 +16,14 @@ export const organizationNode = {
   url: canonicalUrl("/"),
   email: SITE.email,
   telephone: "+96877074345",
-  // The GMT logo already shown in the ventures logo strip. No street address: the site does not
-  // state a company address (press kit "Based in Muscat" describes Zeeshan, not GMT).
+  // Locality only: the press kit states "Based in Muscat, Oman". No street address is published.
+  // sameAs is the LinkedIn URL already in the footer. YouTube and X are not published on the site.
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Muscat",
+    addressCountry: "OM",
+  },
+  sameAs: [SITE.socials.linkedin],
   logo: { "@type": "ImageObject", url: canonicalUrl("/assets/gmt.png") },
   founder: { "@id": PERSON_ID },
 };
